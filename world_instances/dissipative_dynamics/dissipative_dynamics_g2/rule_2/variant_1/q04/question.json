@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "question_id": "variant_1_q04",
+  "family": "dissipative_dynamics",
+  "group_id": "dissipative_dynamics_g2",
+  "rule": "rule_2",
+  "variant_id": "variant_1",
+  "target_object_id": "object_2",
+  "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+}

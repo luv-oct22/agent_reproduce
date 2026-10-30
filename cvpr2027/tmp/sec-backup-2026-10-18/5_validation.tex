@@ -1,0 +1,22 @@
+\section{Benchmark Validation}
+\label{sec:validation}
+
+Before interpreting model performance, we check that the benchmark is solvable, that interaction matters, and that the answer is not leaked through trivial artifacts.
+
+\subsection{Oracle Ceiling}
+
+We evaluate an oracle that receives the latent-law realization $\lambda$ and world-parameter regime $\rho$, simulates the successor state under $\Phi_{\mathcal{W}}$, and selects the matching candidate. The oracle verifies that the generated task has a well-defined physical answer and provides an upper bound. \TODO{Report oracle accuracy per family once measured.}
+
+\subsection{No-Interaction Floor}
+
+The $B=0$ condition removes support interaction. It measures what a model can do from visual context, priors, and candidate comparison alone. \TODO{Report $B=0$ accuracy per family once measured.}
+
+\subsection{Weak-vs-Strong Discrimination}
+
+We include a simple appearance heuristic that chooses the candidate closest to the initial frame under an image-distance metric. If this heuristic matches frontier agents, the task is not testing the intended capability. \TODO{Report the heuristic accuracy and the gap to the strongest model--harness baseline.}
+
+\subsection{Leakage and Sanity Tests}
+
+We test whether non-physical artifacts predict the answer. Candidate positions are independently permuted, object identifiers and colors are randomized when they are not physically meaningful, and filenames or metadata do not encode the label. We also run a label-only classifier; it should perform at chance. \TODO{Report leakage-test results.}
+
+\paragraph{Human sanity.} Where feasible, we report a small human reference under matched information and budget. This check is not the target metric, but it helps establish that the task is understandable from the provided evidence. \TODO{Decide whether to include human sanity in the main paper or appendix.}

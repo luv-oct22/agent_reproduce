@@ -1,0 +1,81 @@
+# kinematics_dynamics_g1/combined_rule/variant_6/q02
+
+Host-only resolved question record:
+
+```json
+{
+  "question_id": "variant_6_q02",
+  "group_id": "kinematics_dynamics_g1",
+  "rule": "combined_rule",
+  "variant_id": "variant_6",
+  "target_object_id": "object_1",
+  "scene_state": {
+    "objects": [
+      {
+        "object_id": "object_1",
+        "color": "red",
+        "mass_kg": 0.4,
+        "radius_m": 0.1,
+        "initial_position_m": [
+          -0.7,
+          -0.3,
+          1.3
+        ],
+        "initial_velocity_m_s": [
+          -0.1,
+          -0.8,
+          0.6
+        ]
+      },
+      {
+        "object_id": "object_2",
+        "color": "blue",
+        "mass_kg": 0.6,
+        "radius_m": 0.16,
+        "initial_position_m": [
+          0.2,
+          0.4,
+          0.9
+        ],
+        "initial_velocity_m_s": [
+          0.7,
+          1.0,
+          -0.7
+        ]
+      },
+      {
+        "object_id": "object_3",
+        "color": "green",
+        "mass_kg": 1.5,
+        "radius_m": 0.11,
+        "initial_position_m": [
+          0.2,
+          -0.7,
+          1.8
+        ],
+        "initial_velocity_m_s": [
+          0.2,
+          -0.9,
+          0.5
+        ]
+      }
+    ],
+    "start_time_s": 1.7,
+    "duration_s": 0.16,
+    "target_object_id": "object_1"
+  },
+  "hidden_parameters": {
+    "equation_parameters": {
+      "kind": "nested",
+      "p": 1.2,
+      "q": 0.6
+    },
+    "force_function": {
+      "field_kind": "nested",
+      "amplitude": 0.3,
+      "time_scale": 3.0,
+      "reference_time_s": 2.0
+    }
+  }
+}
+```

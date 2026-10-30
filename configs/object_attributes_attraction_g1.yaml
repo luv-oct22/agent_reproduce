@@ -1,0 +1,6 @@
+env:
+  type: autonomous_attraction_bench
+  params:
+    instance_path: world_instances/central_force_dynamics/central_force_dynamics_g1/baseline/instance.json
+task:
+  type: characterize_objects

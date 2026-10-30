@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "question_id": "variant_1_q03",
+  "family": "contact_mechanics",
+  "group_id": "contact_mechanics_g2",
+  "rule": "combined_rule",
+  "variant_id": "variant_1",
+  "target_object_id": "object_1",
+  "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+}

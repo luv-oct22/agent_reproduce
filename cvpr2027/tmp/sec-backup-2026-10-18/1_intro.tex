@@ -1,0 +1,34 @@
+\section{Introduction}
+\label{sec:intro}
+
+Suppose a multimodal agent tries several physical interventions and then succeeds. The success is encouraging, but it is not yet evidence that the agent learned physics. The agent may have searched a small action space, copied a locally successful trajectory, or exploited a visual cue that happens to correlate with the answer. For interactive physical agents, the harder question is whether feedback changes the agent's model of the world in a way that transfers beyond the states it touched.
+
+Current benchmarks leave this distinction partly hidden. Passive physical-reasoning benchmarks ask models to judge physical concepts or outcomes from fixed images, videos, or questions; they do not test what feedback from action changes. Interactive physics benchmarks such as PHYRE and I-PHYRE measure task success and sample efficiency, but success on the acted-on instance can mix physical inference with search. Interactive scientific-discovery benchmarks such as PhysGym and NewtonBench study law recovery from active probing, yet their endpoint is usually a symbolic or textual hypothesis, not a rendered counterfactual prediction for a new state of the same world. Feedback-learning benchmarks and situated-induction environments study adaptation in an agent loop, but do not isolate latent physical dynamics. These lines of work motivate a narrower diagnostic: after interacting with a latent physical world, can an agent use the resulting evidence to predict what will happen in a new scene from that same world?
+
+We introduce a benchmark for this diagnostic. Each episode is generated from a \emph{latent physical world} indexed by five factors: a physical-phenomenon family, a world-parameter regime, a latent-dynamics condition, a latent-law realization, and a counterfactual prediction instance. The agent first receives a fixed budget of tool-mediated interaction on support instances. Tool calls expose observable state, such as object attributes, positions, velocities, environmental measurements, and time, but never reveal the hidden constants, governing equation, latent transformation, or answer key. After support, feedback is frozen. The agent is then evaluated on held-out instances from the same latent-law realization. For each held-out instance, it must select the correct future frame from four rendered candidates.
+
+This design forces a separation that task success alone cannot provide. The support instances and held-out prediction instances share the same hidden dynamics, but differ in initial state, target object, and prediction interval. Candidate images are independently permuted per instance, and distractors are rendered from nearby but physically distinct successor states. A system that only matches appearance or memorizes support trajectories should not reliably solve the held-out prediction task. A system that infers the latent dynamics should improve when given more support evidence, especially on held-out states from the same realization.
+
+The benchmark contains 5,670 instances: seven physical-phenomenon families (central-force, kinematics, fluid, contact, dissipative, field-interaction, and elastic dynamics), three world-parameter regimes per family, three latent-dynamics conditions per regime, six latent-law realizations per condition, and fifteen prediction instances per realization. We report accuracy stratified by every level of this hierarchy, and include ablations over support budget and same-realization versus cross-realization evaluation.
+
+Our contributions are:
+\begin{itemize}
+  \item A controlled benchmark for testing whether agent-selected physical experiments support held-out counterfactual visual prediction under an unchanged latent law.
+  \item A 5,670-instance implementation spanning seven physical-phenomenon families, with simulator-generated ground truth, rendered candidates, and per-instance candidate permutation.
+  \item A stratified evaluation protocol for frontier multimodal agents, reported at the model--harness level, that measures the gap between using an interaction history and transferring physical evidence to new states. \TODO{Replace this clause with the main empirical finding once results land.}
+\end{itemize}
+
+\begin{figure*}[t]
+  \centering
+  % \includegraphics[width=\textwidth]{figures/fig1_hero.pdf}
+  \fbox{\parbox[c][6cm][c]{0.95\textwidth}{\centering
+    \textbf{Figure 1 placeholder (hero figure).}\\[0.5em]
+    \emph{Support:} the agent spends a fixed tool budget on several instances from one latent-law realization and records observable state.\\
+    \emph{Evaluation:} tool access is frozen; the agent sees a new initial state from the same realization and chooses among four rendered future frames.\\
+    \emph{Contrast:} appearance matching to the support history fails when the held-out state changes; latent-dynamics inference can transfer.
+  }}
+  \caption{\textbf{Benchmark protocol.} The benchmark separates interaction on support instances from counterfactual prediction on held-out states. During support, the agent gathers observable evidence about one latent-law realization. During evaluation, tool access is frozen and the agent must choose the correct future frame for a new state governed by the same hidden dynamics.}
+  \label{fig:hero}
+\end{figure*}
+
+Section~\ref{sec:benchmark} formalizes the task. Section~\ref{sec:construction} describes the benchmark construction, tool interface, simulator, and splits. Section~\ref{sec:protocol} defines the evaluation protocol and ablations. Section~\ref{sec:validation} gives validation checks. Section~\ref{sec:experiments} reports baselines and analyses. Section~\ref{sec:related} positions the benchmark relative to prior work, and Section~\ref{sec:conclusion} discusses limitations and conclusions.

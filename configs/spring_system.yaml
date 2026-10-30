@@ -1,0 +1,13 @@
+env:
+  type: spring_system
+  params: {}
+
+task:
+  type: shoot_ball  # placeholder — no spring task exists yet
+
+renderer:
+  projection: "2d"
+  axes: [0, 1]
+  xlim: [-2, 2]
+  ylim: [-2, 2]
+  figsize: [6, 6]

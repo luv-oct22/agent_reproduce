@@ -1,0 +1,80 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_6_q08",
+    "family": "elastic_dynamics",
+    "group_id": "elastic_dynamics_g1",
+    "rule": "combined_rule",
+    "variant_id": "variant_6",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.1,
+          "spring_stiffness_N_m": 5.0,
+          "position_m": [
+            0.3,
+            -0.3,
+            0.9
+          ],
+          "velocity_m_s": [
+            1.0,
+            0.7,
+            0.9
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 1.6,
+          "spring_stiffness_N_m": 11.5,
+          "position_m": [
+            1.0,
+            0.3,
+            1.6
+          ],
+          "velocity_m_s": [
+            0.1,
+            -0.4,
+            0.6
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 1.1,
+          "spring_stiffness_N_m": 10.9,
+          "position_m": [
+            0.3,
+            0.5,
+            2.4
+          ],
+          "velocity_m_s": [
+            0.2,
+            -0.8,
+            0.0
+          ]
+        }
+      ],
+      "start_time_s": 1.8,
+      "duration_s": 0.22,
+      "target_object_id": "object_1"
+    },
+    "target_object_id": "object_1",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "nested_restoring",
+    "p": 1.2,
+    "q": 0.8
+  },
+  "force_function": {
+    "field_kind": "nested",
+    "amplitude": 0.3,
+    "reference_time_s": 2.0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format": "world_family_group",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "family": "field_interactions",
+  "group_id": "field_interactions_g3",
+  "constants": {
+    "field_strength_N_C": 2.0,
+    "field_gradient_per_m": 0.2,
+    "field_direction": [
+      -0.6,
+      0.3,
+      0.8
+    ],
+    "reference_position_m": 1.6,
+    "reference_time_s": 2.5,
+    "minimum_separation_m": 0.08
+  },
+  "standard_equations": {
+    "field_force": "F_i=q_i*E(x_i,t)",
+    "net_force": "F_net=F_field+F_external",
+    "acceleration": "a_i=F_i/m_i",
+    "position_update": "x(t+dt)=x(t)+v*dt+0.5*a*dt^2"
+  }
+}

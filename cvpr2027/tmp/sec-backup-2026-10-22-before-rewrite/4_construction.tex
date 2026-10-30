@@ -1,0 +1,45 @@
+\section{Benchmark Construction}
+\label{sec:construction}
+
+We now describe the concrete benchmark: the phenomenon families, the support interface, the simulator and renderer, shortcut controls, and splits.
+
+\subsection{Phenomenon Families and Latent-World Hierarchy}
+
+The benchmark includes seven physical-phenomenon families: central-force, kinematics, fluid, contact, dissipative, field-interaction, and elastic dynamics. Each family fixes a visual setting, a baseline mechanism, and a family-specific state representation. State variables include object identities, intrinsic attributes, positions, velocities, time, and variables needed only by that family.
+
+Each family contains three world-parameter regimes. A regime fixes shared constants, such as reference scales, damping coefficients, thresholds, or field directions. Within each regime, three latent-dynamics conditions specify how the realized dynamics differ from the baseline: a structural equation change, a hidden coefficient or field function, or both. Each condition has six latent-law realizations, and each realization has fifteen instances that vary the initial state, object attributes, target object, and prediction interval.
+
+This gives $7 \times 3 \times 3 \times 6 \times 15 = 5{,}670$ instances. \TODO{Confirm the final per-realization support/held-out allocation; the current protocol uses eight support and seven held-out instances per realization, but this may be rebalanced after budget calibration.}
+
+\subsection{Tool-Mediated Support Interface}
+\label{sec:construction:tools}
+
+During support, the agent interacts with support instances through a fixed tool interface. Each call has a cost, and the total cost is bounded by $B$. Tools reveal observable state, such as object identities and attributes, positions, velocities, environmental measurements, and time. Tools do not reveal world constants, governing equations, hidden coefficient or field functions, or answer keys.
+
+\TODO{Enumerate the concrete tool set once the harness is frozen. For each tool, specify its name, arguments, return schema, and budget cost. Example sketch to replace: \texttt{probe\_state(t)} returns positions and velocities at time $t$; \texttt{apply\_impulse(obj, v)} applies an impulse; \texttt{measure\_field(x)} returns a local field value.}
+
+A subset of \emph{basic experiment tools}, those that apply forces, advance time, and read out object states, is shared by every family; the measurement probe (Section~\ref{sec:protocol:probe}) uses only this subset.
+
+Because tool choice and memory organization affect performance, we disclose the model, prompt scaffold, memory representation, tool-use policy, and reasoning loop for every reported system.
+
+\subsection{Simulator and Renderer}
+
+\TODO{Describe the simulator and renderer: physics engine, time step, determinism and seeding, image resolution, camera model, and logged host-side ground truth.}
+
+For each latent world $\mathcal{W}$, the simulator implements $\Phi_{\mathcal{W}}$. For each held-out instance $e=(s_0,o^\star,\Delta t,\mathcal{C},y)$, the host renders one correct future, $R(\Phi_{\mathcal{W}}(s_0,\Delta t))$, and three distractors from nearby but physically distinct successor states through the same pipeline.
+
+\subsection{Anti-Shortcut Controls}
+\label{sec:construction:antishortcut}
+
+The benchmark is constructed to reduce shortcuts that do not require latent-dynamics inference.
+\begin{itemize}
+  \item \emph{Candidate permutation.} Candidate order is independently permuted for every instance; the host alone stores the answer key.
+  \item \emph{Physically meaningful distractors.} Distractors are close in appearance but correspond to different successor states, so simple image similarity is not enough.
+  \item \emph{Identifier randomization.} Object identifiers, colors, filenames, and non-physical rendering details are randomized so that they do not reveal hidden properties or answers.
+  \item \emph{Held-out states.} Held-out instances differ from support instances in initial state, target object, and prediction interval, preventing direct replay of a support trajectory.
+\end{itemize}
+Section~\ref{sec:validation} tests whether these controls hold.
+
+\subsection{Splits}
+
+Splits are defined over latent-law realizations, not over individual instances, so no realization appears in more than one of train, validation, and test. The benchmark does not require benchmark-specific training; the non-test splits keep realizations used for harness and prompt development, or for any learning-based method, disjoint from test realizations. \TODO{Specify the exact split fractions and stratification variables once the final instance count per cell is fixed.}

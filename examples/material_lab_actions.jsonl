@@ -1,0 +1,5 @@
+{"operation":"inspect"}
+{"operation":"balance","left_pan":["sample_A"],"right_pan":["sample_B"]}
+{"operation":"balance","left_pan":["sample_A"],"right_pan":["weight_50g","weight_10g"]}
+{"operation":"displace","specimen_id":"sample_A"}
+{"operation":"inspect"}

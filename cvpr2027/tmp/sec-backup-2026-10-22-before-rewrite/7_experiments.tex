@@ -1,0 +1,89 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\TODO{This section will be populated once the week 2--3 baseline runs finish. The structure below fixes the claims, tables, and analyses without making numerical claims prematurely.}
+
+\subsection{Setup}
+
+\paragraph{Models and harnesses.} We evaluate \TODO{N} frontier multimodal models. Each model is paired with a disclosed harness: prompt scaffold, memory representation, tool-use policy, and reasoning loop. We treat each model--harness pair as one evaluated system. \TODO{List exact models, API versions, and harness configurations.}
+
+\paragraph{Budgets and seeds.} We evaluate $B \in \{0,B_{\rm small},B_{\rm full}\}$. \TODO{Fix numerical budget values after pilot calibration.} Results are averaged over \TODO{K} seeds, with per-stratum means and 95\% confidence intervals.
+
+\subsection{Main Results}
+
+Table~\ref{tab:main} reports held-out counterfactual prediction accuracy for same-realization and cross-realization evaluation.
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Main results.} Held-out counterfactual prediction accuracy (\%) for each model--harness system and support budget. Cross-realization and the gap are undefined at $B=0$. \TODO{Populate once runs complete.}}
+  \label{tab:main}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{llccc}
+    \toprule
+    Model & Budget & Same-real. & Cross-real. & Gap \\
+    \midrule
+    \TODO{M1} & $B=0$        & -- & n/a & n/a \\
+              & $B_{\rm small}$ & -- & -- & -- \\
+              & $B_{\rm full}$  & -- & -- & -- \\
+    \midrule
+    \TODO{M2} & $B=0$        & -- & n/a & n/a \\
+              & $B_{\rm small}$ & -- & -- & -- \\
+              & $B_{\rm full}$  & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Stratified Analysis}
+
+Table~\ref{tab:stratified} breaks performance down by physical family and latent-dynamics condition. \TODO{Use this table to identify which families and transformations are hardest.}
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Stratified analysis.} Held-out accuracy (\%) by phenomenon family and latent-dynamics condition at $B=B_{\rm full}$; M1--M3 are placeholders. \TODO{Name the systems and populate once runs complete.}}
+  \label{tab:stratified}
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lccc}
+    \toprule
+    Stratum & M1 & M2 & M3 \\
+    \midrule
+    \emph{Family} \\
+    \quad Central-force  & -- & -- & -- \\
+    \quad Kinematics     & -- & -- & -- \\
+    \quad Fluid          & -- & -- & -- \\
+    \quad Contact        & -- & -- & -- \\
+    \quad Dissipative    & -- & -- & -- \\
+    \quad Field-interaction & -- & -- & -- \\
+    \quad Elastic        & -- & -- & -- \\
+    \midrule
+    \emph{Latent-dynamics condition} \\
+    \quad Structural     & -- & -- & -- \\
+    \quad Coefficient    & -- & -- & -- \\
+    \quad Combined       & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Ablations}
+
+\paragraph{Support-budget sweep.} Figure~\ref{fig:budget} plots held-out accuracy against support budget. \TODO{Report whether additional interaction improves same-realization prediction and whether the improvement transfers across realizations.}
+
+\paragraph{Shortcut baselines.} We report the appearance heuristic, the canonical-physics baseline, and the label-only classifier of Section~\ref{sec:validation} alongside the agents. \TODO{Report the numbers.}
+
+\paragraph{Tool ablation.} \TODO{If included, report performance after removing individual tools while holding budget fixed.}
+
+\subsection{Bottleneck Analysis}
+
+We annotate failure cases and categorize the dominant error source as perception, evidence accumulation, hypothesis formation, or visual decoding. The measurement probe (Section~\ref{sec:protocol:probe}) gives a direct check on evidence accumulation: we report probe accuracy and measurement cost per system and family, and held-out accuracy conditioned on whether the system passes the probe. \TODO{Report probe accuracy, median relative error, and median tool calls.} \TODO{Report the distribution of failure modes for each system.}
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox[c][4.5cm][c]{0.95\columnwidth}{\centering
+    \textbf{Figure 3 placeholder.}\\[0.3em]
+    Line plot: held-out accuracy vs.\ support budget, one curve per model--harness system.\\
+    Inset: accuracy by latent-dynamics condition.
+  }}
+  \caption{\textbf{Support-budget sweep and per-condition breakdown.} \TODO{Replace with the final plot and result-specific caption.}}
+  \label{fig:budget}
+\end{figure}

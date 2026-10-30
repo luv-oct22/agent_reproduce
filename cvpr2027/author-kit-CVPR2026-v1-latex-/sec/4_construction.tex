@@ -1,0 +1,32 @@
+\section{Benchmark Construction}
+\label{sec:construction}
+
+\subsection{Worlds}
+
+The benchmark has three world families, which differ in $G$, $m_{\rm ref}$, $r_{\rm ref}$, and the minimum separation, and two equations per family with six hidden-law variants each. Structural variants vary the strength $q\in[0.7,1.3]$, the distance exponent $p\in\{1.3,2,2.7\}$, the mass-coupling exponents $\alpha,\beta\in\{0.8,1,1.2\}$, and the logarithmic power $s\in\{-0.6,0,0.4\}$ of Eq.~\eqref{eq:structural}. Field variants multiply the canonical force by a coefficient field $k(r,t)$ that is linear or quadratic in distance, linear or logarithmic in time, separable in space and time, or a nested combination, with amplitudes between 0.2 and 0.4. The anchor (1\,kg) is fixed; the probe (0.1\,kg) is launched in the vertical plane. A deterministic, adaptive RK4 integrator (maximum step 2\,ms) implements $\Phi_{\mathcal{W}}$ under the realized law, and all frames are rendered offline in Blender from the stored states; the renderer never advances physics.
+
+\paragraph{Identifiability.} Before building questions, we test whether each hidden law is visible at all. One variant per equation, a mild logarithmic correction ($p=2$, $q=0.9$, $s=0.4$) and, in two families, a weak quadratic distance field, never separates from the canonical outcome by more than a few pixels at any admissible horizon. These realizations cannot be learned from images in principle, so we exclude them from evaluation and report them as not visually identifiable. The remaining 33 worlds (15 structural, 18 field) are evaluated.
+
+\subsection{Interaction}
+\label{sec:construction:tools}
+
+The agent acts through one tool, \texttt{run\_experiment}, with an argument naming an experiment from a public menu, plus \texttt{finish\_experiments} to stop early. The menu is identical in every world: the probe starts 0.9, 1.2, or 1.5\,m to the right of the anchor, at rest or with one of three launch velocities, at world time 0.5, 2.5, or 4.5\,s, and is recorded for 0.4 or 0.8\,s, giving 72 experiments. Varying start time and distance is what exposes the time and distance dependence of the hidden fields. Each outcome is returned as one $960\times640$ strobe frame showing the probe at six equally spaced moments, fading from faint to solid. In the predicting mode used throughout, the tool also requires the expected end position, which is logged but not scored. No tool returns constants, the governing equation, the field, or any answer.
+
+The budget is $B=12$ experiments with a checkpoint before the first experiment and after every four, so each episode has four checkpoints. We disclose the full harness: a single system prompt, the complete multimodal transcript kept in context with images re-sent every turn, tools visible but disabled (\texttt{tool\_choice=none}) at checkpoints and in the exam, and temperature 0.7 for all models except one whose endpoint does not accept it (Section~\ref{sec:experiments}).
+
+\subsection{Questions and Renders}
+
+Questions reuse the initial states of the world hierarchy. For each equation, we search its initial states in a fixed order and accept an initial state, with the shortest interval $\Delta t\in\{0.4,0.6,0.8,1.0,1.2,1.5\}$\,s, when the canonical outcome and the outcomes of three sibling variants are pairwise at least 20 pixels apart at $1920\times1280$ and stay inside the frame. New launches are sampled only to complete coverage; 103 of the 117 items reuse an existing initial state. The question states the anchor position, the masses, the probe's initial position and velocity, the start time, and $\Delta t$ in text.
+
+Items of an equation alternate between a checkpoint pool and an exam pool, so the two pools never share an initial state. Each item is a question for each of the three sibling worlds whose outcomes it shows, which gives 171 exam questions over the 33 worlds.
+
+\subsection{Shortcut Controls}
+\label{sec:construction:antishortcut}
+
+\begin{itemize}
+  \item \emph{Law-contrastive candidates.} Every distractor is a physically valid outcome under another variant of the same equation or the canonical law, so no distractor can be rejected as implausible.
+  \item \emph{Shared images across worlds.} The same item is asked for three worlds with three different answers, which caps any world-blind policy at $1/3$.
+  \item \emph{Canonical distractor.} The canonical outcome is always present and always wrong.
+  \item \emph{Candidate permutation.} Labels are shuffled per item; only the host stores the answer map.
+\end{itemize}
+Section~\ref{sec:validation} tests whether these controls hold.

@@ -1,0 +1,74 @@
+# Variant: 1.50 m horizontal release-to-cup distance; all other inputs unchanged.
+env:
+  type: robotics_lab
+  params:
+    dt: 0.001
+    total_steps: 1200
+    table_height: 0.86
+    table_bounds:
+    - -1.4
+    - 1.6
+    - -0.7
+    - 0.7
+    cup_position:
+    - 1.1
+    - -0.12
+    - 1.08
+    cup_radius: 0.085
+    cup_height: 0.22
+    ball_radius: 0.025
+task:
+  type: shoot_ball
+  params:
+    ball_position:
+    - -0.4
+    - -0.12
+    - 1.32
+    ball_radius: 0.025
+    cup_position:
+    - 1.1
+    - -0.12
+    - 1.08
+    cup_radius: 0.085
+simulation:
+  velocity:
+  - 0.9
+  - 0.0
+  - 0.6
+renderer:
+  projection: 3d
+  xlim:
+  - -1.5
+  - 1.7
+  ylim:
+  - -1
+  - 1
+  figsize:
+  - 10
+  - 7
+scene:
+  style: robotics_lab
+  seed: 7
+  preview_step: 100
+  robot_base:
+  - -0.9
+  - 0.2
+  - 0.884
+  pbr_materials: true
+  robot:
+    asset: franka_panda
+    lead_in: 0.65
+    follow_through: 0.28
+    motion_hz: 120
+    max_joint_speed: 2.0
+  camera:
+    position:
+    - 2.5
+    - -4.8
+    - 2.7
+    target:
+    - -0.25
+    - 0.22
+    - 1.1
+    lens: 50
+    fstop: 8

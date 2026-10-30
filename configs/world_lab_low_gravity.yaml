@@ -1,0 +1,13 @@
+# Host-only world configuration. Its gravity is never included in model observations.
+env:
+  type: world_lab
+  params:
+    gravity_m_s2: 3.0
+    seed: 7
+    max_experiments: 56
+    drop_max_distance_m: 2.0
+    drop_clock_resolution_s: 0.001
+task:
+  type: identify_world
+  params:
+    relative_tolerance: 0.03

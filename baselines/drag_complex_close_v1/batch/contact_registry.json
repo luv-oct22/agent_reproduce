@@ -1,0 +1,26 @@
+{
+  "format": "physics_contact_registry",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "registry_id": "sha256:377e7f188dbcbf36129058cfd3c7851ecf0c26b272fb98fdaf2dff6a22a284da",
+  "world_id": "sha256:747b65729571eb4a53722f9ec6288d602b4fc7d1da995cf03b679cc87387129f",
+  "object_registry_id": "sha256:0d2a3200e6b9a059b1c01066f3187b82b68f9086f327d9dcc79cdf421ce5874b",
+  "surface": {
+    "id": "surface_1",
+    "stationary": true,
+    "horizontal": true
+  },
+  "law": "constant_normal_restitution",
+  "coefficient_units": "dimensionless",
+  "tangential_friction": 0.0,
+  "air_drag": true,
+  "spin_coupling": false,
+  "object_object_collisions": false,
+  "pairs": [
+    {
+      "specimen_id": "sample_A",
+      "surface_id": "surface_1",
+      "restitution": 0.8
+    }
+  ]
+}

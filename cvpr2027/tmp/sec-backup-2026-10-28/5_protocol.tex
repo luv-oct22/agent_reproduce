@@ -1,0 +1,30 @@
+\section{Evaluation Protocol}
+\label{sec:protocol}
+
+Learning is measured as what interaction changes. This section defines the metrics, the controls that attribute changes to interaction with the agent's own world, and the diagnostics that locate failures.
+
+\subsection{Metrics}
+
+\paragraph{Held-out accuracy.} The main metric is held-out accuracy (Section~\ref{sec:benchmark}), reported by family, regime, condition, realization, and budget. All held-out experiments of a realization share one interaction history, so they are not independent samples. We compute 95\% confidence intervals by bootstrap resampling over realizations within each stratum. \TODO{Fix the seed count and the aggregation rule across seeds; see Section~\ref{sec:experiments}.}
+
+\paragraph{Online learning curve.} Checkpoint accuracy as a function of the number of experiments run so far traces learning within an episode. Checkpoints sit at the same positions for every system and are matched in difficulty across positions, so the curve is comparable over time and across systems. We summarize each curve by its slope, estimated with a logistic mixed-effects model with random effects for system and realization.
+
+\subsection{Controls}
+\label{sec:protocol:ablations}
+
+\paragraph{Support-budget sweep.} We evaluate $B \in \{0,B_{\rm small},B_{\rm full}\}$. At $B=0$, the agent answers from the rendered context, its priors, and the candidates alone. The gain over $B=0$ measures what interaction adds (RQ1).
+
+\paragraph{Same- vs.\ cross-realization evaluation.} In same-realization evaluation, the history $h_B$ comes from the realization $\lambda$ being tested. In cross-realization evaluation, the agent instead receives the history from a sibling realization $\lambda'$ that shares $f$, $\rho$, and $c$, and is then tested on $\mathcal{Q}_\lambda$. The sibling history is equally informative about the family, the regime, and the kind of change, but describes a different hidden law. The same-minus-cross gap, computed on identical held-out experiments, therefore estimates how much interaction helps through evidence about this particular world rather than through familiarity with the scene type (RQ2). The gap is defined only for $B>0$.
+
+\paragraph{Acting and predicting.} At equal budget, we compare three arms. In \emph{predict-observe}, the default, the agent states expected outcomes before seeing them. In \emph{observe-only}, it runs experiments and sees outcomes without predicting. In \emph{yoked passive}, a fresh agent receives the history produced in the predict-observe arm but cannot act. Comparing the arms on held-out accuracy separates the value of choosing experiments from the value of the evidence itself, and tests whether committing to predictions helps learning.
+
+\subsection{Measurement Probe}
+\label{sec:protocol:probe}
+
+Held-out accuracy shows whether the path from interaction to vision succeeds, but not whether it fails at its first step: measuring the world. A separate probe scores that step directly. In a probe episode, the agent is asked for one intrinsic attribute $m(o)$ of a named object $o$, such as its mass, friction coefficient, restitution, or charge. The attribute is withheld from tool outputs and must be inferred with the basic experiment tools. The agent may repeat experiments as often as the probe budget allows, then submits one estimate $\hat m$. The probe runs in a world of the same family and regime under the canonical law, so it measures experimentation skill rather than law inference, and it runs separately from the main episodes so that the probe question does not steer exploration.
+
+We report two quantities per system and family. \emph{Probe accuracy} is the fraction of estimates within relative tolerance $\tau$, $|\hat m-m|/|m|\le\tau$, alongside the median relative error. \emph{Measurement cost} is the number of tool calls issued before submission, which counts repeated and redundant experiments. \TODO{Fix $\tau$, the probe budget, and the attributes probed per family.}
+
+\subsection{Locating Failures}
+
+The path from interaction to vision has four steps: gathering evidence, forming a law, applying it, and reading the rendered frames. We locate failures by comparing scores along this path (RQ3). The measurement probe tests evidence gathering. The law-informed ceiling (Section~\ref{sec:validation}) tests applying a known law to images. A system that measures well and does well when told the law, but does poorly at $B_{\rm full}$, fails at forming the law. An online curve that rises but plateaus below the law-informed ceiling points to the same failure, and a curve that never rises points to failures in gathering evidence or in perception.

@@ -1,0 +1,191 @@
+"""Evidence arms and the exam runner.
+
+Every arm answers the same (item, world) questions with the same prompt template and differs only
+in the evidence given to the model:
+
+    no_history  B = 0: rendered context and experiment description only.
+    own         a completed interaction record from the tested world.
+    sibling     a completed record from another realization of the same condition.
+    law_text    the hidden law and regime constants in text, no record (ceiling).
+
+Answers are appended to ``<results>/<model>/<arm>/ledger.jsonl``; reruns skip completed questions.
+"""
+from __future__ import annotations
+
+import json
+import os
+import random
+import time
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Callable, Iterable
+
+from src.evaluate import run_evaluation
+from src.interact import InteractionRecord
+
+from .config import ARMS, Config
+from .items import questions, render_complete
+from .worlds import Worlds, safe_model
+
+FIELD_FORMULAS = ('u = (r - r_ref)/r_ref, v = (t - reference_time_s)/time_scale; '
+                  'linear_space: 1 + a u; linear_time: 1 + a v; quadratic_space: 1 + a u^2; '
+                  'log_time: 1 + a ln(1 + |v|); space_time: 1 + a u + time_amplitude sin(2 pi v / 1.5); '
+                  'nested: 1 + 0.3 sin(pi u + 0.5 v) + 0.2 ln(1 + u^2) + 0.15 v^2')
+
+
+# Prompts ---------------------------------------------------------------------------------
+def law_description(constants: dict, law: dict) -> str:
+    text = (f"Canonical law of this regime: F = G (m1/m_ref)(m2/m_ref)(r_ref/r)^2 with G = {constants['strength_N']} N, "
+            f"m_ref = {constants['reference_mass_kg']} kg, r_ref = {constants['reference_distance_m']} m, attraction "
+            f"toward the fixed anchor, separations below {constants['minimum_distance_m']} m excluded.")
+    if 'q' in law:
+        text += (f" This world replaces it with F = {law['q']} G (m1/m_ref)^{law['alpha']} (m2/m_ref)^{law['beta']} "
+                 f"(r_ref/r)^{law['p']} [ln(e + r/r_ref)]^{law['s']}.")
+    if 'field_kind' in law:
+        params = {k: v for k, v in law.items() if k not in ('q', 'alpha', 'beta', 'p', 's', 'field_kind')}
+        text += (f" The force is multiplied by a coefficient field k(r, t) of kind '{law['field_kind']}' with "
+                 f"parameters {json.dumps(params)}, where a = amplitude and {FIELD_FORMULAS}.")
+    return text
+
+
+def question_text(item: dict, lead: str) -> str:
+    L = item['launch']; p, v = L['position_m'], L['velocity_m_s']
+    return (f"{lead}\nThe context image shows the initial positions: the orange anchor is fixed, the blue probe moves. "
+            f"Coordinates are sphere centres in metres, x right and z up, y = 0; the grid spacing is 0.10 m. "
+            f"The probe starts at x = {p[0]:.3f}, z = {p[2]:.3f} m with velocity vx = {v[0]:.3f}, vz = {v[2]:.3f} m/s "
+            f"at world time t = {L['start_time_s']:.1f} s. Which image shows the probe {L['duration_s']:.1f} s later? "
+            f"All choices use the same camera and scale. Return exactly one character: A, B, C, or D.")
+
+
+# Arms ------------------------------------------------------------------------------------
+@dataclass
+class Evidence:
+    lead: str                     # first line of the question
+    record: Path | None = None    # interaction record injected as history
+    world: str | None = None      # world the record comes from
+
+
+def evidence(arm: str, worlds: Worlds, cfg: Config, item: dict, variant: str, history_model: str) -> Evidence | None:
+    """Evidence for one question under one arm; None if the arm has no usable record."""
+    g, rule = item['group'], item['rule']
+    if arm == 'no_history':
+        return Evidence('You have not run any experiments in this world. Use the rendered context only.')
+    if arm == 'law_text':
+        law = law_description(worlds.constants(g, rule, variant), worlds.hidden_law(g, rule, variant))
+        return Evidence('The governing law of this world is given below. ' + law)
+    lead = 'Use the evidence from your experiments in this same world.'
+    if arm == 'own':
+        source = variant
+    else:  # sibling: a fixed random other world of this condition that has a record
+        others = [v for v in worlds.variants(g, rule) if v != variant]
+        random.Random(f"{cfg.exam.seed}-{item['id']}-{variant}").shuffle(others)
+        source = next((v for v in others if worlds.history(history_model, g, rule, v, cfg.exam.seed)), None)
+    path = source and worlds.history(history_model, g, rule, source, cfg.exam.seed)
+    return Evidence(lead, path, source) if path else None
+
+
+# Ledger ----------------------------------------------------------------------------------
+class Ledger:
+    def __init__(self, path: Path):
+        self.path = path
+        path.parent.mkdir(parents=True, exist_ok=True)
+
+    def rows(self) -> list[dict]:
+        if not self.path.exists():
+            return []
+        latest = {}
+        for line in self.path.read_text().splitlines():
+            r = json.loads(line)
+            if r.get('status') == 'complete' or (r['item'], r['variant']) not in latest:
+                latest[(r['item'], r['variant'])] = r
+        return list(latest.values())
+
+    def completed(self) -> set:
+        return {(r['item'], r['variant']) for r in self.rows() if r.get('status') == 'complete'}
+
+    def append(self, row: dict) -> None:
+        with self.path.open('a') as fh:
+            fh.write(json.dumps(row) + '\n')
+
+
+def ledger_for(cfg: Config, model: str, arm: str) -> Ledger:
+    return Ledger(cfg.results_dir / safe_model(model) / arm / 'ledger.jsonl')
+
+
+# Runner ----------------------------------------------------------------------------------
+HarnessFactory = Callable[[str, Path], object]
+
+
+def default_harness(model: str, out_dir: Path):
+    from src.density_pipeline import RecordedHarness
+    from src.harness import OpenAIHarness
+    return RecordedHarness(OpenAIHarness(model=model), out_dir, 'law_contrastive_exam')
+
+
+def run_exam(cfg: Config, model: str, arm: str, *, limit: int = 0, dry_run: bool = False,
+             harness_factory: HarnessFactory = default_harness, log=print) -> dict:
+    """Ask every pending question of one model under one arm. Returns counts."""
+    if arm not in ARMS:
+        raise ValueError(f'Unknown arm {arm!r}; choose from {ARMS}')
+    worlds = Worlds(cfg)
+    history_model = cfg.exam.history_model or model
+    ledger = ledger_for(cfg, model, arm)
+    done = ledger.completed()
+    kwargs = {k: v for k, v in dict(temperature=cfg.exam.temperature,
+                                    max_completion_tokens=cfg.exam.max_completion_tokens).items() if v is not None}
+    counts = dict(answered=0, correct=0, skipped_done=0, skipped_render=0, skipped_history=0, failed=0)
+    for item, variant in questions(cfg):
+        if (item['id'], variant) in done:
+            counts['skipped_done'] += 1; continue
+        if limit and counts['answered'] + counts['failed'] >= limit:
+            break
+        if not dry_run and not render_complete(cfg, item):
+            counts['skipped_render'] += 1; continue
+        ev = evidence(arm, worlds, cfg, item, variant, history_model)
+        if ev is None:
+            counts['skipped_history'] += 1; continue
+        render = cfg.item_renders(item['group'], item['rule'], item['id'])
+        out = ledger.path.parent / item['group'] / item['rule'] / item['id'] / variant
+        out.mkdir(parents=True, exist_ok=True)
+        q = dict(id=f"{item['id']}::{variant}", type='image_multiple_choice',
+                 question=question_text(item, ev.lead), context_caption='Context frame',
+                 context_image=os.path.relpath(render / 'context.png', out),
+                 choices=[dict(label=k, image=os.path.relpath(render / f'choice_{k}.png', out)) for k in 'ABCD'],
+                 answer=item['answers'][variant])
+        (out / 'questions.json').write_text(json.dumps([q], indent=1) + '\n')
+        sibling_answer = item['answers'].get(ev.world) if arm == 'sibling' else None
+        row = dict(item=item['id'], variant=variant, group=item['group'], rule=item['rule'], arm=arm, model=model,
+                   history_model=history_model if ev.record else None,
+                   history_world=ev.world, history_record=str(ev.record) if ev.record else None,
+                   answer=q['answer'], canonical_label=item['canonical_label'], sibling_answer=sibling_answer,
+                   generation_kwargs=kwargs)
+        if dry_run:
+            log(json.dumps(row)); counts['answered'] += 1; continue
+        record = InteractionRecord.load(str(ev.record)) if ev.record else None
+        try:
+            result = run_evaluation('law_contrastive_exam', harness_factory(model, out), str(out / 'questions.json'),
+                                    record, with_history=record is not None, output_dir=str(out),
+                                    generation_kwargs=kwargs)
+            ans = result.answers[0]['agent_answer']
+            row.update(status='complete', agent_answer=ans, correct=ans == q['answer'],
+                       picked_canonical=ans == item['canonical_label'],
+                       picked_sibling=(ans == sibling_answer) if sibling_answer else None)
+            counts['answered'] += 1; counts['correct'] += row['correct']
+        except Exception as exc:  # keep going; the next run retries this question
+            row.update(status='failed', error=f'{type(exc).__name__}: {exc}'[:300])
+            counts['failed'] += 1
+        row['time_utc'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        (out / 'summary.json').write_text(json.dumps(row, indent=1) + '\n')
+        ledger.append(row)
+        log(f"[{model}|{arm}] {item['id']} {variant}: {row['status']} "
+            f"{row.get('agent_answer', '')} (answer {q['answer']})")
+    log(f'[{model}|{arm}] ' + ', '.join(f'{k}={v}' for k, v in counts.items()) + f'; ledger {ledger.path}')
+    return counts
+
+
+def run_all(cfg: Config, models: Iterable[str] | None = None, arms: Iterable[str] | None = None, **kw) -> dict:
+    """Exam for every model x arm. Returns {(model, arm): counts}."""
+    models = list(models or cfg.exam.models)
+    if not models:
+        raise ValueError('No models: set exam.models in the config or pass --models.')
+    return {(m, a): run_exam(cfg, m, a, **kw) for m in models for a in (arms or cfg.exam.arms)}

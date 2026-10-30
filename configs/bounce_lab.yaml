@@ -1,0 +1,21 @@
+# Host-only stage-2 physics. Never include this file in model context.
+env:
+  type: bounce_lab
+  params:
+    gravity_m_s2: 3.0
+    seed: 7
+    max_experiments: 16
+    drop_max_distance_m: 2.0
+    drop_clock_resolution_s: 0.001
+    bounce_height_resolution_m: 0.001
+    surface_id: surface_1
+    restitution_by_specimen:
+      sample_A: 0.60
+      sample_B: 0.85
+      sample_C: 0.35
+      sample_D: 0.75
+task:
+  type: identify_bounce
+  params:
+    relative_tolerance: 0.03
+    restitution_absolute_tolerance: 0.03

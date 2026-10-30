@@ -1,0 +1,32 @@
+\section{Evaluation Protocol}
+\label{sec:protocol}
+
+Each evaluation episode has two phases: support, where the agent gathers evidence, and held-out prediction, where that evidence must transfer.
+
+\subsection{Episode Protocol}
+
+\begin{enumerate}
+  \item \emph{Support phase.} The agent receives support instances from one latent-law realization $\lambda$ and may issue tool calls under budget $B$. Each returned observation is appended to the support history $h_B$.
+  \item \emph{Held-out phase.} Tool access and feedback are frozen. For each held-out instance $e=(s_0,o^\star,\Delta t,\mathcal{C},y)$ from the same realization, the agent receives the rendered context $x_e$ and candidate images $\mathcal{C}$, then outputs one index $\hat y=A(x_e,\mathcal{C},h_B)$.
+\end{enumerate}
+
+The held-out phase reveals no latent constants, equations, transformations, answer labels, or additional feedback.
+
+\subsection{Scoring and Stratification}
+
+The main metric is exact-match accuracy, $\mathbf{1}[\hat y=y]$, on held-out instances. We report accuracy by physical-phenomenon family, world-parameter regime, latent-dynamics condition, latent-law realization, and support budget. Unless stated otherwise, confidence intervals are 95\% intervals over instances within each stratum. Section~\ref{sec:experiments} gives the final seed count and aggregation rule.
+
+\subsection{Built-In Ablations}
+\label{sec:protocol:ablations}
+
+The benchmark includes three ablations that use the same generated data.
+
+\paragraph{Same-realization vs.\ cross-realization held-out.} Same-realization evaluation uses held-out instances governed by the same latent law as support. Cross-realization evaluation uses held-out instances from a different realization of the same latent-dynamics condition. The gap between these settings estimates how much the support evidence helps for the particular hidden dynamics, rather than for generic scene understanding.
+
+\paragraph{Support-budget sweep.} We evaluate $B \in \{0,B_{\rm small},B_{\rm full}\}$. The $B=0$ setting is the no-interaction floor. Increases with $B$ measure the marginal value of tool-mediated evidence.
+
+\paragraph{Candidate-permutation sanity.} Candidate order is randomized independently for each instance. A label-position shortcut should therefore perform at chance. We verify this with a label-only baseline.
+
+\subsection{Reporting Unit}
+
+We report every result at the model--harness level. The harness includes the prompt scaffold, memory representation, tool-use policy, and reasoning loop. This convention avoids attributing system-level behavior to the base model alone.

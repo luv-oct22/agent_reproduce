@@ -1,0 +1,33 @@
+\section{Evaluation Protocol}
+\label{sec:protocol}
+
+Each evaluation episode has two phases: support, where the agent gathers evidence, and held-out prediction, where that evidence must transfer.
+
+\subsection{Episode Protocol}
+
+\begin{enumerate}
+  \item \emph{Support phase.} The agent receives the support instances $\mathcal{S}_\lambda$ of one latent-law realization $\lambda$ and may issue tool calls up to budget $B$. Each returned observation is appended to the support history $h_B$.
+  \item \emph{Held-out phase.} Tool access and feedback are frozen. For each held-out instance $e\in\mathcal{Q}_\lambda$, the agent receives the public context $x_e$ and the candidates $\mathcal{C}$, and outputs one index $\hat y=A(x_e,\mathcal{C},h_B)$.
+\end{enumerate}
+
+The held-out phase reveals no latent constants, equations, transformations, answer labels, or additional feedback. As Eq.~\eqref{eq:agent-objective} specifies, each held-out instance is answered from $h_B$ alone: the system's context and outputs on other held-out instances are not carried forward, so answers are not conditioned on one another.
+
+\subsection{Scoring and Stratification}
+
+The main metric is held-out accuracy (Section~\ref{sec:benchmark}). We report it by physical-phenomenon family, world-parameter regime, latent-dynamics condition, latent-law realization, and support budget. All held-out instances of a realization share one support history, so they are not independent samples. We therefore compute 95\% confidence intervals by bootstrap resampling over realizations within each stratum. \TODO{Fix the seed count and the aggregation rule across seeds; see Section~\ref{sec:experiments}.}
+
+\subsection{Built-In Controls}
+\label{sec:protocol:ablations}
+
+Two controls reuse the generated data and test what the support evidence contributes.
+
+\paragraph{Support-budget sweep.} We evaluate $B \in \{0,B_{\rm small},B_{\rm full}\}$. The $B=0$ setting is the no-interaction floor: the agent answers from the rendered context, its priors, and the candidates. Increases with $B$ measure the marginal value of tool-mediated evidence (RQ1).
+
+\paragraph{Same- vs.\ cross-realization held-out.} In same-realization evaluation, support and held-out instances come from the same realization $\lambda$. In cross-realization evaluation, the agent receives the support instances of a different realization $\lambda'$ that shares $f$, $\rho$, and $c$, and is then tested on $\mathcal{Q}_\lambda$. The cross-realization history is equally informative about the family, regime, and kind of latent change, but describes the wrong hidden law. The same-minus-cross gap therefore estimates how much support helps through evidence about the particular latent law, rather than through generic familiarity with the scene type (RQ2). The gap is defined only for $B>0$.
+
+\subsection{Measurement Probe}
+\label{sec:protocol:probe}
+
+Held-out accuracy tells whether the chain from interaction to prediction succeeds, but not whether it fails at its first step: measuring the scene. A separate probe scores that step directly. In a probe episode, the agent is asked for one intrinsic attribute $a(o)$ of a named object $o$ in a support scene, such as its mass, friction coefficient, restitution, or charge. The attribute is withheld from tool outputs and must be inferred from experiments with the basic tools, which apply forces, advance time, and read out object states. The agent may repeat experiments as often as the probe budget allows, then submits one estimate $\hat a$. The probe runs in a world of the same family and regime without the latent transformation, so it measures experimentation skill rather than law inference, and it runs separately from the main episodes so that the probe question does not steer support exploration.
+
+We report two quantities per system and family. \emph{Probe accuracy} is the fraction of estimates within relative tolerance $\tau$, $|\hat a-a|/|a|\le\tau$, alongside the median relative error. \emph{Measurement cost} is the number of tool calls issued before submission, which counts repeated and redundant experiments. Together with held-out accuracy, the probe separates two failures: a system that measures well but predicts poorly fails at hypothesis formation or transfer, while one that cannot measure fails at evidence gathering (RQ3). \TODO{Fix $\tau$, the probe budget, and the attributes probed per family; decide whether to also run the probe under the latent law.}

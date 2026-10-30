@@ -1,0 +1,44 @@
+# rule_1/variant_1/q10
+
+Host-only resolved scene:
+```json
+{
+  "objects": [
+    {
+      "object_id": "object_1",
+      "color": "red",
+      "mass_kg": 0.7,
+      "volume_m3": 0.11,
+      "position_m": [
+        -0.0,
+        0.2,
+        -1.6
+      ],
+      "velocity_m_s": [
+        0.0,
+        -0.3,
+        0.5
+      ]
+    },
+    {
+      "object_id": "object_2",
+      "color": "blue",
+      "mass_kg": 1.1,
+      "volume_m3": 0.04,
+      "position_m": [
+        -0.4,
+        -0.1,
+        -1.1
+      ],
+      "velocity_m_s": [
+        -0.1,
+        0.1,
+        -0.8
+      ]
+    }
+  ],
+  "start_time_s": 4.5,
+  "duration_s": 0.24,
+  "target_object_id": "object_1"
+}
+```

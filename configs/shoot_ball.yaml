@@ -1,0 +1,23 @@
+env:
+  type: gravity_field
+  params:
+    g_constant: 0
+    dt: 0.001
+    total_steps: 5000
+    uniform_gravity: [0.0, 0.0, -9.8]
+
+task:
+  type: shoot_ball
+  params:
+    cup_position: [5.0, 0.0, 0.0]
+    cup_radius: 0.3
+    ball_position: [0.0, 0.0, 0.0]
+    ball_radius: 0.05
+    g: 9.8
+
+renderer:
+  projection: "2d"
+  axes: [0, 2]
+  xlim: [-1, 7]
+  ylim: [-3, 5]
+  figsize: [8, 6]

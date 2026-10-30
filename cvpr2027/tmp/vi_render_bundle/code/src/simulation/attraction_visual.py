@@ -1,0 +1,92 @@
+"""Shared projection checks with only standard-library dependencies for Blender."""
+import hashlib
+from itertools import combinations
+import json
+import math
+
+
+IMAGES = {'context': 'context.png', **{k: f'choice_{k}.png' for k in 'ABCD'}}
+
+
+POLICY = dict(version='attraction_close_pairs_v1', minimum_separation_m=.02,
+              maximum_separation_m=.08, minimum_separation_pixels=6.,
+              minimum_diameter_pixels=16., max_step_halving_error_m=1e-5)
+
+
+# Law-contrastive exam items: the four candidates are the outcomes of four different laws
+# (canonical + three sibling realizations) for one scene, so they are farther apart and may
+# differ in radial phase. Only separation bounds differ from POLICY.
+LAW_CONTRASTIVE_POLICY = dict(version='attraction_law_contrastive_v1', minimum_separation_m=.05,
+                              maximum_separation_m=5., minimum_separation_pixels=19.,
+                              minimum_diameter_pixels=16., max_step_halving_error_m=1e-5)
+POLICIES = {POLICY['version']: POLICY, LAW_CONTRASTIVE_POLICY['version']: LAW_CONTRASTIVE_POLICY}
+
+
+CAMERA = dict(position_m=[0., -8., 1.5], target_m=[0., 0., 1.5], ortho_scale_m=5.,
+              resolution=[1920, 1280], grid_spacing_m=.1)
+
+
+ANCHOR = [0., 0., 1.5]
+
+
+def digest(value):
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest()
+
+
+def projected(position, resolution=CAMERA['resolution']):
+    width, height = resolution
+    return [(position[0]/5 + .5)*width, height/2 + (position[2]-1.5)*width/5]
+
+
+def geometry(manifest, resolution=None):
+    policy = POLICIES.get(manifest['candidate_policy'].get('version'))
+    if manifest['candidate_policy'] != policy or manifest['camera'] != CAMERA:
+        raise ValueError('Unsupported candidate policy or camera.')
+    resolution = resolution or manifest['camera']['resolution']
+    positions = [c['state']['payload']['objects']['probe']['position_m'] for c in manifest['choices'].values()]
+    distances = [math.dist(a, b) for a, b in combinations(positions, 2)]
+    pixel_distances = [math.dist(projected(a, resolution), projected(b, resolution))
+                       for a, b in combinations(positions, 2)]
+    if min(distances) < policy['minimum_separation_m'] or max(distances) > policy['maximum_separation_m']:
+        raise ValueError(f"Candidate separation is outside the {policy['version']} bounds.")
+    if min(pixel_distances) < policy['minimum_separation_pixels']*resolution[0]/CAMERA['resolution'][0]:
+        raise ValueError(f"Candidate separation is below {policy['minimum_separation_pixels']:g} pixels.")
+    frames = [manifest['launch']['position_m'], *positions]
+    for obj in manifest['objects']:
+        radius_pixels = obj['radius_m']*resolution[0]/5
+        if radius_pixels*2 < policy['minimum_diameter_pixels']:
+            raise ValueError('Specimen diameter is below 16 pixels.')
+        for point in frames if obj['id'] == 'probe' else [ANCHOR]:
+            if point[1] != 0:
+                raise ValueError('This front-view suite requires planar motion.')
+            x, z = projected(point, resolution)
+            if not (radius_pixels < x < resolution[0]-radius_pixels
+                    and radius_pixels + .28*resolution[0]/5 < z < resolution[1]-radius_pixels-.28*resolution[0]/5):
+                raise ValueError('Specimen clips the image or caption area.')
+    # Every choice is on the same inbound/outbound portion of its trajectory.
+    radial = []
+    for candidate in manifest['choices'].values():
+        state = candidate['state']['payload']['objects']['probe']
+        dot = sum((x-a)*v for x, a, v in zip(state['position_m'], ANCHOR, state['velocity_m_s']))
+        radial.append(1 if dot > 1e-8 else -1 if dot < -1e-8 else 0)
+    if len(set(radial)) != 1 and policy is POLICY:
+        raise ValueError('Candidates disagree on radial motion phase.')
+    return dict(minimum_separation_m=min(distances), maximum_separation_m=max(distances),
+                minimum_separation_pixels=min(pixel_distances), radial_motion_sign=radial[0])
+
+
+def validate_projections(manifest, frames, resolution):
+    geometry(manifest, resolution)
+    for key in IMAGES:
+        expected = manifest['initial_state'] if key == 'context' else manifest['choices'][key]['state']
+        for obj in manifest['objects']:
+            actual = frames[key]['objects'][obj['id']]
+            position = expected['payload']['objects'][obj['id']]['position_m']
+            if math.dist(actual['center_pixels'], projected(position, resolution)) > .01:
+                raise ValueError('Blender camera projection differs from the declared camera.')
+            if actual['diameter_pixels'] < POLICY['minimum_diameter_pixels'] or not actual['visible']:
+                raise ValueError('Rendered specimen is too small or occluded.')
+    centers = [frames[key]['objects']['probe']['center_pixels'] for key in 'ABCD']
+    policy = POLICIES[manifest['candidate_policy']['version']]
+    if min(math.dist(a, b) for a, b in combinations(centers, 2)) < policy['minimum_separation_pixels']*resolution[0]/1920:
+        raise ValueError('Rendered candidates are closer than the policy separation.')

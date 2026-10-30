@@ -1,0 +1,92 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_6_q09",
+    "family": "kinematics_dynamics",
+    "group_id": "kinematics_dynamics_g2",
+    "rule": "rule_1",
+    "variant_id": "variant_6",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 0.5,
+          "radius_m": 0.14,
+          "initial_position_m": [
+            -0.3,
+            0.3,
+            1.2
+          ],
+          "initial_velocity_m_s": [
+            0.5,
+            -0.7,
+            -0.9
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 1.4,
+          "radius_m": 0.09,
+          "initial_position_m": [
+            0.9,
+            -0.6,
+            2.5
+          ],
+          "initial_velocity_m_s": [
+            -0.6,
+            -0.7,
+            0.0
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 0.8,
+          "radius_m": 0.12,
+          "initial_position_m": [
+            0.8,
+            -0.4,
+            1.5
+          ],
+          "initial_velocity_m_s": [
+            0.8,
+            -0.0,
+            -0.4
+          ]
+        },
+        {
+          "object_id": "object_4",
+          "color": "yellow",
+          "mass_kg": 1.8,
+          "radius_m": 0.12,
+          "initial_position_m": [
+            -0.1,
+            -0.7,
+            1.0
+          ],
+          "initial_velocity_m_s": [
+            0.1,
+            0.5,
+            0.7
+          ]
+        }
+      ],
+      "start_time_s": 2.6,
+      "duration_s": 0.17,
+      "target_object_id": "object_2"
+    },
+    "target_object_id": "object_2",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "nested",
+    "p": 1.2,
+    "q": 0.6
+  },
+  "force_function": null
+}

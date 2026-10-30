@@ -1,0 +1,126 @@
+{
+  "Engine": "CYCLES",
+  "Render device": "GPU",
+  "Samples": 96,
+  "Denoising": true,
+  "Resolution": [
+    1920,
+    1280
+  ],
+  "Scene FPS": 24.0,
+  "Colour transform": "Standard",
+  "Exposure": -0.4000000059604645,
+  "Render seed": 7,
+  "Actual camera": {
+    "position_m": [
+      0.0,
+      -7.0,
+      2.1600000858306885
+    ],
+    "rotation_euler_rad": [
+      1.5707963705062866,
+      -0.0,
+      0.0
+    ],
+    "lens_mm": 50.0,
+    "depth_of_field": false,
+    "fstop": 2.799999952316284,
+    "focus_distance_m": 10.0
+  },
+  "scene_digest": "be00cf612db04723379231dc29c9820cdb95e6b769cb57258519d22a1481072c",
+  "frames": {
+    "context": {
+      "objects": [
+        {
+          "specimen_id": "sample_A",
+          "center_m": [
+            -1.5,
+            0,
+            1.7149999999999999
+          ],
+          "center_pixels": [
+            333.9130210876465,
+            454.26074981689453
+          ],
+          "diameter_pixels": 25.04344940185547
+        }
+      ],
+      "elapsed_s": 0
+    },
+    "A": {
+      "objects": [
+        {
+          "specimen_id": "sample_A",
+          "center_m": [
+            -0.9107591891098956,
+            0.0,
+            1.0129955480154258
+          ],
+          "center_pixels": [
+            579.8570251464844,
+            161.25019073486328
+          ],
+          "diameter_pixels": 25.04344940185547
+        }
+      ],
+      "elapsed_s": 0.74
+    },
+    "B": {
+      "objects": [
+        {
+          "specimen_id": "sample_A",
+          "center_m": [
+            -0.9293107836202169,
+            0.0,
+            1.0252973834091403
+          ],
+          "center_pixels": [
+            572.1137237548828,
+            166.38484954833984
+          ],
+          "diameter_pixels": 25.04344940185547
+        }
+      ],
+      "elapsed_s": 0.74
+    },
+    "C": {
+      "objects": [
+        {
+          "specimen_id": "sample_A",
+          "center_m": [
+            -0.8915049782822749,
+            0.0,
+            1.000484498302599
+          ],
+          "center_pixels": [
+            587.8935813903809,
+            156.02815628051758
+          ],
+          "diameter_pixels": 25.04344940185547
+        }
+      ],
+      "elapsed_s": 0.74
+    },
+    "D": {
+      "objects": [
+        {
+          "specimen_id": "sample_A",
+          "center_m": [
+            -0.9471802525997504,
+            0.0,
+            1.0373849866451874
+          ],
+          "center_pixels": [
+            564.6552085876465,
+            171.43011093139648
+          ],
+          "diameter_pixels": 25.04344940185547
+        }
+      ],
+      "elapsed_s": 0.74
+    }
+  },
+  "images_rendered": true,
+  "blender_version": "3.6.23",
+  "requested_backend": "CUDA"
+}

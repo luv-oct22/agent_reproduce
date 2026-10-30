@@ -1,0 +1,82 @@
+{
+  "format": "drag_prediction_batch",
+  "schema_version": 2,
+  "source_run": "results/drag_lab/identify_drag_20260924_114916",
+  "seed": 42,
+  "world_id": "sha256:747b65729571eb4a53722f9ec6288d602b4fc7d1da995cf03b679cc87387129f",
+  "object_registry_id": "sha256:0d2a3200e6b9a059b1c01066f3187b82b68f9086f327d9dcc79cdf421ce5874b",
+  "contact_registry_id": "sha256:377e7f188dbcbf36129058cfd3c7851ecf0c26b272fb98fdaf2dff6a22a284da",
+  "questions": [
+    {
+      "folder": "questions/q001",
+      "id": "drag_001"
+    },
+    {
+      "folder": "questions/q002",
+      "id": "drag_002"
+    },
+    {
+      "folder": "questions/q003",
+      "id": "drag_003"
+    },
+    {
+      "folder": "questions/q004",
+      "id": "drag_004"
+    },
+    {
+      "folder": "questions/q005",
+      "id": "drag_005"
+    },
+    {
+      "folder": "questions/q006",
+      "id": "drag_006"
+    },
+    {
+      "folder": "questions/q007",
+      "id": "drag_007"
+    },
+    {
+      "folder": "questions/q008",
+      "id": "drag_008"
+    },
+    {
+      "folder": "questions/q009",
+      "id": "drag_009"
+    },
+    {
+      "folder": "questions/q010",
+      "id": "drag_010"
+    },
+    {
+      "folder": "questions/q011",
+      "id": "drag_011"
+    },
+    {
+      "folder": "questions/q012",
+      "id": "drag_012"
+    },
+    {
+      "folder": "questions/q013",
+      "id": "drag_013"
+    },
+    {
+      "folder": "questions/q014",
+      "id": "drag_014"
+    },
+    {
+      "folder": "questions/q015",
+      "id": "drag_015"
+    },
+    {
+      "folder": "questions/q016",
+      "id": "drag_016"
+    }
+  ],
+  "candidate_policy": {
+    "name": "close_physics_v1",
+    "minimum_separation_m": 0.02,
+    "maximum_separation_m": 0.08,
+    "minimum_separation_pixels": 6.0,
+    "same_motion_phase": true
+  }
+}

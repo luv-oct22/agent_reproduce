@@ -1,0 +1,4 @@
+renderer_id: attraction_default_v1
+resolution: [1920, 1280]
+image_format: png
+camera_policy: matched_scene_geometry

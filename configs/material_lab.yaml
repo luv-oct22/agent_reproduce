@@ -1,0 +1,17 @@
+# HOST-ONLY episode settings. Never include this file or private manifests in the model prompt.
+env:
+  type: material_lab
+  params:
+    seed: 7
+    # To reuse an exact episode, set registry_path instead of generating specimens:
+    # registry_path: results/material_lab_registry_demo/object_registry.json
+    max_experiments: 48
+    balance_tolerance_g: 0.5
+    balance_capacity_g: 1000
+    cylinder_initial_ml: 100
+    cylinder_capacity_ml: 500
+    cylinder_graduation_ml: 1
+task:
+  type: identify_material
+  params:
+    relative_tolerance: 0.03

@@ -1,0 +1,49 @@
+\section{Benchmark Overview}
+\label{sec:benchmark}
+
+Humans come to know an unfamiliar physical world by acting in it and watching how it responds. The understanding they form does not stay with the experiments that produced it: looking at a new scene, a human can picture how it will look a moment later. Our benchmark asks whether a multimodal agent can learn a physical world in this way. It is built around one unit, the visual experiment, which the agent poses during interaction and the world poses during evaluation.
+
+\subsection{Latent Physical Worlds}
+
+We organize worlds in a five-level hierarchy:
+\begin{center}
+\textit{Physical-Phenomenon Family}
+$\rightarrow$ \textit{World-Parameter Regime}
+$\rightarrow$ \textit{Latent-Law Condition}
+$\rightarrow$ \textit{Latent-Law Realization}
+$\rightarrow$ \textit{Scene}.
+\end{center}
+Each level changes a different source of variation. A \emph{physical-phenomenon family} fixes the broad mechanism and visual setting, such as central-force, kinematics, fluid, contact, dissipative, field-interaction, or elastic phenomena. Within a family, a \emph{world-parameter regime} fixes shared constants, for example reference scales, damping coefficients, thresholds, or field directions. A \emph{latent-law condition} specifies how the world departs from the family's canonical law: through a structural change to the governing equation, a hidden coefficient or field function, or both. A \emph{latent-law realization} fixes the concrete hidden equation or function for that condition. A \emph{scene} then fixes the objects, their intrinsic attributes, and their initial state, while the laws and constants stay those of the realization.
+
+Formally, the first four levels index a latent world
+\begin{equation}
+  \mathcal{W} = (f, \rho, c, \lambda),
+  \label{eq:latent-world}
+\end{equation}
+where $f$ is the family, $\rho$ the regime, $c$ the condition, and $\lambda$ the realization. The simulator for $\mathcal{W}$ defines a transition operator $\Phi_{\mathcal{W}}(s,a,\Delta t)$ that maps a complete state $s$, an intervention $a$, and an interval $\Delta t$ to the successor state. Complete states include object identities, intrinsic attributes, positions, velocities, time, and family-specific variables. A renderer $R$ maps a complete state to an image.
+
+\subsection{The Visual Experiment}
+
+A visual experiment is a tuple $(s,a,\Delta t)$ whose outcome is the rendered frame $R(\Phi_{\mathcal{W}}(s,a,\Delta t))$. The agent never observes $s$ itself, only its rendering $R(s)$ and a description of $a$ and $\Delta t$. The same experiments appear in both phases of an episode, with the roles of the agent and the world reversed:
+\begin{itemize}
+  \item In \emph{interaction}, the agent chooses $(a,\Delta t)$ on an exploration scene, and the world returns the outcome frame together with permitted measurements.
+  \item In \emph{evaluation}, the world chooses $(s,a,\Delta t)$ on a new scene, and the agent must foresee the outcome frame.
+\end{itemize}
+Foreseeing is posed as a choice among four rendered candidates $\mathcal{C}=\{I_1,\dots,I_4\}$, of which one is the true outcome $I_y=R(\Phi_{\mathcal{W}}(s,a,\Delta t))$. The other three are rendered by the same $R$ from nearby but physically distinct successor states, and one of them follows the family's canonical law. Candidate positions are permuted independently for every experiment, with chance at 25\%. \TODO{Implement before any run: current renders store every answer at position A (see RESEARCH\_STORY\_AND\_EXPERIMENT\_PLAN.md, \S6).}
+
+\subsection{Episode}
+
+The fifteen scenes of each realization are split into exploration scenes $\mathcal{X}_\lambda$, checkpoint scenes $\mathcal{K}_\lambda$, and held-out scenes $\mathcal{Q}_\lambda$. The current protocol provisionally uses four, four, and seven (Section~\ref{sec:construction}). An episode on realization $\lambda$ has two phases.
+
+\paragraph{Interaction.} The agent may run up to $B$ experiments of its own choice on exploration scenes. Before each outcome is shown, the agent states its expected outcome in text; the statement is logged for analysis and not scored. Tools may also return measurements of observable state, such as positions, velocities, and times, but never the world constants, the governing equation, its transformation, or any hidden field. At fixed points during interaction, the host poses a \emph{checkpoint} experiment from $\mathcal{K}_\lambda$ in the four-candidate format; the agent commits to an answer and then sees the true outcome. Checkpoints do not count against $B$. Let $h_B$ denote the full interaction history: the agent's experiments, predictions, observed outcomes, and checkpoint feedback.
+
+\paragraph{Evaluation.} After interaction, all tools and feedback are frozen. For each held-out experiment $e=(s,a,\Delta t,\mathcal{C},y)$ with $s$ from $\mathcal{Q}_\lambda$, the agent receives the public context $x_e$, consisting of $R(s)$, the description of $a$, and $\Delta t$, together with the candidates, and outputs
+\begin{equation}
+  \hat{y} = A(x_e, \mathcal{C}, h_B),
+  \label{eq:agent-objective}
+\end{equation}
+where $A$ denotes the full model--harness system: the model, the prompt and memory scaffold, the tool-use policy, and the reasoning loop. Each held-out experiment is answered from $h_B$ alone; context from other held-out experiments is not carried forward. The held-out accuracy of a realization is $\frac{1}{|\mathcal{Q}_\lambda|}\sum_{e}\mathbf{1}[\hat{y}=y]$.
+
+\paragraph{Information boundary.} The host withholds world constants, governing equations, their transformations, hidden coefficient or field functions, and the answers of all held-out experiments. The checkpoint and held-out scenes are disjoint, so feedback during interaction never reveals an evaluation answer. The task is therefore to learn the world from permitted observations, not to retrieve its parameters from a hidden record.
+
+This split between interaction and frozen evaluation on new scenes is the central diagnostic. Using the history to describe the scenes the agent acted on shows only that the history was used. Foreseeing outcomes of new experiments in the same world is stronger behavioral evidence that the agent learned the world. Section~\ref{sec:protocol} adds the controls that test whether this evidence is specific to the world's own laws.

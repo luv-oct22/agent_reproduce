@@ -1,0 +1,106 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_6_q10",
+    "family": "attraction",
+    "group_id": "central_force_dynamics_g2",
+    "rule": "rule_1",
+    "variant_id": "variant_6",
+    "hidden_equation_parameters": {
+      "q": 1.2,
+      "alpha": 0.8,
+      "beta": 1.2,
+      "p": 1.3,
+      "s": -0.6
+    },
+    "intrinsic_objects": {
+      "anchor": {
+        "mass_kg": 1.0,
+        "color": "orange",
+        "motion": "fixed"
+      },
+      "probe": {
+        "mass_kg": 0.1,
+        "color": "blue",
+        "motion": "dynamic"
+      }
+    },
+    "scene_state": {
+      "anchor_center_m": [
+        0.4,
+        -0.2,
+        -0.5
+      ],
+      "probe_center_m": [
+        -0.4,
+        -0.6,
+        -0.5
+      ],
+      "probe_initial_velocity_m_s": [
+        1.0,
+        0.3,
+        -1.2
+      ],
+      "start_time_s": 3.3,
+      "probe_offset_distance_m": 0.9
+    },
+    "pairing": {
+      "baseline_group": "central_force_dynamics_g2",
+      "reuse_scene_state_for_baseline": true
+    }
+  },
+  "baseline_world": {
+    "path": "baseline/instance.json",
+    "record_id": "sha256:e8e1f1896dd5597d2e52811ffb1ecdba5a6ffe1b903352b6616267c30ee0529a",
+    "constants": {
+      "strength_N": 1.7,
+      "reference_distance_m": 1.3,
+      "reference_mass_kg": 0.8,
+      "minimum_distance_m": 0.3,
+      "baseline_exponent_p": 2
+    }
+  },
+  "resolved_environment": {
+    "equation": {
+      "q": 1.2,
+      "alpha": 0.8,
+      "beta": 1.2,
+      "p": 1.3,
+      "s": -0.6
+    },
+    "scene_state": {
+      "anchor_center_m": [
+        0.4,
+        -0.2,
+        -0.5
+      ],
+      "probe_center_m": [
+        -0.4,
+        -0.6,
+        -0.5
+      ],
+      "probe_initial_velocity_m_s": [
+        1.0,
+        0.3,
+        -1.2
+      ],
+      "start_time_s": 3.3,
+      "probe_offset_distance_m": 0.9
+    },
+    "intrinsic_objects": {
+      "anchor": {
+        "mass_kg": 1.0,
+        "color": "orange",
+        "motion": "fixed"
+      },
+      "probe": {
+        "mass_kg": 0.1,
+        "color": "blue",
+        "motion": "dynamic"
+      }
+    }
+  }
+}

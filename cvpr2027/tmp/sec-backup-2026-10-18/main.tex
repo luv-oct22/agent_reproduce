@@ -1,0 +1,51 @@
+% CVPR 2027 Paper Template; based on https://github.com/cvpr-org/author-kit
+% Replace with the official CVPR 2027 kit when released.
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+% \usepackage{cvpr}              % To produce the CAMERA-READY version
+\usepackage[review]{cvpr}      % To produce the REVIEW version
+% \usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+
+% Import additional packages in the preamble file, before hyperref
+\input{preamble}
+
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\paperID{*****} % *** Enter the Paper ID here
+\def\confName{CVPR}
+\def\confYear{2027}
+
+%%%%%%%%% TITLE
+\title{Do Multimodal Agents Learn Reusable Physics from Interaction?\\
+A Counterfactual Visual Prediction Benchmark under Latent Laws}
+
+%%%%%%%%% AUTHORS - PLEASE UPDATE (anonymized for review)
+\author{Anonymous CVPR 2027 submission\\
+Paper ID \paperID\\
+}
+
+\begin{document}
+\maketitle
+\input{sec/0_abstract}
+\input{sec/1_intro}
+\input{sec/2_benchmark}
+\input{sec/3_construction}
+\input{sec/4_protocol}
+\input{sec/5_validation}
+\input{sec/6_experiments}
+\input{sec/7_related_work}
+\input{sec/8_conclusion}
+{
+    \small
+    \bibliographystyle{ieeenat_fullname}
+    \bibliography{main}
+}
+
+% WARNING: do not forget to delete the supplementary pages from your submission
+% \input{sec/X_suppl}
+
+\end{document}

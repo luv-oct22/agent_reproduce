@@ -1,0 +1,27 @@
+# Law-contrastive visual exam (python -m src.law_contrastive). Paths are relative to the repo root.
+family: central_force_dynamics
+groups: [g1, g2, g3]                 # world-parameter regimes
+rules: [rule_1, rule_2, combined_rule]
+
+worlds_dir: world_instances           # hidden laws and baseline worlds
+source_renders_dir: renders           # existing exam renders: scenes are reused from here
+interactions_dir: results             # existing interaction records, reused as evidence
+items_dir: results/law_contrastive/items
+renders_dir: renders/law_contrastive  # new exam images (rendered manually)
+results_dir: results/law_contrastive/exam
+
+items:
+  per_world: 8                        # items wanted per hidden-law world
+  min_separation_px: 20.0             # pairwise candidate distance at 1920 px width
+  durations_s: [0.4, 0.6, 0.8, 1.0, 1.2, 1.5]
+  max_sampled_scenes: 600
+  seed: 0
+
+exam:
+  models: [gpt-6.1-sol, bailian/glm-5.3, qwen3.8-max]
+  arms: [no_history, own, sibling, law_text]
+  history_model: null                 # null: each model is shown its own interaction records
+  temperature: 0.7
+  max_completion_tokens: 16384
+  seed: 0
+  max_turns: 8

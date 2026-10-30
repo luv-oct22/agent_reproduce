@@ -1,0 +1,64 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_6_q10",
+    "family": "elastic_dynamics",
+    "group_id": "elastic_dynamics_g2",
+    "rule": "combined_rule",
+    "variant_id": "variant_6",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 0.6,
+          "spring_stiffness_N_m": 10.6,
+          "position_m": [
+            1.4,
+            -1.0,
+            2.3
+          ],
+          "velocity_m_s": [
+            -0.3,
+            0.6,
+            0.1
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 2.0,
+          "spring_stiffness_N_m": 6.1,
+          "position_m": [
+            -1.4,
+            0.9,
+            2.2
+          ],
+          "velocity_m_s": [
+            -0.4,
+            -0.3,
+            -0.1
+          ]
+        }
+      ],
+      "start_time_s": 1.7,
+      "duration_s": 0.13,
+      "target_object_id": "object_2"
+    },
+    "target_object_id": "object_2",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "nested_restoring",
+    "p": 1.2,
+    "q": 0.8
+  },
+  "force_function": {
+    "field_kind": "nested",
+    "amplitude": 0.3,
+    "reference_time_s": 2.0
+  }
+}

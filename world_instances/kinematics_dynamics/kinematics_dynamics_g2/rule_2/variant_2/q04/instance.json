@@ -1,0 +1,61 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_2_q04",
+    "family": "kinematics_dynamics",
+    "group_id": "kinematics_dynamics_g2",
+    "rule": "rule_2",
+    "variant_id": "variant_2",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.8,
+          "radius_m": 0.08,
+          "initial_position_m": [
+            1.0,
+            -0.3,
+            1.5
+          ],
+          "initial_velocity_m_s": [
+            0.7,
+            0.1,
+            1.1
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 1.6,
+          "radius_m": 0.1,
+          "initial_position_m": [
+            0.1,
+            -0.0,
+            2.7
+          ],
+          "initial_velocity_m_s": [
+            -0.1,
+            0.6,
+            -0.8
+          ]
+        }
+      ],
+      "start_time_s": 4.4,
+      "duration_s": 0.12,
+      "target_object_id": "object_2"
+    },
+    "target_object_id": "object_2",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": null,
+  "force_function": {
+    "field_kind": "linear_time",
+    "amplitude": 0.2,
+    "time_scale": 4.0,
+    "reference_time_s": 2.0
+  }
+}

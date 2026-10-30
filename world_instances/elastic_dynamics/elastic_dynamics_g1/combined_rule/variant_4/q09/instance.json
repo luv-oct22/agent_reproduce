@@ -1,0 +1,95 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_4_q09",
+    "family": "elastic_dynamics",
+    "group_id": "elastic_dynamics_g1",
+    "rule": "combined_rule",
+    "variant_id": "variant_4",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.0,
+          "spring_stiffness_N_m": 11.5,
+          "position_m": [
+            -0.3,
+            0.5,
+            2.2
+          ],
+          "velocity_m_s": [
+            1.2,
+            -0.0,
+            0.1
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 0.8,
+          "spring_stiffness_N_m": 8.7,
+          "position_m": [
+            0.9,
+            0.4,
+            1.6
+          ],
+          "velocity_m_s": [
+            -0.1,
+            0.9,
+            0.7
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 1.8,
+          "spring_stiffness_N_m": 11.0,
+          "position_m": [
+            0.2,
+            -0.1,
+            0.7
+          ],
+          "velocity_m_s": [
+            -0.7,
+            0.6,
+            -0.4
+          ]
+        },
+        {
+          "object_id": "object_4",
+          "color": "yellow",
+          "mass_kg": 1.0,
+          "spring_stiffness_N_m": 5.7,
+          "position_m": [
+            -1.4,
+            0.7,
+            1.9
+          ],
+          "velocity_m_s": [
+            0.7,
+            0.9,
+            -0.1
+          ]
+        }
+      ],
+      "start_time_s": 3.0,
+      "duration_s": 0.15,
+      "target_object_id": "object_1"
+    },
+    "target_object_id": "object_1",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "time_power_stiffness",
+    "p": 0.7
+  },
+  "force_function": {
+    "field_kind": "log_time",
+    "amplitude": 0.25,
+    "reference_time_s": 2.0
+  }
+}

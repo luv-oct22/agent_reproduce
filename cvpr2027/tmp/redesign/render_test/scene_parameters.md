@@ -1,0 +1,209 @@
+# Attraction scene parameters (host-only)
+
+```json
+{
+  "scene_digest": "3050b41b8197362d5c2985884a4bbf2b66bf10bc7fc952d003ca9aca8b8bb9e0",
+  "frames": {
+    "context": {
+      "elapsed_s": 0.0,
+      "objects": {
+        "anchor": {
+          "center_pixels": [
+            1036.8000411987305,
+            486.3998794555664
+          ],
+          "diameter_pixels": 61.44001007080078,
+          "visible": true,
+          "center_m": [
+            0.20000000298023224,
+            0.0,
+            1.100000023841858
+          ]
+        },
+        "probe": {
+          "center_pixels": [
+            1267.200050354004,
+            908.7998962402344
+          ],
+          "diameter_pixels": 23.04004669189453,
+          "visible": true,
+          "center_m": [
+            0.800000011920929,
+            0.0,
+            2.200000047683716
+          ]
+        }
+      }
+    },
+    "A": {
+      "elapsed_s": 0.4,
+      "objects": {
+        "anchor": {
+          "center_pixels": [
+            1036.8000411987305,
+            486.3998794555664
+          ],
+          "diameter_pixels": 61.44001007080078,
+          "visible": true,
+          "center_m": [
+            0.20000000298023224,
+            0.0,
+            1.100000023841858
+          ]
+        },
+        "probe": {
+          "center_pixels": [
+            1103.400993347168,
+            804.2530822753906
+          ],
+          "diameter_pixels": 23.039932250976562,
+          "visible": true,
+          "center_m": [
+            0.373440146446228,
+            0.0,
+            1.9277427196502686
+          ]
+        }
+      }
+    },
+    "B": {
+      "elapsed_s": 0.4,
+      "objects": {
+        "anchor": {
+          "center_pixels": [
+            1036.8000411987305,
+            486.3998794555664
+          ],
+          "diameter_pixels": 61.44001007080078,
+          "visible": true,
+          "center_m": [
+            0.20000000298023224,
+            0.0,
+            1.100000023841858
+          ]
+        },
+        "probe": {
+          "center_pixels": [
+            1084.7119903564453,
+            758.7287902832031
+          ],
+          "diameter_pixels": 23.04004669189453,
+          "visible": true,
+          "center_m": [
+            0.32477065920829773,
+            0.0,
+            1.8091899156570435
+          ]
+        }
+      }
+    },
+    "C": {
+      "elapsed_s": 0.4,
+      "objects": {
+        "anchor": {
+          "center_pixels": [
+            1036.8000411987305,
+            486.3998794555664
+          ],
+          "diameter_pixels": 61.44001007080078,
+          "visible": true,
+          "center_m": [
+            0.20000000298023224,
+            0.0,
+            1.100000023841858
+          ]
+        },
+        "probe": {
+          "center_pixels": [
+            1054.7345352172852,
+            675.8823394775391
+          ],
+          "diameter_pixels": 23.04004669189453,
+          "visible": true,
+          "center_m": [
+            0.24670441448688507,
+            0.0,
+            1.5934439897537231
+          ]
+        }
+      }
+    },
+    "D": {
+      "elapsed_s": 0.4,
+      "objects": {
+        "anchor": {
+          "center_pixels": [
+            1036.8000411987305,
+            486.3998794555664
+          ],
+          "diameter_pixels": 61.44001007080078,
+          "visible": true,
+          "center_m": [
+            0.20000000298023224,
+            0.0,
+            1.100000023841858
+          ]
+        },
+        "probe": {
+          "center_pixels": [
+            1095.2912521362305,
+            783.4076690673828
+          ],
+          "diameter_pixels": 23.04004669189453,
+          "visible": true,
+          "center_m": [
+            0.3523208498954773,
+            0.0,
+            1.873457908630371
+          ]
+        }
+      }
+    }
+  },
+  "resolution": [
+    1920,
+    1280
+  ],
+  "images_rendered": true,
+  "image_sha256": {
+    "context": "b79386eab75dc755d294d691e1d81cda5a557e86b5d9d15549dfac1a731ab5a3",
+    "A": "3d30ed2c163b5da55d261b42f0da88a42d680fbd6a43851b5a684b525089f119",
+    "B": "b4e2a1c75e02df492b21ad2f4e692baaeb9ff37190b47bde629a03f74765ce6d",
+    "C": "683ddc8d5587a6bc5d9489500f60b3b05bbc60801c50d4c412afb156d58eb359",
+    "D": "e7751e27163093e63fb504154ada40c0d70c4712895bb438817e710da8058986"
+  },
+  "blender_version": "3.6.23",
+  "device": "CPU",
+  "samples": 16,
+  "settings": {
+    "Engine": "CYCLES",
+    "Render device": "CPU",
+    "Samples": 16,
+    "Denoising": true,
+    "Resolution": [
+      1920,
+      1280
+    ],
+    "Scene FPS": 24.0,
+    "Colour transform": "Standard",
+    "Exposure": -0.4000000059604645,
+    "Render seed": 7,
+    "Actual camera": {
+      "position_m": [
+        0.0,
+        -8.0,
+        1.5
+      ],
+      "rotation_euler_rad": [
+        1.5707963705062866,
+        -0.0,
+        0.0
+      ],
+      "lens_mm": 50.0,
+      "depth_of_field": false,
+      "fstop": 2.799999952316284,
+      "focus_distance_m": 10.0
+    }
+  }
+}
+```

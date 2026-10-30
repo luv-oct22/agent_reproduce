@@ -1,0 +1,77 @@
+# rule_2/variant_2/q03
+
+Host-only scene:
+```json
+{
+  "objects": [
+    {
+      "object_id": "object_1",
+      "color": "red",
+      "mass_kg": 1.5,
+      "radius_m": 0.09,
+      "position_m": [
+        -0.7,
+        -0.3,
+        0.71
+      ],
+      "velocity_m_s": [
+        -0.0,
+        -0.1,
+        -0.3
+      ]
+    },
+    {
+      "object_id": "object_2",
+      "color": "blue",
+      "mass_kg": 0.5,
+      "radius_m": 0.15,
+      "position_m": [
+        0.1,
+        -0.1,
+        0.36
+      ],
+      "velocity_m_s": [
+        -0.5,
+        0.4,
+        -1.0
+      ]
+    },
+    {
+      "object_id": "object_3",
+      "color": "green",
+      "mass_kg": 1.1,
+      "radius_m": 0.16,
+      "position_m": [
+        -0.5,
+        0.3,
+        0.59
+      ],
+      "velocity_m_s": [
+        -0.0,
+        0.3,
+        -0.9
+      ]
+    },
+    {
+      "object_id": "object_4",
+      "color": "yellow",
+      "mass_kg": 1.5,
+      "radius_m": 0.12,
+      "position_m": [
+        1.1,
+        -0.2,
+        0.83
+      ],
+      "velocity_m_s": [
+        -0.4,
+        -0.4,
+        0.7
+      ]
+    }
+  ],
+  "plane_z_m": 0.0,
+  "start_time_s": 1.0,
+  "duration_s": 0.29,
+  "target_object_id": "object_1"
+}
+```

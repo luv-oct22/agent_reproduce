@@ -1,0 +1,28 @@
+# Drag visual evaluation parameters (host-only)
+
+The model receives the public experiment history and five images per question. Private manifests, true drag profiles and answer keys are excluded. Image accuracy is separate from interaction-stage numerical prediction accuracy.
+
+```json
+{
+  "experiment_model": "qwen3.8-max",
+  "evaluation_model": "qwen3.8-max",
+  "record_source": "results/drag_lab/identify_drag_20260924_114916/interaction.json",
+  "record_sha256": "fdd5fd6755563be9d6dd8d81beedd015d93eeb874527207abb686a989b5c8bf0",
+  "batch_source": "renders/lab_5/drag_prediction_complex_close",
+  "question_count": 16,
+  "history_used": true,
+  "interaction_finished": false,
+  "world_id": "sha256:747b65729571eb4a53722f9ec6288d602b4fc7d1da995cf03b679cc87387129f",
+  "object_registry_id": "sha256:0d2a3200e6b9a059b1c01066f3187b82b68f9086f327d9dcc79cdf421ce5874b",
+  "contact_registry_id": "sha256:377e7f188dbcbf36129058cfd3c7851ecf0c26b272fb98fdaf2dff6a22a284da",
+  "api_timeout": {
+    "timeout_seconds": 900.0,
+    "connect_timeout_seconds": 120.0
+  },
+  "api_retry": {
+    "max_retries": 5,
+    "initial_delay_seconds": 5,
+    "max_delay_seconds": 30
+  }
+}
+```

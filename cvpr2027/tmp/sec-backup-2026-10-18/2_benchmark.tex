@@ -1,0 +1,55 @@
+\section{Benchmark Overview and Task Formalization}
+\label{sec:benchmark}
+
+Predicting from a single visual context can often be solved by matching familiar appearances to familiar motions. That is not the ability we want to isolate. We ask whether a multimodal agent can use a finite interaction history to infer an unfamiliar latent physical rule, then apply that inference to a new state. The benchmark therefore follows the chain
+\begin{center}
+\emph{observe} $\rightarrow$ \emph{intervene} $\rightarrow$ \emph{measure}
+$\rightarrow$ \emph{infer latent dynamics} $\rightarrow$
+\emph{predict a counterfactual image}.
+\end{center}
+The final prediction is held out from the states used for interaction. This separation makes the task a test of transferable physical inference rather than a test of whether the agent can answer the specific instance it acted on.
+
+\subsection{A Hierarchy of Latent Physical Worlds}
+
+We organize the benchmark as a five-level hierarchy:
+\begin{center}
+\textit{Physical-Phenomenon Family}
+$\rightarrow$ \textit{World-Parameter Regime}
+$\rightarrow$ \textit{Latent-Dynamics Condition}
+$\rightarrow$ \textit{Latent-Law Realization}
+$\rightarrow$ \textit{Counterfactual Prediction Instance}.
+\end{center}
+Each level changes a different source of variation. A \emph{physical-phenomenon family} fixes the broad mechanism and visual setting, such as central-force, kinematics, fluid, contact, dissipative, field-interaction, or elastic dynamics. Within a family, a \emph{world-parameter regime} fixes shared constants, for example reference scales, damping coefficients, thresholds, or field directions. These constants affect every instance in the regime but are not shown to the agent.
+
+A \emph{latent-dynamics condition} specifies how the realized world departs from the baseline family: through a structural equation change, a hidden coefficient or field function, or both. A \emph{latent-law realization} fixes the concrete hidden equation or function for that condition. A \emph{counterfactual prediction instance} then varies the initial state and the visual query while preserving the same latent-law realization. Instances from the same realization require different predictions, but the hidden dynamics are shared.
+
+Formally, a latent world is indexed by
+\begin{equation}
+  \mathcal{W} = (f, \rho, c, \lambda),
+  \label{eq:latent-world}
+\end{equation}
+where $f$ is the physical-phenomenon family, $\rho$ the world-parameter regime, $c$ the latent-dynamics condition, and $\lambda$ the latent-law realization. The simulator for $\mathcal{W}$ defines a transition operator $\Phi_{\mathcal{W}}$ that maps a complete state $s_t$ to $s_{t+\Delta t}$. The complete state includes object identities, intrinsic attributes, positions, velocities, time, and family-specific variables.
+
+\subsection{Support Interaction and Information Boundary}
+
+For each realization $\lambda$, we split its 15 instances into support instances and held-out prediction instances. In the current protocol, eight instances are used for support and seven for held-out evaluation. On support instances, the agent may plan experiments and query a fixed-budget interaction interface. Tool outputs reveal observable state, including object attributes, positions, velocities, environmental measurements, and time. These observations give the agent evidence about the dynamics without exposing the latent law itself.
+
+The host withholds world-level constants, governing equations, equation transformations, hidden coefficient or field functions, and answer keys. Let $h_B$ denote the full history of tool calls and returned observations under budget $B$. The task is therefore system identification from permitted observations, not parameter retrieval from a hidden record. We evaluate the complete model--harness system: the model, the prompt and memory scaffold, the tool-use policy, and the reasoning loop that turns $h_B$ into an answer.
+
+\subsection{Held-Out Counterfactual Visual Prediction}
+
+After support interaction, tool access and feedback are frozen. A held-out prediction instance is
+\begin{equation}
+  e = (s_0, o^\star, \Delta t, \mathcal{C}, y),
+  \label{eq:prediction-instance}
+\end{equation}
+where $s_0$ is the initial scene state, $o^\star$ is the target object, $\Delta t$ is the prediction interval, $\mathcal{C}=\{I_1,I_2,I_3,I_4\}$ is a set of rendered candidate images, and $y\in\{1,2,3,4\}$ is the host-only correct index. The correct candidate is rendered from the successor state produced by $\Phi_{\mathcal{W}}(s_0,\Delta t)$. Distractors are rendered from nearby but physically distinct successor states, so coarse appearance matching is unreliable.
+
+Given public context $x_e$, candidates $\mathcal{C}$, and frozen support history $h_B$, the evaluated system outputs
+\begin{equation}
+  \hat{y} = A(x_e, \mathcal{C}, h_B),
+  \label{eq:agent-objective}
+\end{equation}
+where $A$ denotes the full model--harness system. The main score is exact candidate accuracy, $\mathbf{1}[\hat{y}=y]$, reported by physical family, parameter regime, latent-dynamics condition, law realization, and interaction budget. Candidate positions are independently permuted for every instance, and the answer key is retained only by the host. A fixed candidate label cannot encode correctness or latent-world identity.
+
+This support-to-held-out split is the central diagnostic. Improvement on support states only shows that the agent used the interaction history somewhere. Accurate prediction on new states from the same latent-law realization is stronger behavioral evidence that the agent inferred reusable physical structure.

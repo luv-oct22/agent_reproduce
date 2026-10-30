@@ -1,0 +1,59 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_3_q01",
+    "family": "elastic_dynamics",
+    "group_id": "elastic_dynamics_g3",
+    "rule": "rule_1",
+    "variant_id": "variant_3",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.9,
+          "spring_stiffness_N_m": 7.1,
+          "position_m": [
+            0.3,
+            -0.2,
+            2.0
+          ],
+          "velocity_m_s": [
+            -0.0,
+            0.4,
+            0.9
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 0.9,
+          "spring_stiffness_N_m": 10.2,
+          "position_m": [
+            1.0,
+            -0.8,
+            1.2
+          ],
+          "velocity_m_s": [
+            0.4,
+            -0.6,
+            0.0
+          ]
+        }
+      ],
+      "start_time_s": 2.0,
+      "duration_s": 0.26,
+      "target_object_id": "object_1"
+    },
+    "target_object_id": "object_1",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "log_extension",
+    "scale": 0.8
+  },
+  "force_function": null
+}

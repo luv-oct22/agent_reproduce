@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "question_id": "variant_6_q02",
+  "family": "attraction",
+  "group_id": "central_force_dynamics_g2",
+  "rule": "rule_2",
+  "variant_id": "variant_6",
+  "pairing": {
+    "baseline_group": "central_force_dynamics_g2",
+    "reuse_scene_state_for_baseline": true
+  }
+}

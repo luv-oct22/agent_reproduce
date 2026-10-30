@@ -1,0 +1,76 @@
+# kinematics_dynamics_g1/rule_2/variant_1/q05
+
+Host-only resolved question record:
+
+```json
+{
+  "question_id": "variant_1_q05",
+  "group_id": "kinematics_dynamics_g1",
+  "rule": "rule_2",
+  "variant_id": "variant_1",
+  "target_object_id": "object_3",
+  "scene_state": {
+    "objects": [
+      {
+        "object_id": "object_1",
+        "color": "red",
+        "mass_kg": 0.6,
+        "radius_m": 0.12,
+        "initial_position_m": [
+          0.5,
+          -0.2,
+          1.5
+        ],
+        "initial_velocity_m_s": [
+          -0.2,
+          0.1,
+          -0.1
+        ]
+      },
+      {
+        "object_id": "object_2",
+        "color": "blue",
+        "mass_kg": 1.3,
+        "radius_m": 0.12,
+        "initial_position_m": [
+          1.1,
+          -0.2,
+          2.4
+        ],
+        "initial_velocity_m_s": [
+          0.3,
+          0.5,
+          0.6
+        ]
+      },
+      {
+        "object_id": "object_3",
+        "color": "green",
+        "mass_kg": 1.0,
+        "radius_m": 0.15,
+        "initial_position_m": [
+          -1.0,
+          -0.5,
+          2.1
+        ],
+        "initial_velocity_m_s": [
+          0.0,
+          0.2,
+          -0.4
+        ]
+      }
+    ],
+    "start_time_s": 3.8,
+    "duration_s": 0.3,
+    "target_object_id": "object_3"
+  },
+  "hidden_parameters": {
+    "force_function": {
+      "field_kind": "linear_space",
+      "amplitude": 0.3,
+      "time_scale": 4.0,
+      "reference_time_s": 2.0
+    }
+  }
+}
+```

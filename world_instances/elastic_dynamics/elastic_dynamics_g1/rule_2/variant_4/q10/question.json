@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "question_id": "variant_4_q10",
+  "family": "elastic_dynamics",
+  "group_id": "elastic_dynamics_g1",
+  "rule": "rule_2",
+  "variant_id": "variant_4",
+  "target_object_id": "object_2",
+  "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+}

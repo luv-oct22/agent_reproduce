@@ -1,0 +1,18 @@
+[
+  {
+    "id": "vp_1",
+    "type": "visual_predict",
+    "question": "Based on the trajectory shown in these simulation frames, where will the ball be next?",
+    "object": "ball",
+    "num_context_frames": 4,
+    "trail_length": 50,
+    "tolerance": 0.5
+  },
+  {
+    "id": "vp_2",
+    "type": "visual_predict",
+    "object": "ball",
+    "num_context_frames": 4,
+    "tolerance": 0.3
+  }
+]

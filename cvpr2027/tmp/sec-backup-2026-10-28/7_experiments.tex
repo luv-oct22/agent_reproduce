@@ -1,0 +1,87 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\TODO{This section will be populated once the baseline runs finish. The structure below fixes the claims, tables, and analyses without making numerical claims prematurely.}
+
+\subsection{Setup}
+
+\paragraph{Models and harnesses.} We evaluate \TODO{N} frontier multimodal models. Each model is paired with a disclosed harness: prompt scaffold, memory representation, tool-use policy, and reasoning loop. We treat each model--harness pair as one evaluated system. \TODO{List exact models, API versions, and harness configurations, including how each harness keeps rendered frames in context.}
+
+\paragraph{Budgets and seeds.} We evaluate $B \in \{0,B_{\rm small},B_{\rm full}\}$, with a checkpoint after every \TODO{k} experiments. \TODO{Fix numerical budget values after pilot calibration.} Results are averaged over \TODO{K} seeds, with per-stratum means and 95\% confidence intervals.
+
+\subsection{Does Interaction Help? (RQ1)}
+
+Figure~\ref{fig:curves} shows online learning curves, and Table~\ref{tab:main} reports held-out accuracy across budgets. \TODO{Report whether accuracy rises with interaction, and how far it stays below the law-informed ceiling.}
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Main results.} Held-out accuracy (\%) for each model--harness system and budget, with same- and cross-realization histories. Cross-realization accuracy and the gap are undefined at $B=0$. \TODO{Populate once runs complete.}}
+  \label{tab:main}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{llccc}
+    \toprule
+    Model & Budget & Same-real. & Cross-real. & Gap \\
+    \midrule
+    \TODO{M1} & $B=0$        & -- & n/a & n/a \\
+              & $B_{\rm small}$ & -- & -- & -- \\
+              & $B_{\rm full}$  & -- & -- & -- \\
+    \midrule
+    \TODO{M2} & $B=0$        & -- & n/a & n/a \\
+              & $B_{\rm small}$ & -- & -- & -- \\
+              & $B_{\rm full}$  & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox[c][4.5cm][c]{0.95\columnwidth}{\centering
+    \textbf{Figure placeholder.}\\[0.3em]
+    Checkpoint accuracy vs.\ number of experiments, one curve per model--harness system.\\
+    Dashed lines: law-informed ceiling and chance.
+  }}
+  \caption{\textbf{Online learning curves.} \TODO{Replace with the final plot and a result-specific caption.}}
+  \label{fig:curves}
+\end{figure}
+
+\subsection{Is the Learning Specific to the World? (RQ2)}
+
+Table~\ref{tab:main} also reports the same-minus-cross gap, and Table~\ref{tab:stratified} breaks held-out accuracy down by family and condition. We additionally report accuracy on the held-out experiments that the canonical-physics baseline gets wrong. \TODO{Report whether the gain is world-specific, and how structural and coefficient-field changes differ.}
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Stratified analysis.} Held-out accuracy (\%) by phenomenon family and latent-law condition at $B=B_{\rm full}$; M1--M3 are placeholders. \TODO{Name the systems and populate once runs complete.}}
+  \label{tab:stratified}
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lccc}
+    \toprule
+    Stratum & M1 & M2 & M3 \\
+    \midrule
+    \emph{Family} \\
+    \quad Central-force  & -- & -- & -- \\
+    \quad Kinematics     & -- & -- & -- \\
+    \quad Fluid          & -- & -- & -- \\
+    \quad Contact        & -- & -- & -- \\
+    \quad Dissipative    & -- & -- & -- \\
+    \quad Field-interaction & -- & -- & -- \\
+    \quad Elastic        & -- & -- & -- \\
+    \midrule
+    \emph{Latent-law condition} \\
+    \quad Structural     & -- & -- & -- \\
+    \quad Coefficient    & -- & -- & -- \\
+    \quad Combined       & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Do Acting and Predicting Matter?}
+
+We compare the predict-observe, observe-only, and yoked-passive arms at equal budget (Section~\ref{sec:protocol:ablations}). \TODO{Report held-out accuracy per arm, with paired tests on identical held-out experiments.}
+
+\subsection{Where Does Learning Break? (RQ3)}
+
+We report probe accuracy, median relative error, and measurement cost per system and family (Section~\ref{sec:protocol:probe}), together with the law-informed ceiling and the simulator oracle (Section~\ref{sec:validation}), and held-out accuracy split by whether the system passes the probe. \TODO{Report the failure decomposition per system.}
+
+\paragraph{Shortcut baselines.} We report the appearance heuristic, the canonical-physics baseline, and the label-only classifier of Section~\ref{sec:validation} alongside the agents. \TODO{Report the numbers.}

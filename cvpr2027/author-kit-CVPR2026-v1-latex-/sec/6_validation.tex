@@ -1,0 +1,28 @@
+\section{Benchmark Validation}
+\label{sec:validation}
+
+Before interpreting model performance, we check that every question has a well-defined answer that cannot be obtained from artifacts or canonical physics alone. Table~\ref{tab:validation} reports reference policies that do not query a model, computed over all 351 law-contrastive questions of the two reported conditions.
+
+\paragraph{Why law-contrastive candidates.} An earlier version of the exam generated distractors by displacing the correct outcome by fixed steps along a line. An audit of its 810 items found that the correct candidate always occupied the same label in the same collinear arrangement, and that simulating canonical physics alone selected the correct candidate in 80.6\% of items. Both properties let a system score without learning the world, and they motivated the design of Section~\ref{sec:benchmark}.
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Exam validity.} Accuracy (\%) of reference policies that do not query a model. Chance is 25\%.}
+  \label{tab:validation}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Policy & Earlier exam & Law-contrastive \\
+    \midrule
+    Simulator oracle (true law)   & 100 & 100 \\
+    Canonical physics             & 80.6 & 0 \\
+    Most frequent label           & 100 & 25.6 \\
+    Best world-blind policy       & 100 & 33.3 \\
+    Closest to initial position   & --  & 26.2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Ceilings.} The \emph{simulator oracle} re-simulates each question under the true law and selects the nearest candidate; it scores 100\% by construction and checks well-posedness: every candidate is at least 20 pixels from every other. The \emph{law-in-text} arm (Section~\ref{sec:protocol}) gives each system the hidden law and constants in text with no interaction, and bounds what the system achieves once the law is known.
+
+\paragraph{Shortcut baselines.} \emph{Canonical physics} simulates each question under the family's canonical law and selects the nearest candidate. It scores 0\% because the canonical outcome is always a distractor, so any accuracy above the no-interaction arm cannot come from textbook physics. The \emph{best world-blind policy} answers each item identically for all three worlds it is asked in, and is capped at one third. The \emph{appearance heuristic} picks the candidate closest to the probe's initial position; the \emph{label prior} always answers the most frequent label. Both stay at chance.

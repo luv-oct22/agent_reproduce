@@ -1,0 +1,60 @@
+{
+  "format": "physics_object_registry",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "registry_id": "sha256:0d2a3200e6b9a059b1c01066f3187b82b68f9086f327d9dcc79cdf421ce5874b",
+  "units": {
+    "length": "m",
+    "mass": "kg",
+    "volume": "m^3",
+    "density": "kg/m^3",
+    "inertia": "kg*m^2"
+  },
+  "provenance": {
+    "source_environment": "material_lab",
+    "seed": null
+  },
+  "objects": [
+    {
+      "id": "sample_A",
+      "color": "blue",
+      "shape": "sphere",
+      "mass_kg": 0.1,
+      "volume_m3": 0.00011309733552923254,
+      "density_kg_m3": 884.1941282883076,
+      "geometry": {
+        "dimensions_m": [
+          0.06000000000000001,
+          0.06000000000000001,
+          0.06000000000000001
+        ],
+        "collision_shape": "sphere",
+        "center_of_mass_local_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "appearance": {
+        "color_rgba": [
+          0.08,
+          0.35,
+          0.8,
+          1
+        ],
+        "color_space": "linear_srgb"
+      },
+      "physics": {
+        "rigid": true,
+        "uniform_density": true,
+        "porous": false,
+        "absorbs_water": false,
+        "inertia_diagonal_kg_m2": [
+          3.600000000000002e-05,
+          3.600000000000002e-05,
+          3.600000000000002e-05
+        ]
+      }
+    }
+  ]
+}

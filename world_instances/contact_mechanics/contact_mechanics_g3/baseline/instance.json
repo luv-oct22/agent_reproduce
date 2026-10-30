@@ -1,0 +1,20 @@
+{
+  "format": "world_family_group",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "family": "contact_mechanics",
+  "group_id": "contact_mechanics_g3",
+  "constants": {
+    "normal_stiffness_N_m": 25.0,
+    "damping_kg_s": 2.4,
+    "friction_mu": 0.65,
+    "contact_threshold_m": 0.07,
+    "plane_z_m": 0.2
+  },
+  "standard_equations": {
+    "penetration": "delta=max(0,R_i+R_j-d)",
+    "normal_force": "F_n=k_n*delta+c_n*max(0,-v_rel,n)",
+    "friction": "|F_t|<=mu*F_n",
+    "acceleration": "a=F/m"
+  }
+}

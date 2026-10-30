@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "question_id": "variant_4_q01",
+  "family": "fluid_mechanics",
+  "group_id": "fluid_mechanics_g1",
+  "rule": "rule_2",
+  "variant_id": "variant_4",
+  "target_object_id": "object_2",
+  "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+}

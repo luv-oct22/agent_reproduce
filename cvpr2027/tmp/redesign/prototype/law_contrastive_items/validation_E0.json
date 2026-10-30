@@ -1,0 +1,38 @@
+{
+ "questions": 528,
+ "items": 176,
+ "oracle": 1.0,
+ "canonical_physics": 0.0,
+ "appearance": 0.26325757575757575,
+ "label_prior": 0.25946969696969696,
+ "label_prior_letter": "C",
+ "world_blind_max": 0.3333333333333333,
+ "answer_positions": {
+  "A": 130,
+  "B": 127,
+  "C": 137,
+  "D": 134
+ },
+ "min_separation_px_1920_median": 24.1,
+ "by_rule": {
+  "rule_1": {
+   "questions": 174,
+   "appearance": 0.27011494252873564
+  },
+  "rule_2": {
+   "questions": 177,
+   "appearance": 0.2542372881355932
+  },
+  "combined_rule": {
+   "questions": 177,
+   "appearance": 0.2655367231638418
+  }
+ },
+ "old_exam": {
+  "questions": 810,
+  "answer_positions": {
+   "A": 810
+  },
+  "canonical_physics": 0.8060453400503779
+ }
+}

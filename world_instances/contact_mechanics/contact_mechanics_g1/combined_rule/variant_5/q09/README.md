@@ -1,0 +1,77 @@
+# combined_rule/variant_5/q09
+
+Host-only scene:
+```json
+{
+  "objects": [
+    {
+      "object_id": "object_1",
+      "color": "red",
+      "mass_kg": 1.4,
+      "radius_m": 0.1,
+      "position_m": [
+        -0.2,
+        -0.0,
+        1.05
+      ],
+      "velocity_m_s": [
+        -0.7,
+        -0.1,
+        0.2
+      ]
+    },
+    {
+      "object_id": "object_2",
+      "color": "blue",
+      "mass_kg": 0.5,
+      "radius_m": 0.16,
+      "position_m": [
+        -0.4,
+        -0.2,
+        1.17
+      ],
+      "velocity_m_s": [
+        -1.0,
+        -0.0,
+        0.2
+      ]
+    },
+    {
+      "object_id": "object_3",
+      "color": "green",
+      "mass_kg": 0.6,
+      "radius_m": 0.13,
+      "position_m": [
+        0.7,
+        -0.5,
+        1.04
+      ],
+      "velocity_m_s": [
+        -0.3,
+        -0.4,
+        0.3
+      ]
+    },
+    {
+      "object_id": "object_4",
+      "color": "yellow",
+      "mass_kg": 1.1,
+      "radius_m": 0.14,
+      "position_m": [
+        0.9,
+        0.4,
+        0.27
+      ],
+      "velocity_m_s": [
+        0.7,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "plane_z_m": 0.0,
+  "start_time_s": 2.5,
+  "duration_s": 0.1,
+  "target_object_id": "object_3"
+}
+```

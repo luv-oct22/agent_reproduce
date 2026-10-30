@@ -1,0 +1,42 @@
+\section{Related Work}
+\label{sec:related}
+
+Our benchmark sits where three lines of work meet: agents that interact with an environment, physical worlds governed by their own laws and constants, which may depart from canonical physics, and multimodal models that perceive, understand, and model physical scenes from visual input. Prior benchmarks study these elements in pairs, so one question is left open: whether a multimodal agent, by interacting with a physical world, acquires knowledge of that world's laws and principles that carries over to situations it has not encountered. We review each line by the question it answers and the part of this question it leaves unaddressed.
+
+\paragraph{Multimodal agents acting in physical worlds.} A recent line of benchmarks places vision-language models in physics simulators and asks them to act. DeepPHY~\cite{deepphy} evaluates VLM agents on physics puzzles and games and finds that descriptive physical knowledge does not translate into precise predictive control. IPR-1~\cite{ipr1} trains an interactive physical reasoner on more than 1,000 games and tests it on unseen ones. PhysMem~\cite{physmem} lets a VLM robot planner verify hypotheses about physical properties through targeted interaction before reusing them. PhysMent~\cite{physment} gives models tools that apply forces, query object states, and advance time in a MuJoCo scene before answering a question about that scene. Saha \etal~\cite{newevidence} isolate one decision in this loop: whether a VLM chooses an informative measurement when the hidden mass or friction is ambiguous. These works establish that interaction matters, but they score task success or a question about the same scene, under standard physics. They do not ask whether the evidence gathered through interaction transfers to new states of the same world. The closest evidence on that question is negative: VLMs trained by interaction improve on their training task but do not generalize to related tasks that share the same physical principles~\cite{schulzebuschoff2026}. Our benchmark makes this transfer the measured quantity.
+
+\paragraph{Agents that experiment on physical systems.} Interactive physics puzzles such as PHYRE~\cite{phyre} and I-PHYRE~\cite{iphyre} measure whether an agent can solve a task through trial and error. Success on the acted-on instance, however, can come from searching the action space as well as from physical understanding. Scientific-discovery benchmarks instead ask agents to recover hidden laws. PhysGym~\cite{physgym} controls how much prior knowledge the agent receives, Gravity-Bench~\cite{gravitybench} budgets observations of simulated orbits that sometimes deviate from real gravity, and NewtonBench~\cite{newtonbench} shifts canonical laws counterfactually to resist memorization. DiscoverPhysics~\cite{discoverphysics} is closest to our protocol: an agent designs experiments in N-body worlds with deliberately altered laws and is scored partly on predicting trajectories of held-out particles. These benchmarks share our use of agent-selected experiments and altered laws, but their observations and outputs are numeric or symbolic. We ask the same question of a multimodal agent, whose evidence and final prediction are both rendered images.
+
+\paragraph{Inferring hidden physics from visual evidence.} Several benchmarks require inferring physical quantities that are not visible. ComPhy~\cite{comphy} and Physion++~\cite{physionpp} require inferring hidden mass, charge, friction, or elasticity from observed motion before predicting outcomes. InPhyRe~\cite{inphyre} provides demonstration videos of collisions that follow physical laws unseen in training, then asks multimodal models to predict new collision outcomes. Thorpe \etal~\cite{viablewm} show that scenes which look identical but differ in latent physics defeat observation-only world models. DynaPix~\cite{dynapix} asks models to pick the true future image of a simulated scene from close candidates, which is the same answer format as ours. Broad suites such as PhysBench~\cite{physbench} evaluate physical understanding from given images and videos. In all of these, the evidence is supplied rather than collected. Our benchmark keeps the visual prediction target but makes the agent choose, under a budget, the experiments that reveal the hidden law.
+
+\paragraph{Explore-then-test evaluation.} WorldTest~\cite{worldtest} separates reward-free exploration from a later test that includes masked-frame prediction, and Mars~\cite{mars} asks agents to induce counter-commonsense rules through interaction. Both share our separation between gathering evidence and using it, but their worlds are abstract grid or game environments rather than physical worlds governed by world-specific constants and transformed laws.
+
+\paragraph{Evaluation unit.} The same model can behave differently under different prompts, memories, tool policies, and reasoning loops. Harness-Bench~\cite{harnessbench} makes this dependence explicit for agent workflows, and LLF-Bench~\cite{llfbench} studies how the content of feedback changes agent learning. We therefore report each result for a model--harness pair rather than for the base model alone.
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Comparison with the closest benchmarks.} \textbf{Exp.}: the agent chooses its own experiments. \textbf{Law}: the governing law or a hidden coefficient field is altered and hidden. \textbf{Fact.}: variation is factorized into controlled levels. \textbf{Trans.}: evidence is tested on new scenes of the same hidden world, with interaction frozen. \textbf{Frame}: the final answer is a rendered future frame. \textbf{Vis.}: the model perceives rendered images. $\circ$: partially. \TODO{Re-check every cell against the full text of each paper before submission.}}
+  \label{tab:gap}
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lcccccc}
+    \toprule
+    Benchmark & Exp. & Law & Fact. & Trans. & Frame & Vis. \\
+    \midrule
+    PHYRE / I-PHYRE~\cite{phyre,iphyre} & \checkmark &            &            &            &            & \checkmark \\
+    DeepPHY~\cite{deepphy}              & \checkmark &            & $\circ$    &            &            & \checkmark \\
+    PhysMent~\cite{physment}            & \checkmark & $\circ$    & $\circ$    &            &            &            \\
+    PhysGym~\cite{physgym}              & \checkmark &            & $\circ$    &            &            &            \\
+    NewtonBench~\cite{newtonbench}      & \checkmark & \checkmark & \checkmark &            &            &            \\
+    DiscoverPhysics~\cite{discoverphysics} & \checkmark & \checkmark & $\circ$ & \checkmark &            &            \\
+    ComPhy / Physion++~\cite{comphy,physionpp} &  & $\circ$    &            & \checkmark &            & \checkmark \\
+    InPhyRe~\cite{inphyre}              &            & \checkmark &            & \checkmark &            & \checkmark \\
+    DynaPix~\cite{dynapix}              &            &            &            &            & \checkmark & \checkmark \\
+    WorldTest~\cite{worldtest}          & \checkmark &            &            & $\circ$    & $\circ$    & $\circ$    \\
+    \midrule
+    \textbf{Ours}                       & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Table~\ref{tab:gap} summarizes the comparison. Agent-selected experiments, altered laws, and future-frame prediction are widely used across these benchmarks. The question we study is whether what a multimodal agent learns by interacting with a physical world carries over to new situations in that world, and our benchmark is built to answer it. The agent gathers its own evidence about a hidden, transformed law, and must then foresee, with interaction frozen, the rendered outcomes of new experiments in the same world. Checkpoints during interaction trace how this understanding forms, and a factorized hierarchy separates structural law changes from hidden coefficient fields, so each kind of change can be measured on its own.

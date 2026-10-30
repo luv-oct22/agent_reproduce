@@ -1,0 +1,58 @@
+\section{Benchmark Overview}
+\label{sec:benchmark}
+
+Humans come to know an unfamiliar physical world by acting in it and watching how it responds. The understanding they form does not stay with the experiments that produced it: looking at a new scene, a human can picture how it will look a moment later. Our benchmark asks whether a multimodal agent can learn a physical world in this way. It is built around one unit, the visual experiment, which the agent poses during interaction and the world poses during evaluation.
+
+\subsection{Latent Physical Worlds}
+
+Worlds are organized in a four-level hierarchy:
+\begin{center}
+\textit{World Family}
+$\rightarrow$ \textit{Equation}
+$\rightarrow$ \textit{Hidden-Law Variant}
+$\rightarrow$ \textit{Initial State}.
+\end{center}
+A \emph{world family} $f$ fixes the physical phenomenon and its shared constants. All our families are central-force motion, in which a light probe moves under attraction to a fixed anchor with canonical law
+\begin{equation}
+  F = G\,\Big(\frac{m_1}{m_{\rm ref}}\Big)\Big(\frac{m_2}{m_{\rm ref}}\Big)\Big(\frac{r_{\rm ref}}{r}\Big)^{2},
+  \label{eq:canonical}
+\end{equation}
+and the three families differ in $G$, $m_{\rm ref}$, $r_{\rm ref}$, and the minimum separation. An \emph{equation} $e$ specifies the form in which the world departs from Eq.~\eqref{eq:canonical}. In the \emph{structural} equation, the force law itself changes,
+\begin{equation}
+  F = q\,G\,\Big(\frac{m_1}{m_{\rm ref}}\Big)^{\alpha}\Big(\frac{m_2}{m_{\rm ref}}\Big)^{\beta}\Big(\frac{r_{\rm ref}}{r}\Big)^{p}\big[\ln(e + r/r_{\rm ref})\big]^{s},
+  \label{eq:structural}
+\end{equation}
+so that the distance exponent, the mass coupling, or a logarithmic correction differs from textbook physics. In the \emph{field} equation, the canonical force is multiplied by a hidden coefficient field $k(r,t)$ that varies with distance, with time, or with both. A \emph{hidden-law variant} $v$ fixes the concrete parameters $(q,\alpha,\beta,p,s)$ or the concrete field; it is what the agent must discover. An \emph{initial state} $s$ fixes the anchor position and the probe's initial position, velocity, and start time; masses, law, and constants stay those of the variant.
+
+The first three levels index a latent world $\mathcal{W}=(f,e,v)$. Its simulator defines a transition operator $\Phi_{\mathcal{W}}(s,a,\Delta t)$ that maps an initial state $s$, an intervention $a$, and an interval $\Delta t$ to the successor state. A renderer $R$ maps a state to an image.
+
+\subsection{The Visual Experiment}
+
+A visual experiment is a tuple $(s,a,\Delta t)$ whose outcome is the rendered frame $R(\Phi_{\mathcal{W}}(s,a,\Delta t))$. The same unit appears in both phases of an episode, with the roles of the agent and the world reversed:
+\begin{itemize}
+  \item In \emph{interaction}, the agent chooses $(a,\Delta t)$ from a fixed menu, and the world returns the rendered outcome.
+  \item In \emph{evaluation}, the world poses $(s,a,\Delta t)$ on a new scene, and the agent must understand the new scene and predict the next frame of the world.
+\end{itemize}
+To score predictions reliably, the agent states its prediction by selecting one of four rendered frames. Each candidate is the outcome of the same experiment under a different law of the same family and equation: the canonical law and three sibling variants $v_1,v_2,v_3$ of equation $e$,
+\begin{equation}
+  \mathcal{C}=\{R(\Phi_{(f)}(s,a,\Delta t))\}\cup\{R(\Phi_{(f,e,v_k)}(s,a,\Delta t))\}_{k=1}^{3}.
+  \label{eq:law-contrastive}
+\end{equation}
+The same four images form one question for each of the three sibling worlds, with a different correct candidate in each. A system that does not use evidence about the tested world can therefore answer at most one of the three questions correctly, and textbook physics always selects a wrong candidate. Candidate labels are permuted independently for every item, so chance is 25\%.
+
+\subsection{Episode}
+
+An episode on world $\mathcal{W}$ has two phases.
+
+\paragraph{Interaction.} The agent runs up to $B$ experiments of its own choice, one per turn. Before each, it states where it expects the probe to end; the statement is logged and not scored. The world returns a strobe frame of the outcome, with the probe drawn at equally spaced moments. Before the first experiment and after every $k$ experiments, the host poses a \emph{checkpoint} question in the four-candidate format on a new scene; the agent answers and then sees the true outcome. Checkpoints do not count against $B$. Let $h_B$ denote the full interaction history: the agent's experiments, predictions, outcomes, and checkpoint feedback.
+
+\paragraph{Evaluation.} After interaction, all tools and feedback are frozen. For each held-out question $q$, the agent receives the rendered context, the launch and $\Delta t$ in text, and the four candidates, and outputs
+\begin{equation}
+  \hat{y} = A(x_q, \mathcal{C}, h_B),
+  \label{eq:agent-objective}
+\end{equation}
+where $A$ is the full model--harness system. Each question is answered independently from $h_B$; context from other held-out questions is not carried forward.
+
+\paragraph{Information boundary.} The host withholds world constants, the governing equation, any hidden field, and all answers. Checkpoint and held-out questions use disjoint scenes, so feedback during interaction never reveals an evaluation answer.
+
+This split between interaction and frozen evaluation on new scenes is the central diagnostic. Using a history to describe the experiments the agent ran shows only that the history was used. Foreseeing new scenes of the same world, and failing to do so with another world's history, is behavioral evidence that the agent learned this world.

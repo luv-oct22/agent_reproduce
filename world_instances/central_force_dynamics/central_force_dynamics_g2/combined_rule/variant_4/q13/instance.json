@@ -1,0 +1,99 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_4_q13",
+    "family": "attraction",
+    "group_id": "central_force_dynamics_g2",
+    "rule": "combined_rule",
+    "variant_id": "variant_4",
+    "hidden_equation_parameters": {
+      "q": 1.1,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "p": 2.0,
+      "s": -0.6
+    },
+    "intrinsic_objects": {
+      "anchor": {
+        "mass_kg": 1.0,
+        "color": "orange",
+        "motion": "fixed"
+      },
+      "probe": {
+        "mass_kg": 0.1,
+        "color": "blue",
+        "motion": "dynamic"
+      }
+    },
+    "scene_state": {
+      "anchor_center_m": [
+        0.0,
+        0.0,
+        -0.1
+      ],
+      "probe_center_m": [
+        0.4,
+        -0.5,
+        -0.6
+      ],
+      "probe_initial_velocity_m_s": [
+        -0.0,
+        1.1,
+        0.7
+      ],
+      "start_time_s": 4.6,
+      "probe_offset_distance_m": 0.8
+    },
+    "pairing": {
+      "baseline_group": "central_force_dynamics_g2",
+      "reuse_scene_state_for_baseline": true
+    },
+    "hidden_force_function": {
+      "field_kind": "log_time",
+      "amplitude": 0.35,
+      "time_scale": 2.0,
+      "reference_time_s": 2.0
+    }
+  },
+  "baseline_world": {
+    "path": "baseline/instance.json",
+    "record_id": "sha256:e8e1f1896dd5597d2e52811ffb1ecdba5a6ffe1b903352b6616267c30ee0529a"
+  },
+  "resolved_environment": {
+    "equation": {
+      "q": 1.1,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "p": 2.0,
+      "s": -0.6
+    },
+    "force_function": {
+      "field_kind": "log_time",
+      "amplitude": 0.35,
+      "time_scale": 2.0,
+      "reference_time_s": 2.0
+    },
+    "scene_state": {
+      "anchor_center_m": [
+        0.0,
+        0.0,
+        -0.1
+      ],
+      "probe_center_m": [
+        0.4,
+        -0.5,
+        -0.6
+      ],
+      "probe_initial_velocity_m_s": [
+        -0.0,
+        1.1,
+        0.7
+      ],
+      "start_time_s": 4.6,
+      "probe_offset_distance_m": 0.8
+    }
+  }
+}

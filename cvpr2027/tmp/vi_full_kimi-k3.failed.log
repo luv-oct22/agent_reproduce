@@ -1,0 +1,231 @@
+=== episodes g1 rule_1 10:57:40
+[episode kimi-k3|frames_predict] g1/rule_1/variant_1: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_1/variant_2: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_1/variant_4: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_1/variant_5: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_1/variant_6: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=5
+=== exam g1 rule_1 10:57:51
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item002: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item006: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item008: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item010: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item012: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item016: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item018: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item020: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_2 g1_rule_1_item002: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_2 g1_rule_1_item004: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_2 g1_rule_1_item006: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_2 g1_rule_1_item010: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_2 g1_rule_1_item012: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_2 g1_rule_1_item014: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_2 g1_rule_1_item016: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_4 g1_rule_1_item014: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_4 g1_rule_1_item016: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_4 g1_rule_1_item018: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_4 g1_rule_1_item020: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_5 g1_rule_1_item002: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_5 g1_rule_1_item004: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_5 g1_rule_1_item006: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_5 g1_rule_1_item008: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_5 g1_rule_1_item010: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_5 g1_rule_1_item012: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_5 g1_rule_1_item018: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_6 g1_rule_1_item004: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_6 g1_rule_1_item008: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_6 g1_rule_1_item014: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_1/variant_6 g1_rule_1_item020: failed  (answer C)
+[exam kimi-k3|frames_predict] answered=0, correct=0, skipped_done=0, skipped_episode=90, failed=30; ledger /mnt/shared-storage-user/chenliang1/agent_reproduce/results/visual_interaction/kimi-k3/frames_predict/exam.jsonl
+=== episodes g1 rule_2 10:58:16
+[episode kimi-k3|frames_predict] g1/rule_2/variant_1: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_2/variant_2: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_2/variant_3: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_2/variant_4: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_2/variant_5: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/rule_2/variant_6: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=6
+=== exam g1 rule_2 10:58:24
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_1 g1_rule_2_item004: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_1 g1_rule_2_item006: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_1 g1_rule_2_item010: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_1 g1_rule_2_item012: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_1 g1_rule_2_item018: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_2 g1_rule_2_item002: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_2 g1_rule_2_item006: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_2 g1_rule_2_item008: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_2 g1_rule_2_item014: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_2 g1_rule_2_item016: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_3 g1_rule_2_item018: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_4 g1_rule_2_item002: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_4 g1_rule_2_item004: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_4 g1_rule_2_item008: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_4 g1_rule_2_item010: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_4 g1_rule_2_item012: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_4 g1_rule_2_item016: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_5 g1_rule_2_item002: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_5 g1_rule_2_item006: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_5 g1_rule_2_item008: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_5 g1_rule_2_item014: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_5 g1_rule_2_item016: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_6 g1_rule_2_item004: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_6 g1_rule_2_item010: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_6 g1_rule_2_item012: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_6 g1_rule_2_item014: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/rule_2/variant_6 g1_rule_2_item018: failed  (answer B)
+[exam kimi-k3|frames_predict] answered=0, correct=0, skipped_done=0, skipped_episode=81, failed=27; ledger /mnt/shared-storage-user/chenliang1/agent_reproduce/results/visual_interaction/kimi-k3/frames_predict/exam.jsonl
+=== episodes g1 combined_rule 10:58:46
+[episode kimi-k3|frames_predict] g1/combined_rule/variant_1: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/combined_rule/variant_2: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/combined_rule/variant_4: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/combined_rule/variant_5: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g1/combined_rule/variant_6: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=5
+=== exam g1 combined_rule 10:58:54
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_1 g1_combined_rule_item002: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_1 g1_combined_rule_item008: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_1 g1_combined_rule_item010: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_1 g1_combined_rule_item014: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_1 g1_combined_rule_item016: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_1 g1_combined_rule_item018: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item002: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item004: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item006: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item010: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item012: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item014: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item016: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_2 g1_combined_rule_item020: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_4 g1_combined_rule_item014: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_4 g1_combined_rule_item016: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_4 g1_combined_rule_item018: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_4 g1_combined_rule_item020: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_5 g1_combined_rule_item002: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_5 g1_combined_rule_item004: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_5 g1_combined_rule_item006: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_5 g1_combined_rule_item008: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_5 g1_combined_rule_item010: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_5 g1_combined_rule_item012: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_5 g1_combined_rule_item018: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_6 g1_combined_rule_item004: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_6 g1_combined_rule_item006: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_6 g1_combined_rule_item008: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_6 g1_combined_rule_item012: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g1/combined_rule/variant_6 g1_combined_rule_item020: failed  (answer B)
+[exam kimi-k3|frames_predict] answered=0, correct=0, skipped_done=0, skipped_episode=90, failed=30; ledger /mnt/shared-storage-user/chenliang1/agent_reproduce/results/visual_interaction/kimi-k3/frames_predict/exam.jsonl
+=== episodes g2 rule_1 10:59:24
+[episode kimi-k3|frames_predict] g2/rule_1/variant_1: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_1/variant_2: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_1/variant_4: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_1/variant_5: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_1/variant_6: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=5
+=== exam g2 rule_1 10:59:30
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_1 g2_rule_1_item004: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_1 g2_rule_1_item006: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_1 g2_rule_1_item008: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_1 g2_rule_1_item010: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_1 g2_rule_1_item014: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item002: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item004: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item006: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item010: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item012: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item014: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item016: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_2 g2_rule_1_item018: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_4 g2_rule_1_item014: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_4 g2_rule_1_item016: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_4 g2_rule_1_item018: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_5 g2_rule_1_item002: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_5 g2_rule_1_item004: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_5 g2_rule_1_item006: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_5 g2_rule_1_item008: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_5 g2_rule_1_item012: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_5 g2_rule_1_item016: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_6 g2_rule_1_item002: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_6 g2_rule_1_item008: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_6 g2_rule_1_item010: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_6 g2_rule_1_item012: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_1/variant_6 g2_rule_1_item018: failed  (answer D)
+[exam kimi-k3|frames_predict] answered=0, correct=0, skipped_done=0, skipped_episode=81, failed=27; ledger /mnt/shared-storage-user/chenliang1/agent_reproduce/results/visual_interaction/kimi-k3/frames_predict/exam.jsonl
+=== episodes g2 rule_2 10:59:59
+[episode kimi-k3|frames_predict] g2/rule_2/variant_1: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_2/variant_2: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_2/variant_3: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_2/variant_4: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_2/variant_5: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/rule_2/variant_6: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=6
+=== exam g2 rule_2 11:00:08
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_1 g2_rule_2_item002: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_1 g2_rule_2_item010: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_1 g2_rule_2_item012: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_1 g2_rule_2_item014: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_1 g2_rule_2_item016: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_1 g2_rule_2_item020: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_2 g2_rule_2_item006: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_2 g2_rule_2_item010: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_2 g2_rule_2_item012: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_2 g2_rule_2_item016: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_3 g2_rule_2_item016: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_3 g2_rule_2_item018: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_3 g2_rule_2_item020: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_3 g2_rule_2_item022: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item002: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item004: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item006: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item008: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item010: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item014: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item018: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_4 g2_rule_2_item022: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_5 g2_rule_2_item004: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_5 g2_rule_2_item008: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_5 g2_rule_2_item018: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item002: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item004: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item006: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item008: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item012: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item014: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item020: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/rule_2/variant_6 g2_rule_2_item022: failed  (answer B)
+[exam kimi-k3|frames_predict] answered=0, correct=0, skipped_done=0, skipped_episode=99, failed=33; ledger /mnt/shared-storage-user/chenliang1/agent_reproduce/results/visual_interaction/kimi-k3/frames_predict/exam.jsonl
+=== episodes g2 combined_rule 11:00:38
+[episode kimi-k3|frames_predict] g2/combined_rule/variant_1: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/combined_rule/variant_2: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/combined_rule/variant_4: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/combined_rule/variant_5: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] g2/combined_rule/variant_6: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode kimi-k3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=5
+=== exam g2 combined_rule 11:00:46
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_1 g2_combined_rule_item002: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_1 g2_combined_rule_item008: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_1 g2_combined_rule_item010: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_1 g2_combined_rule_item014: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_1 g2_combined_rule_item016: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_1 g2_combined_rule_item018: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_2 g2_combined_rule_item002: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_2 g2_combined_rule_item004: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_2 g2_combined_rule_item006: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_2 g2_combined_rule_item008: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_2 g2_combined_rule_item012: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_2 g2_combined_rule_item014: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_2 g2_combined_rule_item016: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_4 g2_combined_rule_item014: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_4 g2_combined_rule_item016: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_4 g2_combined_rule_item018: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_5 g2_combined_rule_item002: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_5 g2_combined_rule_item004: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_5 g2_combined_rule_item006: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_5 g2_combined_rule_item010: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_5 g2_combined_rule_item012: failed  (answer A)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_6 g2_combined_rule_item004: failed  (answer C)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_6 g2_combined_rule_item006: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_6 g2_combined_rule_item008: failed  (answer D)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_6 g2_combined_rule_item010: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_6 g2_combined_rule_item012: failed  (answer B)
+[exam kimi-k3|frames_predict|none] g2/combined_rule/variant_6 g2_combined_rule_item018: failed  (answer D)
+[exam kimi-k3|frames_predict] answered=0, correct=0, skipped_done=0, skipped_episode=81, failed=27; ledger /mnt/shared-storage-user/chenliang1/agent_reproduce/results/visual_interaction/kimi-k3/frames_predict/exam.jsonl
+=== episodes g3 rule_1 11:01:11

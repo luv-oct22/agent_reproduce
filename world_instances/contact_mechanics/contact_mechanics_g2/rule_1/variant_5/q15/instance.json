@@ -1,0 +1,93 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_5_q15",
+    "family": "contact_mechanics",
+    "group_id": "contact_mechanics_g2",
+    "rule": "rule_1",
+    "variant_id": "variant_5",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.5,
+          "radius_m": 0.11,
+          "position_m": [
+            -0.8,
+            -0.2,
+            0.36
+          ],
+          "velocity_m_s": [
+            0.7,
+            -0.2,
+            -0.2
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 1.0,
+          "radius_m": 0.09,
+          "position_m": [
+            -0.5,
+            0.1,
+            0.89
+          ],
+          "velocity_m_s": [
+            0.8,
+            -0.5,
+            0.7
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 0.8,
+          "radius_m": 0.13,
+          "position_m": [
+            -1.2,
+            0.2,
+            0.52
+          ],
+          "velocity_m_s": [
+            0.0,
+            0.5,
+            0.9
+          ]
+        },
+        {
+          "object_id": "object_4",
+          "color": "yellow",
+          "mass_kg": 1.0,
+          "radius_m": 0.16,
+          "position_m": [
+            0.2,
+            -0.5,
+            1.01
+          ],
+          "velocity_m_s": [
+            -0.3,
+            0.1,
+            -0.5
+          ]
+        }
+      ],
+      "plane_z_m": 0.0,
+      "start_time_s": 0.5,
+      "duration_s": 0.18,
+      "target_object_id": "object_4"
+    },
+    "target_object_id": "object_4",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "normal_friction_coupled",
+    "p": 1.4,
+    "q": 0.6
+  },
+  "force_function": null
+}

@@ -1,0 +1,16 @@
+import hashlib,json,random
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'world_instances/dissipative_dynamics/dissipative_dynamics_g1'
+RULE1={f'variant_{i}':x for i,x in enumerate(({'kind':'linear_power','p':1.2},{'kind':'quadratic_power','p':1.3},{'kind':'speed_log','scale':1.0},{'kind':'time_power','p':.8},{'kind':'coupled','p':1.4,'q':.7},{'kind':'nested','p':1.2,'q':.6}),1)}
+FIELDS={f'variant_{i}':x for i,x in enumerate(({'field_kind':'linear_position','amplitude':.2},{'field_kind':'linear_time','amplitude':.2,'reference_time_s':2.},{'field_kind':'quadratic_speed','amplitude':.3},{'field_kind':'log_time','amplitude':.25,'reference_time_s':2.},{'field_kind':'position_time','amplitude':.2,'time_amplitude':.15},{'field_kind':'nested','amplitude':.3,'reference_time_s':2.}),1)}
+def main():
+ OUT.mkdir(parents=True,exist_ok=True); base={'format':'world_family_group','schema_version':1,'visibility':'host_only','family':'dissipative_dynamics','group_id':'dissipative_dynamics_g1','constants':{'linear_drag_kg_s':.8,'quadratic_drag_kg_m':.3,'external_acceleration_m_s2':[1.0,-.4,.2],'reference_speed_m_s':1.0,'minimum_separation_m':.05},'standard_equations':{'drag':'F_drag=-c*v','quadratic_drag':'F_drag=-c2*|v|v','net_force':'F_net=F_external+F_drag','acceleration':'a=F_net/m'}}; (OUT/'baseline').mkdir(parents=True,exist_ok=True); (OUT/'baseline/instance.json').write_text(json.dumps(base,indent=2)+'\n')
+ for variant,eq in RULE1.items():
+  for i in range(1,16):
+   rng=random.Random(int.from_bytes(hashlib.sha256(f'dissipative_dynamics_g1:{variant}:{i}'.encode()).digest()[:8],'big')); objs=[]
+   for j in range(2+(i-1)%3): objs.append({'object_id':f'object_{j+1}','color':['red','blue','green','yellow'][j],'mass_kg':round(rng.uniform(.3,2),1),'drag_area_m2':round(rng.uniform(.05,.3),2),'position_m':[round(rng.uniform(-1.5,1.5),1),round(rng.uniform(-.8,.8),1),round(rng.uniform(.5,2.5),1)],'velocity_m_s':[round(rng.uniform(-1.2,1.2),1),round(rng.uniform(-1,1),1),round(rng.uniform(-1.2,1.2),1)]})
+   state={'objects':objs,'start_time_s':round(rng.uniform(0,5),1),'duration_s':round(rng.uniform(.1,.3),2),'target_object_id':objs[rng.randrange(len(objs))]['object_id']}; qid=f'{variant}_q{i:02d}'
+   for branch in ('rule_1','rule_2','combined_rule'):
+    qd=OUT/branch/variant/f'q{i:02d}'; qd.mkdir(parents=True,exist_ok=True); q={'schema_version':1,'question_id':qid,'family':'dissipative_dynamics','group_id':'dissipative_dynamics_g1','rule':branch,'variant_id':variant,'scene_state':state,'target_object_id':state['target_object_id'],'prompt':'Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D.'}; host={'format':'question_instance','schema_version':1,'visibility':'host_only','question':q,'equation_parameters':eq if branch in ('rule_1','combined_rule') else None,'force_function':FIELDS[variant] if branch in ('rule_2','combined_rule') else None}; (qd/'instance.json').write_text(json.dumps(host,indent=2)+'\n'); (qd/'question.json').write_text(json.dumps({k:q[k] for k in ('schema_version','question_id','family','group_id','rule','variant_id','target_object_id','prompt')},indent=2)+'\n')
+ print('generated 270 dissipative_dynamics question instances')
+if __name__=='__main__': main()

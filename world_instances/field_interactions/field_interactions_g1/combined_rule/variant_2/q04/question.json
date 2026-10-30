@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "question_id": "variant_2_q04",
+  "family": "field_interactions",
+  "group_id": "field_interactions_g1",
+  "rule": "combined_rule",
+  "variant_id": "variant_2",
+  "target_object_id": "object_1",
+  "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+}

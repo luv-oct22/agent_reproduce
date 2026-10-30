@@ -1,0 +1,59 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_4_q13",
+    "family": "dissipative_dynamics",
+    "group_id": "dissipative_dynamics_g1",
+    "rule": "rule_1",
+    "variant_id": "variant_4",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.2,
+          "drag_area_m2": 0.13,
+          "position_m": [
+            -0.8,
+            -0.2,
+            2.3
+          ],
+          "velocity_m_s": [
+            0.3,
+            -0.1,
+            0.2
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 1.8,
+          "drag_area_m2": 0.25,
+          "position_m": [
+            -1.0,
+            -0.5,
+            1.5
+          ],
+          "velocity_m_s": [
+            0.9,
+            -0.1,
+            -0.6
+          ]
+        }
+      ],
+      "start_time_s": 1.4,
+      "duration_s": 0.19,
+      "target_object_id": "object_2"
+    },
+    "target_object_id": "object_2",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "time_power",
+    "p": 0.8
+  },
+  "force_function": null
+}

@@ -1,0 +1,96 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_5_q09",
+    "family": "dissipative_dynamics",
+    "group_id": "dissipative_dynamics_g3",
+    "rule": "combined_rule",
+    "variant_id": "variant_5",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.1,
+          "drag_area_m2": 0.09,
+          "position_m": [
+            0.4,
+            0.1,
+            2.2
+          ],
+          "velocity_m_s": [
+            -0.2,
+            0.4,
+            1.2
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 0.5,
+          "drag_area_m2": 0.26,
+          "position_m": [
+            -1.4,
+            0.4,
+            1.5
+          ],
+          "velocity_m_s": [
+            0.3,
+            0.4,
+            -0.9
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 0.4,
+          "drag_area_m2": 0.05,
+          "position_m": [
+            1.1,
+            -0.2,
+            1.8
+          ],
+          "velocity_m_s": [
+            -0.4,
+            -0.1,
+            -1.2
+          ]
+        },
+        {
+          "object_id": "object_4",
+          "color": "yellow",
+          "mass_kg": 0.8,
+          "drag_area_m2": 0.26,
+          "position_m": [
+            0.3,
+            -0.6,
+            1.7
+          ],
+          "velocity_m_s": [
+            0.8,
+            -0.8,
+            0.7
+          ]
+        }
+      ],
+      "start_time_s": 1.9,
+      "duration_s": 0.2,
+      "target_object_id": "object_1"
+    },
+    "target_object_id": "object_1",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "coupled",
+    "p": 1.4,
+    "q": 0.7
+  },
+  "force_function": {
+    "field_kind": "position_time",
+    "amplitude": 0.2,
+    "time_amplitude": 0.15
+  }
+}

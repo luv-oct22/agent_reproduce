@@ -1,0 +1,8 @@
+\section{Limitations and Conclusion}
+\label{sec:conclusion}
+
+\paragraph{Limitations.} The benchmark is simulator-based. Its ground truth is internally consistent, but physical fidelity and visual realism are bounded by the engine and renderer. The multiple-choice format gives a clean behavioral signal, yet it does not test open-ended hypothesis writing or expose the mechanism a model used to answer. Harness choices also matter; reporting model--harness systems makes this dependence explicit but does not exhaust the harness space. Finally, the latent-law space is sampled. Seven phenomenon families cover several common modes of physical variation, not all possible physical worlds. \TODO{Add result-specific limitations after the baseline analysis.}
+
+\paragraph{Conclusion.} We introduced a benchmark for asking whether interaction gives a multimodal agent reusable physical evidence. The agent first gathers observations from support instances of one latent world; then, with feedback frozen, it predicts rendered future frames for new states governed by the same hidden dynamics. This support-to-held-out split separates local use of an interaction history from transfer of physical structure. \TODO{Insert the main empirical takeaway once results land.} Future work should broaden the phenomenon families and intervention vocabulary, and pair the behavioral test with analyses that localize failures inside the model--harness system.
+
+\paragraph{Reproducibility.} \TODO{State the release plan for the simulator, renderer, instance generators, harness configurations, and evaluation code.}

@@ -1,0 +1,39 @@
+\section{Benchmark Construction}
+\label{sec:construction}
+
+We now describe the concrete benchmark: the families and world hierarchy, the interaction tools, the simulator and renders, the shortcut controls, and the splits.
+
+\subsection{Families and World Hierarchy}
+
+The benchmark includes seven physical-phenomenon families: central-force, kinematics, fluid, contact, dissipative, field-interaction, and elastic phenomena. Each family fixes a visual setting, a canonical law, and a family-specific state representation. Each family contains three world-parameter regimes, and each regime contains three latent-law conditions: a structural change to the governing equation, a hidden coefficient or field function, or both. Each condition has six realizations, and each realization has fifteen scenes, giving $7 \times 3 \times 3 \times 6 \times 15 = 5{,}670$ scenes. Scenes in sibling realizations of the same condition share their sampled initial states, so a cross-realization comparison changes only the hidden law. \TODO{Rescope to the families validated end to end; the ground truth of the non-central families currently follows the canonical law only.}
+
+The fifteen scenes of each realization are split into four exploration, four checkpoint, and seven held-out scenes. \TODO{Confirm the split after budget calibration.}
+
+\subsection{Interaction Tools}
+\label{sec:construction:tools}
+
+The agent acts through a fixed tool interface. The main tool runs a visual experiment on an exploration scene and returns the rendered outcome frame. Interventions are drawn from a discrete grid per family, for example launch speeds, angles, and target objects, so that every outcome can be simulated and rendered in advance and the episode never waits on the renderer. Measurement tools return observable state, such as positions, velocities, forces, and times, with finite resolution. Each call has a cost, and the total cost is bounded by $B$. A subset of \emph{basic experiment tools}, those that apply forces, advance time, and read out object states, is shared by every family; the measurement probe (Section~\ref{sec:protocol:probe}) uses only this subset. No tool returns world constants, governing equations, hidden fields, or answers.
+
+\TODO{Enumerate the final tool set: name, arguments, return schema, and cost of each tool, and the intervention grid per family.}
+
+Because tool choice and memory organization affect performance, we disclose the model, prompt scaffold, memory representation, tool-use policy, and reasoning loop for every reported system.
+
+\subsection{Simulator and Renders}
+
+For each world $\mathcal{W}$, the simulator implements $\Phi_{\mathcal{W}}$ under the realized law, including any structural change and hidden field. All frames are rendered offline: the outcomes of every grid intervention on exploration scenes, and the four candidates of every checkpoint and held-out experiment. For each checkpoint and held-out experiment, the host renders the true outcome and three distractors from nearby but physically distinct successor states, one of which follows the canonical law of the family. \TODO{Describe the engine, time step, determinism and seeding, image resolution, camera, and the distractor margin.}
+
+\subsection{Shortcut Controls}
+\label{sec:construction:antishortcut}
+
+The benchmark is constructed to reduce shortcuts that do not require learning the world.
+\begin{itemize}
+  \item \emph{Candidate permutation.} Candidate order is permuted independently for every experiment, and only the host stores the answer.
+  \item \emph{Close and canonical distractors.} Distractors are close in appearance but follow different successor states. Including the canonical-law outcome means that textbook physics points to a wrong answer whenever the hidden law matters.
+  \item \emph{Identifier randomization.} Object identifiers, colors, filenames, and non-physical rendering details are randomized so that they do not reveal hidden properties or answers.
+  \item \emph{New scenes.} Held-out scenes differ from exploration and checkpoint scenes in initial state, objects, intervention, and interval, so no observed outcome can be replayed.
+\end{itemize}
+Section~\ref{sec:validation} tests whether these controls hold.
+
+\subsection{Splits}
+
+Splits are defined over realizations, so no realization appears in more than one of the development and test splits. The benchmark requires no benchmark-specific training; development realizations are reserved for harness and prompt development, and for any learning-based method. \TODO{Specify split fractions and stratification variables.}

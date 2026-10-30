@@ -1,0 +1,4259 @@
+[
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item001",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.2,
+   0.0,
+   1.1
+  ],
+  "launch": {
+   "position_m": [
+    0.8,
+    0.0,
+    2.2
+   ],
+   "velocity_m_s": [
+    -0.9,
+    0.0,
+    -0.3
+   ],
+   "start_time_s": 3.1,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q01",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q01/context.png"
+  },
+  "choices": {
+   "C": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:4f2f1b6fa41ecf8dfdea8c3b3556ec820f4a188991c022e20c2654ae55e3bcf4",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.324770662978801,
+         0.0,
+         1.809189868621761
+        ],
+        "velocity_m_s": [
+         -1.4928792586225215,
+         0.0,
+         -1.9935362957313016
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1084.7,
+     758.7
+    ]
+   },
+   "A": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:47eeb8e4bd30da5027326ad74a139c87a03d55a2f649e71d69f1c16da032c95b",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.3734401538884142,
+         0.0,
+         1.9277427560859384
+        ],
+        "velocity_m_s": [
+         -1.2206216760522492,
+         0.0,
+         -1.1552154779719368
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1103.4,
+     804.3
+    ]
+   },
+   "B": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:afd839384899ade80d51e8bb4a919d8946e4bccd1c57acce35fc29d8254da529",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.24670442148697475,
+         0.0,
+         1.5934440127286724
+        ],
+        "velocity_m_s": [
+         -2.0562600767695174,
+         0.0,
+         -4.381795491467148
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1054.7,
+     675.9
+    ]
+   },
+   "D": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:4b05a3bfafcbab822288aac94057ed1fdc7239292b2f4d6384494aefdb1ea9ce",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.3523208590253229,
+         0.0,
+         1.8734578975825598
+        ],
+        "velocity_m_s": [
+         -1.368218767535698,
+         0.0,
+         -1.6298464501825627
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1095.3,
+     783.4
+    ]
+   }
+  },
+  "answers": {
+   "variant_6": "A",
+   "variant_5": "B",
+   "variant_1": "D"
+  },
+  "canonical_label": "C",
+  "min_separation_px_1920": 22.4
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item002",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   -0.1,
+   0.0,
+   1.4
+  ],
+  "launch": {
+   "position_m": [
+    -1.1,
+    0.0,
+    2.5
+   ],
+   "velocity_m_s": [
+    1.1,
+    0.0,
+    -1.1
+   ],
+   "start_time_s": 4.1,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q02",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q02/context.png"
+  },
+  "choices": {
+   "B": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:e7b22c506d91cd31ba0d97af989da4e30c6dd99c303cee20e5bd6145bf483b09",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.4922278637952164,
+         0.0,
+         1.8709017365023555
+        ],
+        "velocity_m_s": [
+         2.260375969371869,
+         0.0,
+         -2.4333176126001437
+        ]
+       }
+      },
+      "time_s": 4.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     771.0,
+     782.4
+    ]
+   },
+   "D": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:78866af68c3d4380baf0d97f815177320f24e4f4e8840da723b96e17fb9bc638",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.4537288248842647,
+         0.0,
+         1.8278688151597857
+        ],
+        "velocity_m_s": [
+         2.384080808750724,
+         0.0,
+         -2.5728008770083624
+        ]
+       }
+      },
+      "time_s": 4.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     785.8,
+     765.9
+    ]
+   },
+   "C": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:462308f6cb7d7bedc76d7789aeb719036f97d1df0c9704416d04b01588e2ef2c",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.37597851926657955,
+         0.0,
+         1.7377235364011614
+        ],
+        "velocity_m_s": [
+         3.8404042364803703,
+         0.0,
+         -4.301040903881123
+        ]
+       }
+      },
+      "time_s": 4.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     815.6,
+     731.3
+    ]
+   },
+   "A": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ca6419ca9f01c633dd8c949d3f303188d3b39ab0dd3b97147f76e2ab741b46ee",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.5373529557416884,
+         0.0,
+         1.9216192267629133
+        ],
+        "velocity_m_s": [
+         2.0158690609473386,
+         0.0,
+         -2.1527602556840257
+        ]
+       }
+      },
+      "time_s": 4.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     753.7,
+     801.9
+    ]
+   }
+  },
+  "answers": {
+   "variant_2": "D",
+   "variant_5": "C",
+   "variant_1": "A"
+  },
+  "canonical_label": "B",
+  "min_separation_px_1920": 22.2
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item003",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.5,
+   0.0,
+   1.2
+  ],
+  "launch": {
+   "position_m": [
+    1.5,
+    0.0,
+    0.5
+   ],
+   "velocity_m_s": [
+    0.0,
+    0.0,
+    0.7
+   ],
+   "start_time_s": 0.5,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q03",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q03/context.png"
+  },
+  "choices": {
+   "C": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:f957b81b57e93842b42259afcd48c252ecd677fd04db0279c72707301d65dc49",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.2
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.251932120882386,
+         0.0,
+         0.9256296289292533
+        ],
+        "velocity_m_s": [
+         -1.4793494229685002,
+         0.0,
+         1.470730694182072
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1440.7,
+     419.4
+    ]
+   },
+   "A": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:bbf8d6547716e6a92fd2cd0e8fa874eb7157beb49537505abd9f69ec93fba561",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.2
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.3588890348010705,
+         0.0,
+         0.8641023892158268
+        ],
+        "velocity_m_s": [
+         -0.7726703310748629,
+         0.0,
+         1.1171852000114344
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1481.8,
+     395.8
+    ]
+   },
+   "D": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:fc04ad28cfd1455fb6a1cdc1e0610cbf65022a4e8fa9bc7004d69b3975d29fc7",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.2
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.3125925169695472,
+         0.0,
+         0.8900616600608598
+        ],
+        "velocity_m_s": [
+         -1.132988718346627,
+         0.0,
+         1.2935839557743734
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1464.0,
+     405.8
+    ]
+   },
+   "B": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ee44bef7437196321db156ad567aea6762d57514e9cf15755a730e22f4603359",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.2
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.068516701672655,
+         0.0,
+         1.0244600189402597
+        ],
+        "velocity_m_s": [
+         -3.2134375067134595,
+         0.0,
+         2.223482186793739
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1370.3,
+     457.4
+    ]
+   }
+  },
+  "answers": {
+   "variant_6": "A",
+   "variant_1": "D",
+   "variant_5": "B"
+  },
+  "canonical_label": "C",
+  "min_separation_px_1920": 20.4
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item004",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   -0.5,
+   0.0,
+   1.6
+  ],
+  "launch": {
+   "position_m": [
+    0.2,
+    0.0,
+    0.5
+   ],
+   "velocity_m_s": [
+    -1.0,
+    0.0,
+    -0.8
+   ],
+   "start_time_s": 0.8,
+   "duration_s": 0.6
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q05",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q05/context.png"
+  },
+  "choices": {
+   "B": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:0cf551e552148a99d0993d790ea42407dbd9d7a0060c869fe45bdcae342c646f",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.5713149561718386,
+         0.0,
+         0.4702161934293577
+        ],
+        "velocity_m_s": [
+         -1.4174076643202793,
+         0.0,
+         0.822208645834961
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     740.6,
+     244.6
+    ]
+   },
+   "C": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ef0983c0c6cf06c951b59869c930055b07f1529ef56096f54b056b7cc2810ead",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.6224875181304746,
+         0.0,
+         0.6183934105385999
+        ],
+        "velocity_m_s": [
+         -1.518320385842285,
+         0.0,
+         1.3846856147657143
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     721.0,
+     301.5
+    ]
+   },
+   "A": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:55fc58d930a73796addd5aadd16cc4d2774cdec00d63346edb6d93a2748c47d6",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.5097102814350943,
+         0.0,
+         0.29805316024705364
+        ],
+        "velocity_m_s": [
+         -1.2738682894436923,
+         0.0,
+         0.15356983288897802
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     764.3,
+     178.5
+    ]
+   },
+   "D": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:3239da794eab19d709b45e155ad48bb35cd85bf3aa5a7f4b78afb64a3627b6b1",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.6460073373427915,
+         0.0,
+         0.7248863131434438
+        ],
+        "velocity_m_s": [
+         -1.5448846245624444,
+         0.0,
+         2.1098276705631935
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     711.9,
+     342.4
+    ]
+   }
+  },
+  "answers": {
+   "variant_2": "C",
+   "variant_6": "A",
+   "variant_5": "D"
+  },
+  "canonical_label": "B",
+  "min_separation_px_1920": 41.9
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item005",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.2,
+   0.0,
+   1.7
+  ],
+  "launch": {
+   "position_m": [
+    -1.0,
+    0.0,
+    1.5
+   ],
+   "velocity_m_s": [
+    -1.2,
+    0.0,
+    0.5
+   ],
+   "start_time_s": 3.9,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q08",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q08/context.png"
+  },
+  "choices": {
+   "D": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:cdffee46c8ff41fde874f913452d7030945606aad53cf4b2a18dc819ba2ba628",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.2131667603888365,
+         0.0,
+         1.939419160713757
+        ],
+        "velocity_m_s": [
+         0.5712502978387135,
+         0.0,
+         0.4976282720805534
+        ]
+       }
+      },
+      "time_s": 4.7,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     494.1,
+     808.7
+    ]
+   },
+   "B": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:aff3e951f392652c962171048e92b3e97294f5666fc3779b3a36d6d0f7ec4bc9",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.275967996574707,
+         0.0,
+         1.937786376500974
+        ],
+        "velocity_m_s": [
+         0.3948734152758164,
+         0.0,
+         0.5055018016220469
+        ]
+       }
+      },
+      "time_s": 4.7,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     470.0,
+     808.1
+    ]
+   },
+   "C": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ca52d09381e5e36ffe08e538e8afbd77844b4f0421e937253178d1d04d9b7d2d",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.9060836873761169,
+         0.0,
+         1.9436288459436066
+        ],
+        "velocity_m_s": [
+         1.4704713048190312,
+         0.0,
+         0.43554640441047393
+        ]
+       }
+      },
+      "time_s": 4.7,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     612.1,
+     810.4
+    ]
+   },
+   "A": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ae6fd8f1e843c6dd0c6c0cc8fa7708f187d30dcfcaf98c6bb72c948336a92e59",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.48823587752927,
+         0.0,
+         1.930482996614661
+        ],
+        "velocity_m_s": [
+         -0.1740188187678977,
+         0.0,
+         0.5213183717579823
+        ]
+       }
+      },
+      "time_s": 4.7,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     388.5,
+     805.3
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "B",
+   "variant_2": "C",
+   "variant_1": "A"
+  },
+  "canonical_label": "D",
+  "min_separation_px_1920": 24.1
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item006",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.3,
+   0.0,
+   1.1
+  ],
+  "launch": {
+   "position_m": [
+    0.8,
+    0.0,
+    2.2
+   ],
+   "velocity_m_s": [
+    -1.2,
+    0.0,
+    1.0
+   ],
+   "start_time_s": 1.0,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q09",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q09/context.png"
+  },
+  "choices": {
+   "B": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:6d18bd09f276c8b8ad29914f7cce8d4fd112be399bdee8b34318999bd744ada7",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.3,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.2582054305406217,
+         0.0,
+         2.37892127230929
+        ],
+        "velocity_m_s": [
+         -1.4197666755008949,
+         0.0,
+         -0.10121403428204384
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1059.2,
+     977.5
+    ]
+   },
+   "C": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:df1a870f6212264f69fa1d164fa2921a1b3b4bea129e8521b065412981b24abd",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.3,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.2423364803319578,
+         0.0,
+         2.317806728143441
+        ],
+        "velocity_m_s": [
+         -1.4741301764833141,
+         0.0,
+         -0.4299833423638989
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1053.1,
+     954.0
+    ]
+   },
+   "D": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:16e764acdd929f9d495c1234193ee9b81606a62b10d010568eaf61e2bf5a0bd1",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.3,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.2814294741968451,
+         0.0,
+         2.4634570608812743
+        ],
+        "velocity_m_s": [
+         -1.3392882606384489,
+         0.0,
+         0.32643316549846374
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1068.1,
+     1010.0
+    ]
+   },
+   "A": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:8a2f6ca34deaed080a5dbc1fcc57f684023d4a2f30802e1cc4d45207ee515aff",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.3,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.22904002120048245,
+         0.0,
+         2.266327288233847
+        ],
+        "velocity_m_s": [
+         -1.5166504198027235,
+         0.0,
+         -0.7199724342801173
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1048.0,
+     934.3
+    ]
+   }
+  },
+  "answers": {
+   "variant_2": "C",
+   "variant_6": "D",
+   "variant_5": "A"
+  },
+  "canonical_label": "B",
+  "min_separation_px_1920": 20.3
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item007",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.5,
+   0.0,
+   1.1
+  ],
+  "launch": {
+   "position_m": [
+    -0.6,
+    0.0,
+    0.6
+   ],
+   "velocity_m_s": [
+    0.3,
+    0.0,
+    -1.1
+   ],
+   "start_time_s": 1.9,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q12",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q12/context.png"
+  },
+  "choices": {
+   "D": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:9e7f2434489448fb0c46126477e29c5c6b2aa1aec830d58e80fcbbc1d9675a0a",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.27042444674057176,
+         0.0,
+         0.28918581026411966
+        ],
+        "velocity_m_s": [
+         1.3269690550881739,
+         0.0,
+         -0.3687248788585636
+        ]
+       }
+      },
+      "time_s": 2.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     856.2,
+     175.0
+    ]
+   },
+   "C": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:e0d38b6f05b6ab64efeb6db7ecb9107ed6ff7e463189ca18264e0e25fd39b199",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.2190538876198145,
+         0.0,
+         0.3214778018653727
+        ],
+        "velocity_m_s": [
+         1.5794948026169857,
+         0.0,
+         -0.18124960669611134
+        ]
+       }
+      },
+      "time_s": 2.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     875.9,
+     187.4
+    ]
+   },
+   "B": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:1b6d7309c7ac33a95e77f6d6e0a7276f1a2f87a480d0e80190975ad37096ee5c",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.3530181847302452,
+         0.0,
+         0.23750966120885744
+        ],
+        "velocity_m_s": [
+         0.9084879146369624,
+         0.0,
+         -0.6757627926764491
+        ]
+       }
+      },
+      "time_s": 2.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     824.4,
+     155.2
+    ]
+   },
+   "A": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:e99c696ebe530fe8b875494ca8c2ee32fac9179f79d85db63ee29d4545465ad8",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.1556420438231995,
+         0.0,
+         0.36401455662776727
+        ],
+        "velocity_m_s": [
+         1.982589712650143,
+         0.0,
+         0.1512367451480879
+        ]
+       }
+      },
+      "time_s": 2.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     900.2,
+     203.8
+    ]
+   }
+  },
+  "answers": {
+   "variant_2": "C",
+   "variant_6": "B",
+   "variant_5": "A"
+  },
+  "canonical_label": "D",
+  "min_separation_px_1920": 23.3
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item008",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.2,
+   0.0,
+   1.1
+  ],
+  "launch": {
+   "position_m": [
+    -0.8,
+    0.0,
+    1.6
+   ],
+   "velocity_m_s": [
+    -0.3,
+    0.0,
+    -1.0
+   ],
+   "start_time_s": 0.7,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q13",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q13/context.png"
+  },
+  "choices": {
+   "A": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:5bfbe70038f3a8545d9c668a265a7079aab9d68c90662ae57daff285d19c39a5",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.6132204048566003,
+         0.0,
+         1.0988637064507223
+        ],
+        "velocity_m_s": [
+         1.4511671611456547,
+         0.0,
+         -1.4121030919266464
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     724.5,
+     486.0
+    ]
+   },
+   "B": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:fa4feaab26377cc0bddc0af45ff7af8a3fa7c00e78b928001395249510cbeb9b",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.6785526939550125,
+         0.0,
+         1.119962781801142
+        ],
+        "velocity_m_s": [
+         1.0818638873194866,
+         0.0,
+         -1.333553491762529
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     699.4,
+     494.1
+    ]
+   },
+   "C": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:f97081af3a80c97711eae02686fe52b5dee1dbfb9c6d2a7686bdb2cbad688ea4",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.7520941182875213,
+         0.0,
+         1.1424570633464284
+        ],
+        "velocity_m_s": [
+         0.5892765618149529,
+         0.0,
+         -1.2341415935086155
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     671.2,
+     502.7
+    ]
+   },
+   "D": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:084f76c670cad8a94b9382d507f6faec2219f89589a3ab5ea08627b4986477e8",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.1
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.35119121059684644,
+         0.0,
+         1.0330890932350223
+        ],
+        "velocity_m_s": [
+         3.8462525561005103,
+         0.0,
+         -1.6194811104729463
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     825.1,
+     460.7
+    ]
+   }
+  },
+  "answers": {
+   "variant_1": "B",
+   "variant_6": "C",
+   "variant_5": "D"
+  },
+  "canonical_label": "A",
+  "min_separation_px_1920": 26.4
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item009",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   -0.1,
+   0.0,
+   1.4
+  ],
+  "launch": {
+   "position_m": [
+    0.3,
+    0.0,
+    2.3
+   ],
+   "velocity_m_s": [
+    0.2,
+    0.0,
+    0.8
+   ],
+   "start_time_s": 2.8,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_1/q15",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_1/q15/context.png"
+  },
+  "choices": {
+   "B": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:66cf809fbd14034d665479f19993f0bafb0fa4b4d03495c44ca8959f2f645820",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.24935542381196274,
+         0.0,
+         2.311843327231659
+        ],
+        "velocity_m_s": [
+         -0.4412212051950116,
+         0.0,
+         -0.7508817493882015
+        ]
+       }
+      },
+      "time_s": 3.1999999999999997,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1055.8,
+     951.7
+    ]
+   },
+   "A": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:a8928e854bfdae6928adfabb5a7e3fb6e1a56b1464b23281e4f416c3bc5628a5",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.2752385781933655,
+         0.0,
+         2.3733509809996307
+        ],
+        "velocity_m_s": [
+         -0.30051062557524144,
+         0.0,
+         -0.40641426832687483
+        ]
+       }
+      },
+      "time_s": 3.1999999999999997,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1065.7,
+     975.4
+    ]
+   },
+   "C": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:c076cab506c72ad9c77148847a2992854c2dbe5056309df8aeb68a356c193bab",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.30866568703822894,
+         0.0,
+         2.452107140890031
+        ],
+        "velocity_m_s": [
+         -0.13937986853942602,
+         0.0,
+         -0.016254251818364387
+        ]
+       }
+      },
+      "time_s": 3.1999999999999997,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1078.5,
+     1005.6
+    ]
+   },
+   "D": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:303a97fc4b8b1978fb35525d5df765bd0b55423e2bb5f3e174a8ffd699b3c131",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.4
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.142625366748775,
+         0.0,
+         2.055779206523186
+        ],
+        "velocity_m_s": [
+         -1.149294551823002,
+         0.0,
+         -2.529345869640211
+        ]
+       }
+      },
+      "time_s": 3.1999999999999997,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1014.8,
+     853.4
+    ]
+   }
+  },
+  "answers": {
+   "variant_1": "A",
+   "variant_6": "C",
+   "variant_5": "D"
+  },
+  "canonical_label": "B",
+  "min_separation_px_1920": 25.7
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item010",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.2,
+   0.0,
+   1.5
+  ],
+  "launch": {
+   "position_m": [
+    1.3,
+    0.0,
+    0.8
+   ],
+   "velocity_m_s": [
+    -0.6,
+    0.0,
+    -0.8
+   ],
+   "start_time_s": 4.3,
+   "duration_s": 0.6
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_2/q01",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_2/q01/context.png"
+  },
+  "choices": {
+   "A": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:c467700d0d43b110aa100d1f289aa5d8eebec176f894d97948f6a0aa9196663a",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.5470323435544894,
+         0.0,
+         0.6868242642886543
+        ],
+        "velocity_m_s": [
+         -1.9221017276899597,
+         0.0,
+         0.7578731245407646
+        ]
+       }
+      },
+      "time_s": 4.8999999999999995,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1170.1,
+     327.7
+    ]
+   },
+   "D": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:53f4040ce008fe2f9ec958f5e3154702a72a652bd6c81a37de3dc74f95d6ecec",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.4390209840555019,
+         0.0,
+         0.7916978536960455
+        ],
+        "velocity_m_s": [
+         -2.237847737244616,
+         0.0,
+         1.1926666460617326
+        ]
+       }
+      },
+      "time_s": 4.8999999999999995,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1128.6,
+     368.0
+    ]
+   },
+   "C": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:dae319cdfd158c4d4c9afd56529d5a111d94e9eee7661afb70772f8a6cbddae8",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.6679878277046493,
+         0.0,
+         0.5693077871522592
+        ],
+        "velocity_m_s": [
+         -1.5057956212344172,
+         0.0,
+         0.21674123303718615
+        ]
+       }
+      },
+      "time_s": 4.8999999999999995,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1216.5,
+     282.6
+    ]
+   },
+   "B": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ece4726a3f76a03e148da1b5891b3a4e4f0e8d8f4c25ec93062b0f1bc2012e95",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.2,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.2998928171156471,
+         0.0,
+         0.9861892581208975
+        ],
+        "velocity_m_s": [
+         -3.1841616112554223,
+         0.0,
+         3.3641702121695016
+        ]
+       }
+      },
+      "time_s": 4.8999999999999995,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1075.2,
+     442.7
+    ]
+   }
+  },
+  "answers": {
+   "variant_2": "D",
+   "variant_1": "C",
+   "variant_5": "B"
+  },
+  "canonical_label": "A",
+  "min_separation_px_1920": 57.8
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item011",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   -0.4,
+   0.0,
+   1.7
+  ],
+  "launch": {
+   "position_m": [
+    -1.2,
+    0.0,
+    2.4
+   ],
+   "velocity_m_s": [
+    -0.4,
+    0.0,
+    -0.1
+   ],
+   "start_time_s": 3.5,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_2/q02",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_2/q02/context.png"
+  },
+  "choices": {
+   "D": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:50043dedba710eb086ebd3fc7761cb5d662ddfba9c89ec96c3985d53fdf3f37d",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.1004685718007738,
+         0.0,
+         2.1530600297848412
+        ],
+        "velocity_m_s": [
+         1.0391073790557255,
+         0.0,
+         -1.1860318271936958
+        ]
+       }
+      },
+      "time_s": 3.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     537.4,
+     890.8
+    ]
+   },
+   "A": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:69ac9b3fd857222588cf9e56b58d637643af977245efc62676e37c6e4d097e42",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.1541712626991654,
+         0.0,
+         2.195562919464037
+        ],
+        "velocity_m_s": [
+         0.7324620355210243,
+         0.0,
+         -0.958643030406427
+        ]
+       }
+      },
+      "time_s": 3.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     516.8,
+     907.1
+    ]
+   },
+   "C": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:a9f511e8884c553b85bf76c4574eef163d4e36c89447e6ff80703ad0c790ebbb",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.218858933372224,
+         0.0,
+         2.2466958336611853
+        ],
+        "velocity_m_s": [
+         0.33096057205044127,
+         0.0,
+         -0.6605957922672003
+        ]
+       }
+      },
+      "time_s": 3.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     492.0,
+     926.7
+    ]
+   },
+   "B": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:79ad97f1dd79e4cb08b758a3a08c72adb9522ce45d7c1da456d6f7579b343a4a",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.8733607097239156,
+         0.0,
+         1.9801097207897425
+        ],
+        "velocity_m_s": [
+         3.085945516652165,
+         0.0,
+         -2.5866180100892784
+        ]
+       }
+      },
+      "time_s": 3.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     624.6,
+     824.4
+    ]
+   }
+  },
+  "answers": {
+   "variant_1": "A",
+   "variant_6": "C",
+   "variant_5": "B"
+  },
+  "canonical_label": "D",
+  "min_separation_px_1920": 26.3
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item012",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.0,
+   0.0,
+   1.3
+  ],
+  "launch": {
+   "position_m": [
+    -1.0,
+    0.0,
+    0.5
+   ],
+   "velocity_m_s": [
+    -0.4,
+    0.0,
+    0.5
+   ],
+   "start_time_s": 3.9,
+   "duration_s": 0.4
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_2/q08",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_2/q08/context.png"
+  },
+  "choices": {
+   "C": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:59318025f2f9cbda843383d56c7f97a165c4df5769cf9c6938388baf3d0be21f",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.9696126607173736,
+         0.0,
+         0.8309891883368226
+        ],
+        "velocity_m_s": [
+         0.6360533765109235,
+         0.0,
+         1.1533635601984609
+        ]
+       }
+      },
+      "time_s": 4.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     587.7,
+     383.1
+    ]
+   },
+   "B": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:d3c3c536d3e14b946bc31cc53f215ce2176030c64d092821b535a1bc0d9e35b4",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.9168840923577077,
+         0.0,
+         0.8671212459832013
+        ],
+        "velocity_m_s": [
+         0.9134154974690575,
+         0.0,
+         1.3255744892669257
+        ]
+       }
+      },
+      "time_s": 4.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     607.9,
+     397.0
+    ]
+   },
+   "D": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:d88b83cf3ca4ed4f2ba0f963bc202b14ceef4562fd92bb2005ebc4ade6fa2a5b",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.0428463025477168,
+         0.0,
+         0.7811178516046884
+        ],
+        "velocity_m_s": [
+         0.21344993429276454,
+         0.0,
+         0.8925144177112134
+        ]
+       }
+      },
+      "time_s": 4.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     559.5,
+     363.9
+    ]
+   },
+   "A": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:8971ef5c6d98df6893afa363c2ca29a695fe7c1599a188db50d493353c98cbaf",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.869842404591168,
+         0.0,
+         0.8973190997148099
+        ],
+        "velocity_m_s": [
+         1.3086926530868392,
+         0.0,
+         1.5485397453975593
+        ]
+       }
+      },
+      "time_s": 4.3,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     626.0,
+     408.6
+    ]
+   }
+  },
+  "answers": {
+   "variant_2": "B",
+   "variant_6": "D",
+   "variant_5": "A"
+  },
+  "canonical_label": "C",
+  "min_separation_px_1920": 21.5
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item013",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   -0.0,
+   0.0,
+   1.7
+  ],
+  "launch": {
+   "position_m": [
+    1.2,
+    0.0,
+    1.7
+   ],
+   "velocity_m_s": [
+    0.7,
+    0.0,
+    -0.4
+   ],
+   "start_time_s": 0.2,
+   "duration_s": 0.6
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_2/q12",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_2/q12/context.png"
+  },
+  "choices": {
+   "C": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:30850a3e1a81764e483f040f4d9f646f3a855b2e8a9becdeb842e7790b984a43",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.1094556090808003,
+         0.0,
+         1.4909833936904398
+        ],
+        "velocity_m_s": [
+         -1.0314569968739165,
+         0.0,
+         -0.23832261227488719
+        ]
+       }
+      },
+      "time_s": 0.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1386.0,
+     636.5
+    ]
+   },
+   "B": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:dc8caac7c40a698742ff50c018638763c6112278aa19b3df7d19c25a8fb9dd8b",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.9553050051039782,
+         0.0,
+         1.5023321529086604
+        ],
+        "velocity_m_s": [
+         -1.6081092919570714,
+         0.0,
+         -0.16971385840652803
+        ]
+       }
+      },
+      "time_s": 0.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1326.8,
+     640.9
+    ]
+   },
+   "A": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:004b4e91fb8369ff0812d16938652acd6a42725cd7808251e3bf8dcf6912c874",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.2719989902661688,
+         0.0,
+         1.4797112100726137
+        ],
+        "velocity_m_s": [
+         -0.4204400077634854,
+         0.0,
+         -0.3045456658512439
+        ]
+       }
+      },
+      "time_s": 0.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1448.4,
+     632.2
+    ]
+   },
+   "D": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:18f081ed1abdfbc45a53433d824de7e415ca3ec935c7f5986d33aa65946ef859",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.8011143706004035,
+         0.0,
+         1.5172048161499292
+        ],
+        "velocity_m_s": [
+         -2.5435747156025768,
+         0.0,
+         -0.01878232718971304
+        ]
+       }
+      },
+      "time_s": 0.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1267.6,
+     646.6
+    ]
+   }
+  },
+  "answers": {
+   "variant_2": "B",
+   "variant_1": "A",
+   "variant_5": "D"
+  },
+  "canonical_label": "C",
+  "min_separation_px_1920": 59.4
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item014",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.0,
+   0.0,
+   1.7
+  ],
+  "launch": {
+   "position_m": [
+    1.0,
+    0.0,
+    1.2
+   ],
+   "velocity_m_s": [
+    1.2,
+    0.0,
+    -1.0
+   ],
+   "start_time_s": 0.1,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_4/q01",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_4/q01/context.png"
+  },
+  "choices": {
+   "C": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:1b7e6d3ce41193883c2e3cfb6b2294511b7a64904a36b74962e7cd929cc3c34b",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.2858422933987657,
+         0.0,
+         0.7838874850077525
+        ],
+        "velocity_m_s": [
+         -0.2930637339289443,
+         0.0,
+         -0.1022836519941318
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1453.8,
+     365.0
+    ]
+   },
+   "D": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:2780a590fd16607b390e688458f8540ccdf714432378bafe693d40553ce03ac3",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.3394075150876124,
+         0.0,
+         0.7523576699695397
+        ],
+        "velocity_m_s": [
+         -0.1500676568622845,
+         0.0,
+         -0.1924653498542958
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1474.3,
+     352.9
+    ]
+   },
+   "B": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:5b7f0aceff16e40abd20c36b392c65a272029325dcc58c5d73e01a7c7f65980f",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.0314077532575507,
+         0.0,
+         0.9360548502276281
+        ],
+        "velocity_m_s": [
+         -1.0177836447690847,
+         0.0,
+         0.36603455592283
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1356.1,
+     423.4
+    ]
+   },
+   "A": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:9eab9f06e374e160a79c0992fdfe1c8f9bf83b49449a66f620733db521c29547",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.7
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.5207087229109317,
+         0.0,
+         0.6465877748697773
+        ],
+        "velocity_m_s": [
+         0.3115865003469884,
+         0.0,
+         -0.4788747625890447
+        ]
+       }
+      },
+      "time_s": 0.9,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1544.0,
+     312.3
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "D",
+   "variant_2": "B",
+   "variant_1": "A"
+  },
+  "canonical_label": "C",
+  "min_separation_px_1920": 23.8
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item015",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   -0.4,
+   0.0,
+   1.3
+  ],
+  "launch": {
+   "position_m": [
+    0.8,
+    0.0,
+    0.9
+   ],
+   "velocity_m_s": [
+    1.0,
+    0.0,
+    -0.2
+   ],
+   "start_time_s": 2.7,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_5/q03",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_5/q03/context.png"
+  },
+  "choices": {
+   "B": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:6c96115efb3a452697c5dd904006af368b76c80598f50143013c1bc2dc2e5940",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.9030988690650766,
+         0.0,
+         0.956060936418514
+        ],
+        "velocity_m_s": [
+         -0.7122377080062477,
+         0.0,
+         0.3107717917287737
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1306.8,
+     431.1
+    ]
+   },
+   "D": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:db902bc4fcf71d2f285d3f93c458d0124c38c7c4de1f774781639a79e1c858cb",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.9635586256192669,
+         0.0,
+         0.9376323735188464
+        ],
+        "velocity_m_s": [
+         -0.5372389804673208,
+         0.0,
+         0.26011203885276213
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1330.0,
+     424.1
+    ]
+   },
+   "C": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:c852541d116b4ff7b911dee0050b7f4830ed4479868e3f696e7599fef8c1ee78",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.1505290489370241,
+         0.0,
+         0.8798195807848173
+        ],
+        "velocity_m_s": [
+         -0.06692777155343076,
+         0.0,
+         0.1213274522250496
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1401.8,
+     401.9
+    ]
+   },
+   "A": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:de3be8e50b492e055ed33c100a88dfaff1ccb0a3c83d530c2e272c128d9b3730",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.4,
+         0.0,
+         1.3
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.6018316881230846,
+         0.0,
+         1.0471703496773408
+        ],
+        "velocity_m_s": [
+         -1.614409706865948,
+         0.0,
+         0.5671318330216544
+        ]
+       }
+      },
+      "time_s": 3.5,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1191.1,
+     466.1
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "D",
+   "variant_6": "C",
+   "variant_2": "A"
+  },
+  "canonical_label": "B",
+  "min_separation_px_1920": 24.2
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item016",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.5,
+   0.0,
+   1.6
+  ],
+  "launch": {
+   "position_m": [
+    1.5,
+    0.0,
+    2.5
+   ],
+   "velocity_m_s": [
+    1.2,
+    0.0,
+    0.6
+   ],
+   "start_time_s": 1.0,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_6/q01",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_6/q01/context.png"
+  },
+  "choices": {
+   "A": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:94daf3ef5e31417c25d16e9f83fe3d18f7c4fa0430faa299d303547249b7a616",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         2.0082032837368438,
+         0.0,
+         2.6119148508354737
+        ],
+        "velocity_m_s": [
+         0.15433027631780014,
+         0.0,
+         -0.21471303301908318
+        ]
+       }
+      },
+      "time_s": 1.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1731.2,
+     1067.0
+    ]
+   },
+   "B": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:692dc0c64d562b08c8226e9fead02a79c96ebbcdab850f70baba6ba9d05bdab0",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         2.0518875439192468,
+         0.0,
+         2.646834182165611
+        ],
+        "velocity_m_s": [
+         0.27081965993682244,
+         0.0,
+         -0.1266178877107433
+        ]
+       }
+      },
+      "time_s": 1.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1747.9,
+     1080.4
+    ]
+   },
+   "D": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:b95dd711865540d262eeaf6ed86cafc3e1245880ab97669f7b9e66455b98c1e8",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         2.194481257133646,
+         0.0,
+         2.7615937618797664
+        ],
+        "velocity_m_s": [
+         0.6331339111959858,
+         0.0,
+         0.15075079798279997
+        ]
+       }
+      },
+      "time_s": 1.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1802.7,
+     1124.5
+    ]
+   },
+   "C": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:48be194a67a9ace58cade8c080761dd89bb138a9152379671819eba435deaeb0",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.5,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.7660912319715742,
+         0.0,
+         2.4203451288660887
+        ],
+        "velocity_m_s": [
+         -0.5282710453703019,
+         0.0,
+         -0.721405026530529
+        ]
+       }
+      },
+      "time_s": 1.8,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1638.2,
+     993.4
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "B",
+   "variant_1": "D",
+   "variant_2": "C"
+  },
+  "canonical_label": "A",
+  "min_separation_px_1920": 21.4
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item017",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   -0.1,
+   0.0,
+   1.6
+  ],
+  "launch": {
+   "position_m": [
+    0.7,
+    0.0,
+    2.5
+   ],
+   "velocity_m_s": [
+    1.1,
+    0.0,
+    0.5
+   ],
+   "start_time_s": 0.2,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "existing_render",
+   "scene": "combined_rule/variant_6/q05",
+   "context_image": "renders/central_force_dynamics/central_force_dynamics_g1/combined_rule/variant_6/q05/context.png"
+  },
+  "choices": {
+   "C": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:f474dc09fca7d620b9686fdbfa967a5e4eba25a008f468c24129e5b1d8e60fac",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.021432669160845,
+         0.0,
+         2.366622883148079
+        ],
+        "velocity_m_s": [
+         -0.2928494066477102,
+         0.0,
+         -0.7263075874737597
+        ]
+       }
+      },
+      "time_s": 1.0,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1352.2,
+     972.8
+    ]
+   },
+   "B": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:b03f6a1b69e0d82d2e2d58c73482563d2d987293a0b04d64f7e09358b564839d",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.0686611930180165,
+         0.0,
+         2.4099376590390706
+        ],
+        "velocity_m_s": [
+         -0.1508991596088004,
+         0.0,
+         -0.609431472816549
+        ]
+       }
+      },
+      "time_s": 1.0,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1370.4,
+     989.4
+    ]
+   },
+   "A": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:b74f701156e175b1c60c444ec9f3b33f11341b297d37102dbdebb0d122566047",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         1.2284074729348315,
+         0.0,
+         2.5617767521268706
+        ],
+        "velocity_m_s": [
+         0.25468463142301284,
+         0.0,
+         -0.2597472909505899
+        ]
+       }
+      },
+      "time_s": 1.0,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1431.7,
+     1047.7
+    ]
+   },
+   "D": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:62f75e3cfa013e281567bf8d74577bdf2e02007d67a70eb25dd7cdb5cebef2cf",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         -0.1,
+         0.0,
+         1.6
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         0.7926824217624875,
+         0.0,
+         2.160579070798266
+        ],
+        "velocity_m_s": [
+         -1.0126952239300773,
+         0.0,
+         -1.2968730193508669
+        ]
+       }
+      },
+      "time_s": 1.0,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     1264.4,
+     893.7
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "B",
+   "variant_6": "A",
+   "variant_2": "D"
+  },
+  "canonical_label": "C",
+  "min_separation_px_1920": 24.6
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item018",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.0,
+   0.0,
+   1.5
+  ],
+  "launch": {
+   "position_m": [
+    -0.819,
+    0.0,
+    2.831
+   ],
+   "velocity_m_s": [
+    -0.14,
+    0.0,
+    -0.062
+   ],
+   "start_time_s": 0.3,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "sampled",
+   "context_image": null
+  },
+  "choices": {
+   "C": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:a5ced67a6771f198401b3c91cc58f8d26b2d93d1f0725e4db4351863d84473bf",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.5525944272014229,
+         0.0,
+         2.209077389992726
+        ],
+        "velocity_m_s": [
+         1.0511093105793547,
+         0.0,
+         -1.7778605758261787
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     747.8,
+     912.3
+    ]
+   },
+   "D": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ac97843fa6fcb4bfbd94d9a1155a1dbed93e4c0f807321ecfa0aa6cb1f626e7e",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.5890452297187243,
+         0.0,
+         2.2634836517500276
+        ],
+        "velocity_m_s": [
+         0.918791316728216,
+         0.0,
+         -1.593426280932732
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     733.8,
+     933.2
+    ]
+   },
+   "B": {
+    "law": "variant_1",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:0efe30d9a6d8414a3b986a21018ebf23f4ae75432c77b3559ac07e74a2789acb",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.708618304056156,
+         0.0,
+         2.4431115549358946
+        ],
+        "velocity_m_s": [
+         0.5130113029448173,
+         0.0,
+         -1.017395237313604
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     687.9,
+     1002.2
+    ]
+   },
+   "A": {
+    "law": "variant_5",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:dfc9ffde341316f5a9735eaccb89a186e9d2a8c8d8ead838b72011c6995d755a",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.3498004857037253,
+         0.0,
+         1.9188501827939726
+        ],
+        "velocity_m_s": [
+         2.538444281099488,
+         0.0,
+         -3.7173929262384515
+        ]
+       }
+      },
+      "time_s": 1.1,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     825.7,
+     800.8
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "D",
+   "variant_1": "B",
+   "variant_5": "A"
+  },
+  "canonical_label": "C",
+  "min_separation_px_1920": 25.2
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item019",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.0,
+   0.0,
+   1.5
+  ],
+  "launch": {
+   "position_m": [
+    -1.287,
+    0.0,
+    0.871
+   ],
+   "velocity_m_s": [
+    -0.357,
+    0.0,
+    0.207
+   ],
+   "start_time_s": 0.6,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "sampled",
+   "context_image": null
+  },
+  "choices": {
+   "D": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:2a4b30bf7ce4ce0eaa734881d38aa7eaf9b2562f9d2e78913eaff69d9f97cfed",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.8597354258073473,
+         0.0,
+         1.321456580006921
+        ],
+        "velocity_m_s": [
+         1.798678677865442,
+         0.0,
+         0.9445978591054385
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     629.9,
+     571.4
+    ]
+   },
+   "B": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:c11e5b14308dd2fc2318124b8864222093aeefaa6448d711893bf54d33b34c4e",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.924155324794648,
+         0.0,
+         1.2969842197827475
+        ],
+        "velocity_m_s": [
+         1.5672619291602379,
+         0.0,
+         0.8755464386173963
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     605.1,
+     562.0
+    ]
+   },
+   "C": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:754d606b31cd4a3e86b756dc67448954d0af09d23dbba04844f92c60972efa51",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -1.1258941071699393,
+         0.0,
+         1.2195432615416462
+        ],
+        "velocity_m_s": [
+         0.8337276863199589,
+         0.0,
+         0.6437430865408446
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     527.7,
+     532.3
+    ]
+   },
+   "A": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:cb634b577fcc04d84ed645c2363e4afbdb234b896f73a3d1f0b5d71151dc8e5e",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.5474408901830646,
+         0.0,
+         1.4376017468003106
+        ],
+        "velocity_m_s": [
+         2.8839712997957423,
+         0.0,
+         1.2255510748582548
+        ]
+       }
+      },
+      "time_s": 1.4,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     749.8,
+     616.0
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "B",
+   "variant_6": "C",
+   "variant_2": "A"
+  },
+  "canonical_label": "D",
+  "min_separation_px_1920": 26.5
+ },
+ {
+  "format": "law_contrastive_item",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "id": "g1_combined_rule_item020",
+  "group": "central_force_dynamics_g1",
+  "rule": "combined_rule",
+  "anchor_m": [
+   0.0,
+   0.0,
+   1.5
+  ],
+  "launch": {
+   "position_m": [
+    -1.451,
+    0.0,
+    2.102
+   ],
+   "velocity_m_s": [
+    0.284,
+    0.0,
+    0.357
+   ],
+   "start_time_s": 3.4,
+   "duration_s": 0.8
+  },
+  "source": {
+   "kind": "sampled",
+   "context_image": null
+  },
+  "choices": {
+   "A": {
+    "law": "canonical",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:5515c32a104707ed83073721184feea120acff2d0e6ce6063eed71c33fcb4972",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.5912754518238813,
+         0.0,
+         2.0463146783928323
+        ],
+        "velocity_m_s": [
+         2.208804996811899,
+         0.0,
+         -0.8756115104538477
+        ]
+       }
+      },
+      "time_s": 4.2,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     733.0,
+     849.8
+    ]
+   },
+   "D": {
+    "law": "variant_4",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:6f7aff555ec1b5aae11aeb4bd7077ee8c5dcc6b9aa8cdbe107b5d7673f5ff410",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.6501156550753077,
+         0.0,
+         2.0796658737902702
+        ],
+        "velocity_m_s": [
+         2.0075614110284157,
+         0.0,
+         -0.7302390517829196
+        ]
+       }
+      },
+      "time_s": 4.2,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     710.4,
+     862.6
+    ]
+   },
+   "B": {
+    "law": "variant_6",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:7d83a236780ebaa1ed82676b564e2849d30798c41f4ba00484ac37d236fd8d5a",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.8152788762672732,
+         0.0,
+         2.174069628500135
+        ],
+        "velocity_m_s": [
+         1.373674112418589,
+         0.0,
+         -0.29066986222339575
+        ]
+       }
+      },
+      "time_s": 4.2,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     646.9,
+     898.8
+    ]
+   },
+   "C": {
+    "law": "variant_2",
+    "state": {
+     "format": "attraction_motion_state",
+     "schema_version": 1,
+     "visibility": "host_only",
+     "record_id": "sha256:ad4b5baecde8d8145afa205574d637eb705ff645d51de0d122e4ba75166832ae",
+     "payload": {
+      "objects": {
+       "anchor": {
+        "position_m": [
+         0.0,
+         0.0,
+         1.5
+        ],
+        "velocity_m_s": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "probe": {
+        "position_m": [
+         -0.298812162355606,
+         0.0,
+         1.8769003293036315
+        ],
+        "velocity_m_s": [
+         3.1075317396185,
+         0.0,
+         -1.613905980875175
+        ]
+       }
+      },
+      "time_s": 4.2,
+      "world_id": "sha256:c5aaa179eef1fd8e4a41a9a208149d81559445773c60402356786ce7d00d3ee3"
+     }
+    },
+    "pixel_1920": [
+     845.3,
+     784.7
+    ]
+   }
+  },
+  "answers": {
+   "variant_4": "D",
+   "variant_6": "B",
+   "variant_2": "C"
+  },
+  "canonical_label": "A",
+  "min_separation_px_1920": 26.0
+ }
+]

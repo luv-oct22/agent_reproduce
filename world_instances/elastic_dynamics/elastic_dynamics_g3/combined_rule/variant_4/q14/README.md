@@ -1,0 +1,3 @@
+# combined_rule/variant_4/q14
+
+Host-only elastic-dynamics scene.

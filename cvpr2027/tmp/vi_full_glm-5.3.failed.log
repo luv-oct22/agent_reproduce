@@ -1,0 +1,12 @@
+=== episodes g1 rule_1 21:03:47
+[episode bailian/glm-5.3|frames_predict] g1/rule_1/variant_1: failed NotFoundError: Error code: 404 - {'error': {'code': 'model_not_found', 'message': 'The requested model is not available', 'type': 'invalid_request_error'}}
+[episode bailian/glm-5.3|frames_predict] g1/rule_1/variant_2: failed NotFoundError: Error code: 404 - {'error': {'code': 'model_not_found', 'message': 'The requested model is not available', 'type': 'invalid_request_error'}}
+[episode bailian/glm-5.3|frames_predict] g1/rule_1/variant_4: failed NotFoundError: Error code: 404 - {'error': {'code': 'model_not_found', 'message': 'The requested model is not available', 'type': 'invalid_request_error'}}
+[episode bailian/glm-5.3|frames_predict] g1/rule_1/variant_5: failed NotFoundError: Error code: 404 - {'error': {'code': 'model_not_found', 'message': 'The requested model is not available', 'type': 'invalid_request_error'}}
+[episode bailian/glm-5.3|frames_predict] g1/rule_1/variant_6: failed NotFoundError: Error code: 404 - {'error': {'code': 'model_not_found', 'message': 'The requested model is not available', 'type': 'invalid_request_error'}}
+[episode bailian/glm-5.3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=5
+=== exam g1 rule_1 21:04:28
+[exam bailian/glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item002: failed  (answer B)
+[exam bailian/glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item006: failed  (answer C)
+[exam bailian/glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item008: failed  (answer D)
+[exam bailian/glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item010: failed  (answer D)

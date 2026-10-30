@@ -1,0 +1,80 @@
+# kinematics_dynamics_g1/combined_rule/variant_3/q11
+
+Host-only resolved question record:
+
+```json
+{
+  "question_id": "variant_3_q11",
+  "group_id": "kinematics_dynamics_g1",
+  "rule": "combined_rule",
+  "variant_id": "variant_3",
+  "target_object_id": "object_2",
+  "scene_state": {
+    "objects": [
+      {
+        "object_id": "object_1",
+        "color": "red",
+        "mass_kg": 0.8,
+        "radius_m": 0.09,
+        "initial_position_m": [
+          -0.6,
+          -0.5,
+          1.4
+        ],
+        "initial_velocity_m_s": [
+          0.9,
+          0.1,
+          0.2
+        ]
+      },
+      {
+        "object_id": "object_2",
+        "color": "blue",
+        "mass_kg": 1.2,
+        "radius_m": 0.1,
+        "initial_position_m": [
+          -0.1,
+          -0.3,
+          1.3
+        ],
+        "initial_velocity_m_s": [
+          -0.3,
+          0.1,
+          1.2
+        ]
+      },
+      {
+        "object_id": "object_3",
+        "color": "green",
+        "mass_kg": 0.8,
+        "radius_m": 0.16,
+        "initial_position_m": [
+          0.0,
+          0.2,
+          0.8
+        ],
+        "initial_velocity_m_s": [
+          0.3,
+          -0.4,
+          0.6
+        ]
+      }
+    ],
+    "start_time_s": 1.6,
+    "duration_s": 0.19,
+    "target_object_id": "object_2"
+  },
+  "hidden_parameters": {
+    "equation_parameters": {
+      "kind": "log_velocity",
+      "scale": 1.0
+    },
+    "force_function": {
+      "field_kind": "quadratic_space",
+      "amplitude": 0.4,
+      "time_scale": 4.0,
+      "reference_time_s": 2.0
+    }
+  }
+}
+```

@@ -1,0 +1,430 @@
+# Drag scene parameters (host-only)
+
+Exact recorded objects, gravity and contact rules; do not include this file in model context. Heights in the public instructions are sphere-bottom clearances. All options depict the same elapsed time.
+
+```json
+{
+  "scene": {
+    "format": "drag_prediction_scene",
+    "schema_version": 2,
+    "visual_version": 2,
+    "id": "drag_005",
+    "world_id": "sha256:747b65729571eb4a53722f9ec6288d602b4fc7d1da995cf03b679cc87387129f",
+    "object_registry_id": "sha256:0d2a3200e6b9a059b1c01066f3187b82b68f9086f327d9dcc79cdf421ce5874b",
+    "contact_registry_id": "sha256:377e7f188dbcbf36129058cfd3c7851ecf0c26b272fb98fdaf2dff6a22a284da",
+    "surface_id": "surface_1",
+    "surface_z_m": 0.86,
+    "objects": [
+      {
+        "station": "1",
+        "source_specimen_id": "sample_A",
+        "color": "blue",
+        "color_rgba": [
+          0.08,
+          0.35,
+          0.8,
+          1
+        ],
+        "radius_m": 0.030000000000000006,
+        "mass_kg": 0.1,
+        "release_height_m": 1.975,
+        "position_m": [
+          -1.5,
+          0,
+          2.865
+        ],
+        "velocity_m_s": [
+          0.9,
+          0,
+          0
+        ]
+      }
+    ],
+    "elapsed_s": 1.82,
+    "choices": {
+      "A": {
+        "hypothesis": "local_profile_3",
+        "world": {
+          "format": "height_drag_world",
+          "schema_version": 1,
+          "visibility": "host_only",
+          "world_id": "sha256:476306d7d722ffaf3dac6c42a952a1d2bd90c8bd4b00620a742eeb9c23d3c2e8",
+          "gravity_m_s2": 3.0,
+          "heights_m": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25,
+            2.5,
+            2.75,
+            3.0
+          ],
+          "coefficients_kg_s": [
+            0.20814200600001775,
+            0.018673242919871852,
+            0.09755013710728216,
+            0.08236758609714691,
+            0.2493929835701733,
+            0.22478313033987649,
+            0.2854101671524278,
+            0.03807402900104409,
+            0.14238554323395286,
+            0.01956661169685563,
+            0.08051129345175857,
+            0.167724503677431,
+            0.019042122195323873
+          ],
+          "generation_seed": null,
+          "law": "F_drag = -b(z) * velocity",
+          "interpolation": "smoothstep: w(u)=3*u^2-2*u^3",
+          "extrapolation": "constant endpoint values",
+          "coordinate": "sphere centre z above impact surface at z=0",
+          "drag_units": "kg/s",
+          "gravity_units": "m/s^2",
+          "length_units": "m",
+          "medium_stationary": true,
+          "buoyancy": false,
+          "spin_coupling": false,
+          "object_object_collisions": false,
+          "rest_normal_speed_threshold_m_s": 1e-07,
+          "solver": "rk4_with_bisected_impact_and_apex_events_v1",
+          "max_step_s": 0.002
+        },
+        "restitution": 0.8,
+        "objects": [
+          {
+            "source_specimen_id": "sample_A",
+            "position_m": [
+              -0.9207292153353185,
+              0.0,
+              1.106605941490114
+            ],
+            "velocity_m_s": [
+              0.06691146981352558,
+              0.0,
+              0.8844229006538763
+            ],
+            "impacts": 1
+          }
+        ]
+      },
+      "B": {
+        "hypothesis": "local_profile_1",
+        "world": {
+          "format": "height_drag_world",
+          "schema_version": 1,
+          "visibility": "host_only",
+          "world_id": "sha256:5938fa5d9995000e2891df71ee018ceaad0554528b4441ac9b2a300b9879501b",
+          "gravity_m_s2": 3.0,
+          "heights_m": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25,
+            2.5,
+            2.75,
+            3.0
+          ],
+          "coefficients_kg_s": [
+            0.19966984970186347,
+            0.01772649364967289,
+            0.0923557139204571,
+            0.07727660474115469,
+            0.23218209592843347,
+            0.21242294434838835,
+            0.27429143880707935,
+            0.036166183975368485,
+            0.13570006621713654,
+            0.01894966632364548,
+            0.0757737729459495,
+            0.16027685692579371,
+            0.018144328203988258
+          ],
+          "generation_seed": null,
+          "law": "F_drag = -b(z) * velocity",
+          "interpolation": "smoothstep: w(u)=3*u^2-2*u^3",
+          "extrapolation": "constant endpoint values",
+          "coordinate": "sphere centre z above impact surface at z=0",
+          "drag_units": "kg/s",
+          "gravity_units": "m/s^2",
+          "length_units": "m",
+          "medium_stationary": true,
+          "buoyancy": false,
+          "spin_coupling": false,
+          "object_object_collisions": false,
+          "rest_normal_speed_threshold_m_s": 1e-07,
+          "solver": "rk4_with_bisected_impact_and_apex_events_v1",
+          "max_step_s": 0.002
+        },
+        "restitution": 0.8,
+        "objects": [
+          {
+            "source_specimen_id": "sample_A",
+            "position_m": [
+              -0.8978894961385554,
+              0.0,
+              1.1441794157337821
+            ],
+            "velocity_m_s": [
+              0.08030828326316494,
+              0.0,
+              0.82594522726726
+            ],
+            "impacts": 1
+          }
+        ]
+      },
+      "C": {
+        "hypothesis": "recorded_physics",
+        "world": {
+          "format": "height_drag_world",
+          "schema_version": 1,
+          "visibility": "host_only",
+          "world_id": "sha256:747b65729571eb4a53722f9ec6288d602b4fc7d1da995cf03b679cc87387129f",
+          "gravity_m_s2": 3.0,
+          "heights_m": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25,
+            2.5,
+            2.75,
+            3.0
+          ],
+          "coefficients_kg_s": [
+            0.1954337715527863,
+            0.01725311901457341,
+            0.08975850232704458,
+            0.07473111406315859,
+            0.22357665210756358,
+            0.20624285135264428,
+            0.2687320746344052,
+            0.03521226146253068,
+            0.1323573277087284,
+            0.0186411936370404,
+            0.07340501269304496,
+            0.1565530335499751,
+            0.017695431208320452
+          ],
+          "generation_seed": 42,
+          "law": "F_drag = -b(z) * velocity",
+          "interpolation": "smoothstep: w(u)=3*u^2-2*u^3",
+          "extrapolation": "constant endpoint values",
+          "coordinate": "sphere centre z above impact surface at z=0",
+          "drag_units": "kg/s",
+          "gravity_units": "m/s^2",
+          "length_units": "m",
+          "medium_stationary": true,
+          "buoyancy": false,
+          "spin_coupling": false,
+          "object_object_collisions": false,
+          "rest_normal_speed_threshold_m_s": 1e-07,
+          "solver": "rk4_with_bisected_impact_and_apex_events_v1",
+          "max_step_s": 0.002
+        },
+        "restitution": 0.8,
+        "objects": [
+          {
+            "source_specimen_id": "sample_A",
+            "position_m": [
+              -0.8857487250177704,
+              0.0,
+              1.1627519572080611
+            ],
+            "velocity_m_s": [
+              0.08764268883522282,
+              0.0,
+              0.7980510125226723
+            ],
+            "impacts": 1
+          }
+        ]
+      },
+      "D": {
+        "hypothesis": "local_profile_2",
+        "world": {
+          "format": "height_drag_world",
+          "schema_version": 1,
+          "visibility": "host_only",
+          "world_id": "sha256:3d7b9d9d6c444e39f3396b34df4eeedde13695c227f6e808cc7735d7fcd24da3",
+          "gravity_m_s2": 3.0,
+          "heights_m": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0,
+            2.25,
+            2.5,
+            2.75,
+            3.0
+          ],
+          "coefficients_kg_s": [
+            0.20390592785094058,
+            0.01819986828477237,
+            0.09495292551386963,
+            0.0798220954191508,
+            0.24078753974930342,
+            0.21860303734413242,
+            0.2798508029797536,
+            0.03712010648820629,
+            0.1390428047255447,
+            0.01925813901025055,
+            0.07814253319885403,
+            0.16400068030161238,
+            0.018593225199656067
+          ],
+          "generation_seed": null,
+          "law": "F_drag = -b(z) * velocity",
+          "interpolation": "smoothstep: w(u)=3*u^2-2*u^3",
+          "extrapolation": "constant endpoint values",
+          "coordinate": "sphere centre z above impact surface at z=0",
+          "drag_units": "kg/s",
+          "gravity_units": "m/s^2",
+          "length_units": "m",
+          "medium_stationary": true,
+          "buoyancy": false,
+          "spin_coupling": false,
+          "object_object_collisions": false,
+          "rest_normal_speed_threshold_m_s": 1e-07,
+          "solver": "rk4_with_bisected_impact_and_apex_events_v1",
+          "max_step_s": 0.002
+        },
+        "restitution": 0.8,
+        "objects": [
+          {
+            "source_specimen_id": "sample_A",
+            "position_m": [
+              -0.9095432163445769,
+              0.0,
+              1.1254770127780163
+            ],
+            "velocity_m_s": [
+              0.07339017576622525,
+              0.0,
+              0.8546301868623172
+            ],
+            "impacts": 1
+          }
+        ]
+      }
+    },
+    "answer": "C",
+    "images": {
+      "context": "context.png",
+      "A": "choice_A.png",
+      "B": "choice_B.png",
+      "C": "choice_C.png",
+      "D": "choice_D.png"
+    },
+    "minimum_candidate_separation_m": 0.021937272049504315,
+    "truth_impacts": 1,
+    "scene": {
+      "camera_position_m": [
+        0,
+        -7,
+        2.16
+      ],
+      "camera_target_m": [
+        0,
+        0,
+        2.16
+      ],
+      "ortho_scale_m": 4.6,
+      "grid_spacing_m": 0.1,
+      "minor_grid_spacing_m": 0.025,
+      "grid_height_m": 2.6,
+      "grid_half_width_m": 2.1,
+      "show_launch_height": true,
+      "table_bounds_m": [
+        -2.2,
+        2.2,
+        -0.6,
+        0.6
+      ],
+      "grid_back_y_m": 0.22
+    },
+    "profile_type": "smooth_random",
+    "candidate_policy": {
+      "name": "close_physics_v1",
+      "minimum_separation_m": 0.02,
+      "maximum_separation_m": 0.08,
+      "minimum_separation_pixels": 6.0,
+      "same_motion_phase": true
+    },
+    "truth_profile_rank": 0,
+    "maximum_candidate_separation_m": 0.0661514155846725
+  },
+  "actual": {
+    "Engine": "CYCLES",
+    "Render device": "CPU",
+    "Samples": 96,
+    "Denoising": true,
+    "Resolution": [
+      1920,
+      1280
+    ],
+    "Scene FPS": 24.0,
+    "Colour transform": "Standard",
+    "Exposure": -0.4000000059604645,
+    "Render seed": 7,
+    "Actual camera": {
+      "position_m": [
+        0.0,
+        -7.0,
+        2.1600000858306885
+      ],
+      "rotation_euler_rad": [
+        1.5707963705062866,
+        -0.0,
+        0.0
+      ],
+      "lens_mm": 50.0,
+      "depth_of_field": false,
+      "fstop": 2.799999952316284,
+      "focus_distance_m": 10.0
+    },
+    "frame": "B",
+    "geometry": {
+      "objects": [
+        {
+          "specimen_id": "sample_A",
+          "center_m": [
+            -0.8978894961385554,
+            0.0,
+            1.1441794157337821
+          ],
+          "center_pixels": [
+            585.2287101745605,
+            216.00519180297852
+          ],
+          "diameter_pixels": 25.04344940185547
+        }
+      ],
+      "elapsed_s": 1.82
+    }
+  }
+}
+```

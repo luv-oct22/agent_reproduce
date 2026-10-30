@@ -1,0 +1,26 @@
+\section{Evaluation Protocol}
+\label{sec:protocol}
+
+Learning is measured as what interaction changes. All exam arms answer the same 171 questions and differ only in the evidence the system receives; every comparison is paired on identical questions.
+
+\subsection{Evidence Arms}
+\label{sec:protocol:ablations}
+
+\begin{itemize}
+  \item \emph{No interaction} ($B=0$). The rendered context, the question text, and the candidates only. This is the prior-only floor.
+  \item \emph{Own world.} The agent's complete episode in the tested world, continued as its own conversation with tools disabled.
+  \item \emph{Sibling world.} The same agent's episode from another variant of the same equation, which is equally informative about the family and the equation but describes a different law.
+  \item \emph{Yoked observer.} A fresh instance of the same model receives the own-world episode as a single record of another agent's experiments, with every image it saw, and cannot act.
+  \item \emph{Own record.} The own-world episode in exactly the observer's format, introduced instead as the agent's own earlier experiments.
+  \item \emph{Law in text.} The hidden law and family constants in text, with no history.
+\end{itemize}
+
+These arms answer three questions. \emph{Own minus no interaction} measures what interaction adds (RQ1). \emph{Own minus sibling} measures whether the gain is specific to this world's law rather than to familiarity with the setting (RQ2). The sibling arm also records how often the system picks the sibling world's answer, which is the direct signature of having learned a law, but the wrong one. Comparing \emph{own record} with the \emph{yoked observer} isolates authorship: the two see the same record in the same format and differ only in whether the experiments are framed as the agent's own. Comparing \emph{own record} with \emph{own world} measures the effect of how the history is presented, a live multi-turn conversation versus a single record. \emph{Law in text minus own} measures what is lost in forming the law from evidence, and the gap between law in text and the oracle measures what is lost in applying a known law to images (RQ3).
+
+\subsection{Metrics}
+
+\paragraph{Exam accuracy.} The main metric is the fraction of correct answers. Questions of one world share one history, so they are not independent; we report 95\% confidence intervals from a bootstrap that resamples worlds, and paired differences with the same resampling. Every answer is also coded as \emph{correct}, \emph{canonical}, or, in the sibling arm, \emph{sibling}. The canonical-pick rate measures reliance on textbook physics directly.
+
+\paragraph{Online learning curve.} Checkpoint accuracy after 0, 4, 8, and 12 experiments traces learning within an episode. Checkpoint scenes are disjoint from exam scenes and are the same for every system.
+
+\paragraph{Exploration.} From the logged actions, we record which start times, distances, and launch velocities each episode covers, which tests whether the agent ran the experiments that could reveal a time- or distance-dependent field.

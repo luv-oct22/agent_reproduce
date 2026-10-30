@@ -1,0 +1,7 @@
+harness_id: openai_chat_default
+provider: openai
+model: gpt-5.6
+timeout_seconds: 600
+connect_timeout_seconds: 60
+max_retries: 5
+multimodal: true

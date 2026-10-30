@@ -1,0 +1,1 @@
+{"group": "g1", "rule": "rule_1", "variant": "variant_1", "model": "claude-sonnet-5", "mode": "frames_predict", "status": "complete", "experiments": 12, "turns": 8, "model_calls": 12, "checkpoint_correct": [false, false, false, false], "seconds": 471.8, "time_utc": "2026-10-28T03:05:33Z"}

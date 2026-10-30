@@ -1,0 +1,302 @@
+[
+ {
+  "id": "discoverphysics",
+  "arxiv_id": "2605.26087",
+  "doi": null,
+  "title": "DiscoverPhysics: Benchmarking LLMs for Out-of-the-Box Scientific Thinking"
+ },
+ {
+  "id": "newtonbench",
+  "arxiv_id": "2510.07172",
+  "doi": null,
+  "title": "NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents"
+ },
+ {
+  "id": "physgym",
+  "arxiv_id": "2507.15550",
+  "doi": null,
+  "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors"
+ },
+ {
+  "id": "worldtest",
+  "arxiv_id": "2510.19788",
+  "doi": null,
+  "title": "Benchmarking World-Model Learning"
+ },
+ {
+  "id": "inphyre",
+  "arxiv_id": "2509.12263",
+  "doi": null,
+  "title": "InPhyRe Discovers: Large Multimodal Models Struggle in Inductive Physical Reasoning"
+ },
+ {
+  "id": "iprone",
+  "arxiv_id": "2511.15407",
+  "doi": null,
+  "title": "IPR-1: Interactive Physical Reasoner"
+ },
+ {
+  "id": "physmem",
+  "arxiv_id": "2602.20323",
+  "doi": null,
+  "title": "PhysMem: Scaling Test-Time Memory for Embodied Physical Reasoning"
+ },
+ {
+  "id": "physment",
+  "arxiv_id": "2609.13152",
+  "doi": null,
+  "title": "PhysMent: An Interactive Approach For LLM Reasoning In Physics Problems"
+ },
+ {
+  "id": "deepphy",
+  "arxiv_id": "2508.05405",
+  "doi": null,
+  "title": "DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning"
+ },
+ {
+  "id": "icprl",
+  "arxiv_id": "2603.13295",
+  "doi": null,
+  "title": "ICPRL: Acquiring Physical Intuition from Interactive Control"
+ },
+ {
+  "id": "vlmlearnphys",
+  "arxiv_id": "2602.06033",
+  "doi": null,
+  "title": "Can Vision Language Models Learn Intuitive Physics from Interaction?"
+ },
+ {
+  "id": "newevidence",
+  "arxiv_id": "2609.11022",
+  "doi": null,
+  "title": "New Evidence, Same Choice: Testing Physical Experiment Selection in Vision Language Models"
+ },
+ {
+  "id": "hexa",
+  "arxiv_id": "2606.29315",
+  "doi": null,
+  "title": "Hierarchical Experimentalist Agents"
+ },
+ {
+  "id": "chain",
+  "arxiv_id": "2602.21015",
+  "doi": null,
+  "title": "From Perception to Action: An Interactive Benchmark for Vision Reasoning"
+ },
+ {
+  "id": "viableWM",
+  "arxiv_id": "2605.30542",
+  "doi": null,
+  "title": "Physically Viable World Models: A Case for Query-Conditioned Embodied AI"
+ },
+ {
+  "id": "dynapix",
+  "arxiv_id": "2608.05505",
+  "doi": null,
+  "title": "DynaPix: Can Vision-Language Models Identify the Exact Future?"
+ },
+ {
+  "id": "gravitybench",
+  "arxiv_id": "2501.18411",
+  "doi": null,
+  "title": "Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents"
+ },
+ {
+  "id": "explorationbench",
+  "arxiv_id": "2609.30199",
+  "doi": null,
+  "title": "ExplorationBench: Measuring AI Systems' Exploration in Verifiable Alien Worlds"
+ },
+ {
+  "id": "llmphy",
+  "arxiv_id": "2411.08027",
+  "doi": null,
+  "title": "LLMPhy: Complex Physical Reasoning Using Large Language Models and World Models"
+ },
+ {
+  "id": "simpact",
+  "arxiv_id": "2512.05955",
+  "doi": null,
+  "title": "SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models"
+ },
+ {
+  "id": "vdaworld",
+  "arxiv_id": "2512.11061",
+  "doi": null,
+  "title": "VDAWorld: World Modelling via VLM-Directed Abstraction and Simulation"
+ },
+ {
+  "id": "physcap",
+  "arxiv_id": "2608.21031",
+  "doi": null,
+  "title": "PhysCaP: Grounding Code-as-Policy Agent with Physics-Informed Exploration"
+ },
+ {
+  "id": "worldinworld",
+  "arxiv_id": "2510.18135",
+  "doi": null,
+  "title": "World-in-World: World Models in a Closed-Loop World"
+ },
+ {
+  "id": "acwmphys",
+  "arxiv_id": "2605.08567",
+  "doi": null,
+  "title": "ACWM-Phys: Investigating Generalized Physical Interaction in Action-Conditioned Video World Models"
+ },
+ {
+  "id": "mpmworlds",
+  "arxiv_id": "2606.01538",
+  "doi": null,
+  "title": "MPMWorlds: MPM Simulations for Inferring and Extrapolating Physical Dynamics"
+ },
+ {
+  "id": "visgym",
+  "arxiv_id": "2601.16973",
+  "doi": null,
+  "title": "VisGym: Diverse, Customizable, Scalable Environments for Multimodal Agents"
+ },
+ {
+  "id": "phyre",
+  "arxiv_id": "1908.05656",
+  "doi": null,
+  "title": "PHYRE: A New Benchmark for Physical Reasoning"
+ },
+ {
+  "id": "iphyre",
+  "arxiv_id": "2312.03009",
+  "doi": null,
+  "title": "I-PHYRE: Interactive Physical Reasoning"
+ },
+ {
+  "id": "phyq",
+  "arxiv_id": "2108.13696",
+  "doi": null,
+  "title": "Phy-Q as a measure for physical reasoning intelligence"
+ },
+ {
+  "id": "virtualtools",
+  "arxiv_id": "1907.09620",
+  "doi": null,
+  "title": "Rapid trial-and-error learning with simulation supports flexible tool use and physical reasoning"
+ },
+ {
+  "id": "open",
+  "arxiv_id": "2110.06912",
+  "doi": null,
+  "title": "OPEn: An Open-ended Physics Environment for Learning Without a Task"
+ },
+ {
+  "id": "denil",
+  "arxiv_id": "1611.01843",
+  "doi": null,
+  "title": "Learning to Perform Physics Experiments via Deep Reinforcement Learning"
+ },
+ {
+  "id": "comphy",
+  "arxiv_id": "2205.01089",
+  "doi": null,
+  "title": "ComPhy: Compositional Physical Reasoning of Objects and Events from Videos"
+ },
+ {
+  "id": "physionpp",
+  "arxiv_id": "2306.15668",
+  "doi": null,
+  "title": "Physion++: Evaluating Physical Scene Understanding that Requires Online Inference of Different Physical Properties"
+ },
+ {
+  "id": "physion",
+  "arxiv_id": "2106.08261",
+  "doi": null,
+  "title": "Physion: Evaluating Physical Prediction from Vision in Humans and Machines"
+ },
+ {
+  "id": "cophy",
+  "arxiv_id": "1909.12000",
+  "doi": null,
+  "title": "CoPhy: Counterfactual Learning of Physical Dynamics"
+ },
+ {
+  "id": "filteredcophy",
+  "arxiv_id": "2202.00368",
+  "doi": null,
+  "title": "Filtered-CoPhy: Unsupervised Learning of Counterfactual Physics in Pixel Space"
+ },
+ {
+  "id": "physbench",
+  "arxiv_id": "2501.16411",
+  "doi": null,
+  "title": "PhysBench: Benchmarking and Enhancing Vision-Language Models for Physical World Understanding"
+ },
+ {
+  "id": "physicsiq",
+  "arxiv_id": "2501.09038",
+  "doi": null,
+  "title": "Do generative video models understand physical principles?"
+ },
+ {
+  "id": "kang",
+  "arxiv_id": "2411.02385",
+  "doi": null,
+  "title": "How Far is Video Generation from World Model: A Physical Law Perspective"
+ },
+ {
+  "id": "mars",
+  "arxiv_id": "2410.08126",
+  "doi": null,
+  "title": "Mars: Situated Inductive Reasoning in an Open-World Environment"
+ },
+ {
+  "id": "worldcoder",
+  "arxiv_id": "2402.12275",
+  "doi": null,
+  "title": "WorldCoder, a Model-Based LLM Agent: Building World Models by Writing Code and Interacting with the Environment"
+ },
+ {
+  "id": "boxinggym",
+  "arxiv_id": "2501.01540",
+  "doi": null,
+  "title": "BoxingGym: Benchmarking Progress in Automated Experimental Design and Model Discovery"
+ },
+ {
+  "id": "doingexp",
+  "arxiv_id": "2402.06025",
+  "doi": null,
+  "title": "Doing Experiments and Revising Rules with Natural Language and Probabilistic Reasoning"
+ },
+ {
+  "id": "finn",
+  "arxiv_id": "1605.07157",
+  "doi": null,
+  "title": "Unsupervised Learning for Physical Interaction through Video Prediction"
+ },
+ {
+  "id": "mindseye",
+  "arxiv_id": "2210.05359",
+  "doi": null,
+  "title": "Mind's Eye: Grounded Language Model Reasoning through Simulation"
+ },
+ {
+  "id": "llfbench",
+  "arxiv_id": "2312.06853",
+  "doi": null,
+  "title": "LLF-Bench: Benchmark for Interactive Learning from Language Feedback"
+ },
+ {
+  "id": "harnessbench",
+  "arxiv_id": "2605.27922",
+  "doi": null,
+  "title": "Harness-Bench"
+ },
+ {
+  "id": "phyblock",
+  "arxiv_id": "2506.08708",
+  "doi": null,
+  "title": "PhyBlock: A Progressive Benchmark for Physical Understanding and Planning via 3D Block Assembly"
+ },
+ {
+  "id": "physimcode",
+  "arxiv_id": "2610.15722",
+  "doi": null,
+  "title": "PhySimCode: A Benchmark and Evaluation Method for Physics Video to Code Generation"
+ }
+]

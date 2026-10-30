@@ -1,0 +1,14 @@
+# Host-only episode parameters. Never include this YAML in a model prompt.
+env:
+  type: drag_lab
+  params:
+    gravity_m_s2: 3.0
+    restitution: 0.8
+    boundary_height_m: 0.85
+    lower_drag_kg_s: 0.03
+    upper_drag_kg_s: 0.18
+    max_experiments: 12
+    clock_resolution_s: 0.001
+    height_resolution_m: 0.001
+task:
+  type: identify_drag

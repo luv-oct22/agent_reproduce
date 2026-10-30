@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "scene_id": "horizontal_projection_001",
+  "family": "attraction",
+  "group_id": "central_force_dynamics_g1",
+  "world_id": "sha256:17919e0b176fc8ff13e7cc004ce4bc74bec03c7fa6b57e503953de94f7f70fa3",
+  "world_role": "baseline",
+  "equation_slots": [
+    "pair_force",
+    "acceleration"
+  ],
+  "optional_equation_slots": [
+    "radial_motion"
+  ],
+  "initial_state": {
+    "anchor": {
+      "position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity_m_s": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "probe": {
+      "position_m": [
+        1.5,
+        0.0,
+        1.0
+      ],
+      "velocity_m_s": [
+        0.0,
+        0.8,
+        0.0
+      ]
+    },
+    "time_s": 0.0
+  },
+  "surface_friction": null,
+  "baseline_binding": {
+    "required": true,
+    "reason": "Horizontal projection has no rough-surface friction constant."
+  }
+}

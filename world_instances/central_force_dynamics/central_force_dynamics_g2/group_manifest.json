@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "family": "attraction",
+  "group_id": "central_force_dynamics_g2",
+  "scene_type": "horizontal_projection",
+  "equation_slots": [
+    "pair_force",
+    "acceleration",
+    "radial_motion_optional"
+  ],
+  "fixed_constants": {
+    "strength_G": 1.1,
+    "reference_distance_m": 1.1,
+    "reference_mass_kg": 0.6,
+    "minimum_distance_m": 0.3
+  },
+  "allowed_sibling_changes": [
+    "distance_exponent_equation",
+    "mass_coupling_exponents_equation",
+    "logarithmic_distance_power_equation",
+    "hidden_coefficient_principle",
+    "combined_equation_and_hidden_principle"
+  ],
+  "world_branches": {
+    "baseline": "baseline",
+    "rule_1": "rule_1",
+    "rule_2": "rule_2",
+    "combined_rule": "combined_rule"
+  },
+  "baseline_policy": "Every branch is a complete world instance and is compared with the baseline for this group."
+}

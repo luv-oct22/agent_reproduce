@@ -1,0 +1,60 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_6_q07",
+    "family": "field_interactions",
+    "group_id": "field_interactions_g3",
+    "rule": "rule_2",
+    "variant_id": "variant_6",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.7,
+          "charge_c": 0.6,
+          "position_m": [
+            -0.4,
+            0.0,
+            0.6
+          ],
+          "velocity_m_s": [
+            -0.7,
+            0.2,
+            -0.9
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 1.8,
+          "charge_c": -0.7,
+          "position_m": [
+            0.2,
+            -0.4,
+            1.0
+          ],
+          "velocity_m_s": [
+            0.4,
+            1.0,
+            -0.1
+          ]
+        }
+      ],
+      "start_time_s": 3.5,
+      "duration_s": 0.23,
+      "target_object_id": "object_2"
+    },
+    "target_object_id": "object_2",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": null,
+  "force_function": {
+    "field_kind": "nested",
+    "amplitude": 0.3,
+    "reference_time_s": 2.0
+  }
+}

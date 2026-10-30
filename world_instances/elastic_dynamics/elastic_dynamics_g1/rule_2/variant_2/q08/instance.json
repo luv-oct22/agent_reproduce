@@ -1,0 +1,76 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_2_q08",
+    "family": "elastic_dynamics",
+    "group_id": "elastic_dynamics_g1",
+    "rule": "rule_2",
+    "variant_id": "variant_2",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 0.7,
+          "spring_stiffness_N_m": 6.8,
+          "position_m": [
+            1.0,
+            -0.2,
+            1.8
+          ],
+          "velocity_m_s": [
+            0.2,
+            -1.0,
+            -0.0
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 0.8,
+          "spring_stiffness_N_m": 7.4,
+          "position_m": [
+            -0.9,
+            -0.0,
+            1.5
+          ],
+          "velocity_m_s": [
+            0.0,
+            0.9,
+            0.9
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 1.7,
+          "spring_stiffness_N_m": 6.4,
+          "position_m": [
+            0.6,
+            -0.5,
+            2.5
+          ],
+          "velocity_m_s": [
+            1.1,
+            0.6,
+            0.4
+          ]
+        }
+      ],
+      "start_time_s": 1.7,
+      "duration_s": 0.15,
+      "target_object_id": "object_2"
+    },
+    "target_object_id": "object_2",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": null,
+  "force_function": {
+    "field_kind": "linear_time",
+    "amplitude": 0.2,
+    "reference_time_s": 2.0
+  }
+}

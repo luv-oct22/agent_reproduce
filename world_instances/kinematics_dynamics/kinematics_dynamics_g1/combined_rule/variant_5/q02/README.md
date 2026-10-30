@@ -1,0 +1,82 @@
+# kinematics_dynamics_g1/combined_rule/variant_5/q02
+
+Host-only resolved question record:
+
+```json
+{
+  "question_id": "variant_5_q02",
+  "group_id": "kinematics_dynamics_g1",
+  "rule": "combined_rule",
+  "variant_id": "variant_5",
+  "target_object_id": "object_2",
+  "scene_state": {
+    "objects": [
+      {
+        "object_id": "object_1",
+        "color": "red",
+        "mass_kg": 0.3,
+        "radius_m": 0.16,
+        "initial_position_m": [
+          0.0,
+          0.7,
+          1.6
+        ],
+        "initial_velocity_m_s": [
+          -0.2,
+          -0.4,
+          -0.3
+        ]
+      },
+      {
+        "object_id": "object_2",
+        "color": "blue",
+        "mass_kg": 1.7,
+        "radius_m": 0.13,
+        "initial_position_m": [
+          0.6,
+          0.7,
+          2.3
+        ],
+        "initial_velocity_m_s": [
+          0.6,
+          0.9,
+          -1.0
+        ]
+      },
+      {
+        "object_id": "object_3",
+        "color": "green",
+        "mass_kg": 1.5,
+        "radius_m": 0.09,
+        "initial_position_m": [
+          -0.2,
+          0.8,
+          1.1
+        ],
+        "initial_velocity_m_s": [
+          -0.4,
+          0.4,
+          0.7
+        ]
+      }
+    ],
+    "start_time_s": 0.8,
+    "duration_s": 0.24,
+    "target_object_id": "object_2"
+  },
+  "hidden_parameters": {
+    "equation_parameters": {
+      "kind": "power_both",
+      "p": 1.4,
+      "q": 0.7
+    },
+    "force_function": {
+      "field_kind": "space_time",
+      "amplitude": 0.25,
+      "time_amplitude": 0.2,
+      "time_scale": 4.0,
+      "reference_time_s": 2.0
+    }
+  }
+}
+```

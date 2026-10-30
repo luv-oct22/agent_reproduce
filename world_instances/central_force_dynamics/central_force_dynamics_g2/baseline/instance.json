@@ -1,0 +1,375 @@
+{
+  "format": "world_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "record_id": "sha256:4f9e7f88182826670100e199112cafed23b59cbde3b48859337ba2d49fff5be7",
+  "payload": {
+    "protocol": {
+      "format": "experiment_protocol_spec",
+      "payload": {
+        "budget": {
+          "max_turns": 8,
+          "measurement_units": 24
+        },
+        "clock": {
+          "mode": "resettable",
+          "reset_behavior": "explicit_start_time",
+          "start_time_s": 0.0,
+          "time_range_s": [
+            0.0,
+            30.0
+          ]
+        },
+        "disclosures": [
+          "objects.anchor.mass_kg",
+          "objects.anchor.radius_m",
+          "objects.probe.mass_kg",
+          "objects.probe.radius_m"
+        ],
+        "id": "common_bench_v1",
+        "instructions": "You are in an unfamiliar physical environment. Choose your own experiments within the stated budget to gather evidence for later prediction tasks. Physical behavior may differ from familiar laws. Colors identify objects. Calibrated masses and radii are provided. The orange anchor remains fixed during each trial. Keep object centres more than 0.20 m apart. Trials use explicit start times; tool descriptions specify controls, measurement limits and costs.",
+        "tools": [
+          {
+            "cost": {
+              "base_units": 0,
+              "per_sample_units": 0,
+              "per_simulated_second_units": 0
+            },
+            "description": "Read visible objects, apparatus calibration and current trial settings.",
+            "measurements": [],
+            "name": "inspect",
+            "parameters": {
+              "additionalProperties": false,
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "sample_definition": "One recorded vector observation is one sample."
+          },
+          {
+            "cost": {
+              "base_units": 0,
+              "per_sample_units": 0,
+              "per_simulated_second_units": 0
+            },
+            "description": "Set a movable specimen position and velocity and an absolute trial start time.",
+            "measurements": [],
+            "name": "configure_trial",
+            "parameters": {
+              "additionalProperties": false,
+              "properties": {
+                "object_id": {
+                  "enum": [
+                    "probe"
+                  ],
+                  "type": "string"
+                },
+                "position_m": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "type": "array"
+                },
+                "start_time_s": {
+                  "maximum": 30,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "velocity_m_s": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "object_id",
+                "position_m",
+                "velocity_m_s",
+                "start_time_s"
+              ],
+              "type": "object"
+            },
+            "sample_definition": "One recorded vector observation is one sample."
+          },
+          {
+            "cost": {
+              "base_units": 1,
+              "per_sample_units": 0,
+              "per_simulated_second_units": 0
+            },
+            "description": "Apply a calibrated impulse vector to a movable specimen.",
+            "measurements": [],
+            "name": "apply_impulse",
+            "parameters": {
+              "additionalProperties": false,
+              "properties": {
+                "impulse_N_s": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "type": "array"
+                },
+                "object_id": {
+                  "enum": [
+                    "probe"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "object_id",
+                "impulse_N_s"
+              ],
+              "type": "object"
+            },
+            "sample_definition": "One recorded vector observation is one sample."
+          },
+          {
+            "cost": {
+              "base_units": 0,
+              "per_sample_units": 1,
+              "per_simulated_second_units": 0
+            },
+            "description": "Read the external force vector on a held specimen in laboratory axes.",
+            "measurements": [
+              {
+                "name": "force",
+                "range": [
+                  -10.0,
+                  10.0
+                ],
+                "resolution": 0.001,
+                "unit": "N"
+              }
+            ],
+            "name": "measure_force",
+            "parameters": {
+              "additionalProperties": false,
+              "properties": {
+                "object_id": {
+                  "enum": [
+                    "anchor",
+                    "probe"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "object_id"
+              ],
+              "type": "object"
+            },
+            "sample_definition": "One recorded vector observation is one sample."
+          },
+          {
+            "cost": {
+              "base_units": 0,
+              "per_sample_units": 1,
+              "per_simulated_second_units": 0
+            },
+            "description": "Record specimen positions at equally spaced times over a duration.",
+            "measurements": [
+              {
+                "name": "position",
+                "range": [
+                  -5.0,
+                  5.0
+                ],
+                "resolution": 0.001,
+                "unit": "m"
+              }
+            ],
+            "name": "track_motion",
+            "parameters": {
+              "additionalProperties": false,
+              "properties": {
+                "duration_s": {
+                  "exclusiveMinimum": 0,
+                  "maximum": 3,
+                  "type": "number"
+                },
+                "object_id": {
+                  "enum": [
+                    "probe"
+                  ],
+                  "type": "string"
+                },
+                "sample_count": {
+                  "maximum": 24,
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "object_id",
+                "duration_s",
+                "sample_count"
+              ],
+              "type": "object"
+            },
+            "sample_definition": "One recorded vector observation is one sample."
+          },
+          {
+            "cost": {
+              "base_units": 0,
+              "per_sample_units": 0,
+              "per_simulated_second_units": 0
+            },
+            "description": "End the interaction when ready for subsequent prediction tasks.",
+            "measurements": [],
+            "name": "finish",
+            "parameters": {
+              "additionalProperties": false,
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "sample_definition": "One recorded vector observation is one sample."
+          }
+        ],
+        "track": "law_discovery"
+      },
+      "record_id": "sha256:34651f39e5c04fcf7de1a18529457a70762a70aa6add967b1d48338bcc0a0891",
+      "schema_version": 1,
+      "visibility": "host_only"
+    },
+    "provenance": {
+      "authoring_version": "central_force_dynamics_g1_horizontal_v1",
+      "family": "attraction",
+      "group_id": "central_force_dynamics_g2",
+      "world_role": "baseline",
+      "scene_ids": [
+        "horizontal_projection_001"
+      ],
+      "equation_slots": [
+        "pair_force",
+        "acceleration",
+        "radial_motion_optional"
+      ],
+      "constants": {
+        "strength_field": "strength",
+        "distance_exponent": 2
+      }
+    },
+    "solver": {
+      "format": "solver_spec",
+      "payload": {
+        "kind": "central_attraction_rk4",
+        "parameters": {
+          "max_step_s": 0.002,
+          "max_steps": 200000,
+          "min_step_s": 1e-08
+        },
+        "version": 1
+      },
+      "record_id": "sha256:3eebb45bd0312c8981d58703c6516e13b130ebda94fc2c74b08c80ddd54c5dc4",
+      "schema_version": 1,
+      "visibility": "host_only"
+    },
+    "world": {
+      "format": "physical_world_spec",
+      "payload": {
+        "contacts": [],
+        "coordinate_frame": "cartesian_z_up_m",
+        "fields": [
+          {
+            "format": "coefficient_field_spec",
+            "payload": {
+              "bounds": [
+                0.0,
+                5.0
+              ],
+              "id": "strength",
+              "kind": "constant",
+              "parameters": {
+                "value": 1.1
+              },
+              "unit": "N",
+              "version": 1
+            },
+            "record_id": "sha256:8632ee854c07797ab3fb69090da1e2cf3d50997ef69e6e25aa5ae367d3f6a692",
+            "schema_version": 1,
+            "visibility": "host_only"
+          }
+        ],
+        "laws": [
+          {
+            "format": "physical_law_spec",
+            "payload": {
+              "fields": {
+                "strength": "strength"
+              },
+              "id": "interaction",
+              "kind": "central_attraction",
+              "parameters": {
+                "coefficient_sample": "pair_midpoint",
+                "exponent": 2,
+                "mass_coupling": "inertial_mass",
+                "minimum_distance_m": 0.3,
+                "reference_distance_m": 1.1,
+                "reference_mass_kg": 0.6
+              },
+              "version": 1
+            },
+            "record_id": "sha256:264ac84636cf66b653d06da9255c89d409dd2e66cd2adb1bc3be232661797b79",
+            "schema_version": 1,
+            "visibility": "host_only"
+          }
+        ],
+        "motion_law": "newton_second_law_v1",
+        "objects": [
+          {
+            "format": "physical_object_spec",
+            "payload": {
+              "color": "orange",
+              "color_rgba": [
+                1.0,
+                0.35,
+                0.05,
+                1.0
+              ],
+              "id": "anchor",
+              "mass_kg": 1.0,
+              "motion": "fixed",
+              "shape": "sphere",
+              "volume_m3": 0.0021446605848506324
+            },
+            "record_id": "sha256:f0a3de9a597dec61072ec2d005ec7daad35f7b66436fbbce4e96841d7b886b51",
+            "schema_version": 1,
+            "visibility": "host_only"
+          },
+          {
+            "format": "physical_object_spec",
+            "payload": {
+              "color": "blue",
+              "color_rgba": [
+                0.08,
+                0.35,
+                0.8,
+                1.0
+              ],
+              "id": "probe",
+              "mass_kg": 0.1,
+              "motion": "dynamic",
+              "shape": "sphere",
+              "volume_m3": 0.00011309733552923254
+            },
+            "record_id": "sha256:e885e5c7b6b9b4fe00c8d1861c2857dc3420b0faec8210967cb8e588a3142037",
+            "schema_version": 1,
+            "visibility": "host_only"
+          }
+        ]
+      },
+      "record_id": "sha256:9e2fc6ceea76575f5f08187ed8a91c021df90bd6b34b7d2dd745ff7b22ee64e9",
+      "schema_version": 1,
+      "visibility": "host_only"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+=== episodes g1 rule_1 21:05:52
+[episode glm-5.3|frames_predict] g1/rule_1/variant_1: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode glm-5.3|frames_predict] g1/rule_1/variant_2: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode glm-5.3|frames_predict] g1/rule_1/variant_4: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode glm-5.3|frames_predict] g1/rule_1/variant_5: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode glm-5.3|frames_predict] g1/rule_1/variant_6: failed BadRequestError: Error code: 400 - {'error': {'code': 'invalid_request_format', 'message': 'The request format is invalid or unsupported by the upstream provider.', 'type': 'invalid_request_error'}}
+[episode glm-5.3|frames_predict] complete=0, skipped_done=0, skipped_frames=0, failed=5
+=== exam g1 rule_1 21:07:35
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item002: failed  (answer B)
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item006: failed  (answer C)
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item008: failed  (answer D)
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item010: failed  (answer D)
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item012: failed  (answer A)
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item016: failed  (answer C)
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item018: failed  (answer B)
+[exam glm-5.3|frames_predict|none] g1/rule_1/variant_1 g1_rule_1_item020: failed  (answer D)
+Terminated
+=== episodes g1 rule_2 21:10:08

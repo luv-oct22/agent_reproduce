@@ -1,0 +1,31 @@
+# Visual interaction (python -m src.visual_interaction). Paths are relative to the repo root.
+# Episodes run in the central-force worlds of the law-contrastive exam and reuse its items:
+# items alternate between the checkpoint pool and the exam pool (see items.py: item_role).
+law_contrastive_config: configs/law_contrastive.yaml
+groups: [g1, g2, g3]
+rules: [rule_1, rule_2, combined_rule]
+frames_dir: renders/visual_interaction       # pre-rendered outcome frames, one per (world, experiment)
+results_dir: results/visual_interaction
+
+grid:                                         # the public experiment menu, identical in every world
+  radii_m: [0.9, 1.2, 1.5]                    # probe start distance to the right of the fixed anchor
+  velocities_m_s: [[0.0, 0.0], [0.0, 0.5], [0.0, 1.0], [0.5, 0.0]]   # [radial outward, tangential upward]
+  start_times_s: [0.5, 2.5, 4.5]
+  durations_s: [0.4, 0.8]
+  samples: 6                                  # probe positions shown per outcome (strobe)
+  resolution: [960, 640]
+
+episode:
+  budget: 12                                  # experiments per episode (one per turn)
+  checkpoint_every: 4                         # checkpoints after 0, 4, 8, 12 experiments
+  max_turns: 20
+  checkpoint_image_width: 960                 # checkpoint and exam images are downscaled to this width
+  seed: 0
+
+run:
+  models: [gpt-6.1-sol]
+  modes: [frames_predict]                     # see MODES in config.py
+  evidence: [none, own, sibling, observations, own_record, sibling_told, law_text]   # observations = yoked passive; own_record = own episode as a record, fresh context; sibling_told = sibling history, told it is a different world; law_text = true law in text, no history (ceiling)
+  temperature: 1.0                      # kimi-k3 rejects 0.7 on this endpoint
+  max_completion_tokens: 16384
+  tool_choice_none: true                      # answer checkpoints and exam questions in text, tools visible

@@ -1,0 +1,59 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_1_q13",
+    "family": "fluid_mechanics",
+    "group_id": "fluid_mechanics_g2",
+    "rule": "rule_1",
+    "variant_id": "variant_1",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.0,
+          "volume_m3": 0.06,
+          "position_m": [
+            -0.6,
+            0.1,
+            -0.9
+          ],
+          "velocity_m_s": [
+            -0.2,
+            -0.2,
+            0.6
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 0.6,
+          "volume_m3": 0.03,
+          "position_m": [
+            0.6,
+            0.7,
+            -0.5
+          ],
+          "velocity_m_s": [
+            -0.1,
+            -0.1,
+            -0.6
+          ]
+        }
+      ],
+      "start_time_s": 2.8,
+      "duration_s": 0.27,
+      "target_object_id": "object_1"
+    },
+    "target_object_id": "object_1",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "density_power",
+    "p": 1.1
+  },
+  "force_function": null
+}

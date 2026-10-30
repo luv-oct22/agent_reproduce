@@ -1,0 +1,24 @@
+{
+  "format": "world_family_group",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "family": "dissipative_dynamics",
+  "group_id": "dissipative_dynamics_g2",
+  "constants": {
+    "linear_drag_kg_s": 0.5,
+    "quadratic_drag_kg_m": 0.5,
+    "external_acceleration_m_s2": [
+      0.7,
+      -0.2,
+      0.4
+    ],
+    "reference_speed_m_s": 0.8,
+    "minimum_separation_m": 0.05
+  },
+  "standard_equations": {
+    "drag": "F_drag=-c*v",
+    "quadratic_drag": "F_drag=-c2*|v|v",
+    "net_force": "F_net=F_external+F_drag",
+    "acceleration": "a=F_net/m"
+  }
+}

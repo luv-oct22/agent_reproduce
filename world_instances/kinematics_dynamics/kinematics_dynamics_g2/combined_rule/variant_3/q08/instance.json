@@ -1,0 +1,80 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_3_q08",
+    "family": "kinematics_dynamics",
+    "group_id": "kinematics_dynamics_g2",
+    "rule": "combined_rule",
+    "variant_id": "variant_3",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 0.6,
+          "radius_m": 0.08,
+          "initial_position_m": [
+            -0.0,
+            -0.7,
+            1.4
+          ],
+          "initial_velocity_m_s": [
+            0.6,
+            0.2,
+            -1.0
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 0.8,
+          "radius_m": 0.08,
+          "initial_position_m": [
+            -0.4,
+            -0.7,
+            1.9
+          ],
+          "initial_velocity_m_s": [
+            0.8,
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 0.7,
+          "radius_m": 0.11,
+          "initial_position_m": [
+            -0.9,
+            -0.4,
+            1.7
+          ],
+          "initial_velocity_m_s": [
+            0.6,
+            0.9,
+            0.4
+          ]
+        }
+      ],
+      "start_time_s": 2.3,
+      "duration_s": 0.23,
+      "target_object_id": "object_1"
+    },
+    "target_object_id": "object_1",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": {
+    "kind": "log_velocity",
+    "scale": 1.0
+  },
+  "force_function": {
+    "field_kind": "quadratic_space",
+    "amplitude": 0.4,
+    "time_scale": 4.0,
+    "reference_time_s": 2.0
+  }
+}

@@ -1,0 +1,554 @@
+{
+  "task_name": "identify_drag",
+  "model": "qwen3.8-max",
+  "with_history": true,
+  "questions": [
+    {
+      "id": "drag_001",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 0.66 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q001/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q001/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q001/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q001/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q001/choice_D.png"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "drag_002",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 1.26 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q002/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q002/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q002/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q002/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q002/choice_D.png"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "drag_003",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 2.55 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q003/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q003/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q003/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q003/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q003/choice_D.png"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "drag_004",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 1.00 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q004/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q004/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q004/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q004/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q004/choice_D.png"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "drag_005",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 1.82 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q005/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q005/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q005/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q005/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q005/choice_D.png"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "drag_006",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 3.08 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q006/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q006/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q006/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q006/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q006/choice_D.png"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "drag_007",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 1.46 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q007/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q007/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q007/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q007/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q007/choice_D.png"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "drag_008",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 2.11 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q008/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q008/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q008/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q008/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q008/choice_D.png"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "drag_009",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 2.01 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q009/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q009/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q009/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q009/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q009/choice_D.png"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "drag_010",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 0.74 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q010/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q010/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q010/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q010/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q010/choice_D.png"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "drag_011",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 1.54 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q011/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q011/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q011/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q011/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q011/choice_D.png"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "drag_012",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 2.41 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q012/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q012/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q012/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q012/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q012/choice_D.png"
+        }
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "drag_013",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 1.05 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q013/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q013/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q013/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q013/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q013/choice_D.png"
+        }
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "drag_014",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 2.13 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q014/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q014/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q014/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q014/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q014/choice_D.png"
+        }
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "drag_015",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 3.05 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q015/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q015/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q015/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q015/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q015/choice_D.png"
+        }
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "drag_016",
+      "type": "image_multiple_choice",
+      "question": "The context image shows the calibrated specimen held immediately before horizontal launch. Use the prior experimental evidence for this same specimen, surface and invisible medium. Read the initial bottom clearance and horizontal launch velocity from the image. Initial vertical velocity is zero; the holder retracts instantly without any extra impulse. Which image shows the specimen 1.38 seconds after launch? Gravity, specimen mass/radius and surface restitution retain their experimental calibration values. The same invisible, fixed smooth function b(z) exerts F_drag = -b(z) * velocity in ALL velocity components, where z is sphere-centre height above the impact surface. Infer the height-dependent drag from the experiments. At each impact the normal velocity reverses with the calibrated restitution; horizontal velocity is continuous at impact but is damped by the medium. There is no buoyancy, spin coupling or tangential contact friction. Track all impacts before the requested time. The major grid spacing is 0.10 m; minor horizontal lines are 0.025 m apart. All choices have the same elapsed time, camera and scale. The drag distribution is not drawn.",
+      "context_caption": "Context \u2014 immediately before launch",
+      "context_image": "questions/q016/context.png",
+      "choices": [
+        {
+          "label": "A",
+          "image": "questions/q016/choice_A.png"
+        },
+        {
+          "label": "B",
+          "image": "questions/q016/choice_B.png"
+        },
+        {
+          "label": "C",
+          "image": "questions/q016/choice_C.png"
+        },
+        {
+          "label": "D",
+          "image": "questions/q016/choice_D.png"
+        }
+      ],
+      "answer": "B"
+    }
+  ],
+  "answers": [
+    {
+      "question_id": "drag_001",
+      "type": "image_multiple_choice",
+      "agent_answer": "C",
+      "expected": "D",
+      "correct": false,
+      "response": "C"
+    },
+    {
+      "question_id": "drag_002",
+      "type": "image_multiple_choice",
+      "agent_answer": "C",
+      "expected": "A",
+      "correct": false,
+      "response": "C"
+    },
+    {
+      "question_id": "drag_003",
+      "type": "image_multiple_choice",
+      "agent_answer": "B",
+      "expected": "C",
+      "correct": false,
+      "response": "B"
+    },
+    {
+      "question_id": "drag_004",
+      "type": "image_multiple_choice",
+      "agent_answer": "D",
+      "expected": "D",
+      "correct": true,
+      "response": "D"
+    },
+    {
+      "question_id": "drag_005",
+      "type": "image_multiple_choice",
+      "agent_answer": "B",
+      "expected": "C",
+      "correct": false,
+      "response": "B"
+    },
+    {
+      "question_id": "drag_006",
+      "type": "image_multiple_choice",
+      "agent_answer": "A",
+      "expected": "B",
+      "correct": false,
+      "response": "A"
+    },
+    {
+      "question_id": "drag_007",
+      "type": "image_multiple_choice",
+      "agent_answer": "B",
+      "expected": "A",
+      "correct": false,
+      "response": "B"
+    },
+    {
+      "question_id": "drag_008",
+      "type": "image_multiple_choice",
+      "agent_answer": "A",
+      "expected": "B",
+      "correct": false,
+      "response": "A"
+    },
+    {
+      "question_id": "drag_009",
+      "type": "image_multiple_choice",
+      "agent_answer": "C",
+      "expected": "C",
+      "correct": true,
+      "response": "C"
+    },
+    {
+      "question_id": "drag_010",
+      "type": "image_multiple_choice",
+      "agent_answer": "B",
+      "expected": "D",
+      "correct": false,
+      "response": "B\n\n**Reasoning summary:** Using the drag profile reconstructed from the 24 drop/bounce measurements (near-floor hump b\u22480.19, valley b\u22480.044 at z\u22480.24, rising to b\u22480.20 near z\u22481.1), I integrated the launched trajectory: vertical fall from centre z=0.855 m reaches z\u22480.18 m at t=0.74 s (first impact only occurs at \u22480.82 s, so no bounce yet), while the horizontal velocity is strongly damped (\u222bb/m dt\u22480.65), giving x\u22480.53 m instead of the vacuum 0.78 m. The image matching both the low altitude and the shortened horizontal travel is **B**.\n\nB"
+    },
+    {
+      "question_id": "drag_011",
+      "type": "image_multiple_choice",
+      "agent_answer": "A",
+      "expected": "A",
+      "correct": true,
+      "response": "A\n\n**Reasoning summary:** From the drop/bounce record, b(z) peaks (~0.20 kg/s) near z\u22481.1 m, dips (~0.045) near z\u22480.25 m, and rises again (~0.19) near the floor. Launching from centre height 1.105 m with v\u2093=0.75 m/s, the fall to first impact takes \u22481.01\u20131.04 s (matching the h\u22481.0\u20131.2 drop timings), during which \u222bb dt \u2248 0.14 kg\u00b7s/m\u00b2 gives strong horizontal damping (factor e^(\u2212\u222bb/m dt) \u2248 0.25 at impact), so x \u2248 0.28 m at impact. The rebound (v\u22481.6\u20131.7 m/s up, e=0.8) apexes near centre height \u22480.33\u20130.35 m at t\u22481.45 s; at t=1.54 s the ball is just past apex at z\u22480.32 m, having drifted only \u22480.07 m further horizontally (total x \u2248 0.35\u20130.36 m \u2248 205 px right of launch). This matches choice A's position (\u22480.36 m right, \u22480.32 m centre height).\n\nA"
+    },
+    {
+      "question_id": "drag_012",
+      "type": "image_multiple_choice",
+      "agent_answer": "C",
+      "expected": "C",
+      "correct": true,
+      "response": "C"
+    },
+    {
+      "question_id": "drag_013",
+      "type": "image_multiple_choice",
+      "agent_answer": "D",
+      "expected": "D",
+      "correct": true,
+      "response": "D\n\n**Reasoning summary:** From the drop/bounce record, b(z) is small near the floor hump zone, minimal at z\u22480.24, and rises to a broad peak (\u22480.2 kg/s) around z\u22481.0\u20131.4, falling off above z\u22482. Launching from centre height z\u2080 = 1.625 + 0.03 = 1.655 m with v\u2093 = 1.15 m/s, the ball falls through the high-drag band: its vertical speed saturates near mg/b \u2248 1.2\u20131.5 m/s, so after 1.05 s it has fallen only \u22480.85\u20130.9 m (z \u2248 0.78\u20130.80 m), well above the vacuum prediction (which would put it at the floor). Horizontally, \u222bb dt \u2248 0.2 kg\u00b7s/m gives an exponential damping factor exp(\u221210\u222bb dt) that shrinks v\u2093 to \u22480.2 m/s by t = 1 s, yielding a total horizontal travel of \u22480.44 m (\u22480.45 m), not the 1.21 m of a drag-free flight. No impact occurs before 1.05 s (first impact \u22481.46 s), so restitution is irrelevant. The snapshot matching z \u2248 0.8 m with x \u2248 0.44 m is choice D.\n\nD"
+    },
+    {
+      "question_id": "drag_014",
+      "type": "image_multiple_choice",
+      "agent_answer": "D",
+      "expected": "B",
+      "correct": false,
+      "response": "D\n\n**Reasoning summary:** From the bounce calibration, a release at ~1.875 m clearance impacts at t\u2081 \u2248 1.55\u20131.60 s with rebound apex centre height \u2248 0.40 m (rebound clearance \u2248 0.365\u20130.39 m). The ascent takes \u2248 0.45\u20130.55 s, so at t = 2.13 s the ball is at or just past its first rebound apex \u2014 i.e., centre height \u2248 0.40\u20130.42 m, ruling out the higher positions in A\u2013C. Horizontally, the strong drag (b/m \u2248 1.5\u20132 s\u207b\u00b9 along much of the path, especially the near\u2011floor hump and the mid\u2011height peak) reduces the 0.80 m/s launch to a total displacement of only \u2248 0.45\u20130.50 m, matching the smallest horizontal offset. Both criteria pick the lowest, least\u2011advanced ball.\n\nD"
+    },
+    {
+      "question_id": "drag_015",
+      "type": "image_multiple_choice",
+      "agent_answer": "C",
+      "expected": "A",
+      "correct": false,
+      "response": "C"
+    },
+    {
+      "question_id": "drag_016",
+      "type": "image_multiple_choice",
+      "agent_answer": "B",
+      "expected": "B",
+      "correct": true,
+      "response": "B"
+    }
+  ],
+  "score": 0.375
+}

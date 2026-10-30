@@ -1,0 +1,22 @@
+\section{Benchmark Validation}
+\label{sec:validation}
+
+Before interpreting model performance, we check that every experiment has a well-defined answer and that the answer cannot be obtained through artifacts or canonical physics alone. The same checks apply to checkpoint experiments.
+
+\subsection{Ceilings}
+
+\paragraph{Simulator oracle.} Given the full world $\mathcal{W}$ and the complete state $s$, the oracle re-simulates $\Phi_{\mathcal{W}}(s,a,\Delta t)$, renders the result, and selects the nearest candidate. Because the correct candidate is produced by the same pipeline, this oracle checks well-posedness rather than difficulty: each distractor must be separated from the correct render by a minimum image-space margin, and experiments that violate this margin are regenerated. \TODO{Report the margin and the number of regenerated experiments.}
+
+\paragraph{Law-informed agent.} Each evaluated model--harness system is also run with the latent law and the regime constants given in text, and with no interaction. This ceiling bounds what the system can achieve once the law is known. The gap between the law-informed ceiling and the $B=B_{\rm full}$ score isolates failures of evidence gathering and hypothesis formation. The gap between the ceiling and the simulator oracle isolates failures in applying a known law and decoding the rendered frames (RQ3). \TODO{Report per-family ceilings once measured.}
+
+\subsection{Shortcut Baselines}
+
+\paragraph{Appearance heuristic.} This baseline chooses the candidate closest to the initial frame under an image-distance metric. If it matches frontier agents, the task is not testing the intended capability.
+
+\paragraph{Canonical-physics baseline.} This baseline simulates each held-out experiment under the canonical law of family $f$ (with the regime constants, but without the latent transformation $c,\lambda$) and selects the nearest candidate. It measures how often textbook physics alone identifies the answer. Agent accuracy is also reported separately on experiments this baseline gets wrong, where success cannot come from memorized canonical physics. \TODO{Report the baseline accuracy per latent-law condition.}
+
+\subsection{Leakage and Sanity Tests}
+
+We test whether non-physical artifacts predict the answer. Candidate positions are independently permuted, object identifiers and colors are randomized when they are not physically meaningful, and filenames and metadata do not encode the label. A label-only classifier trained on candidate positions, filenames, and metadata should perform at chance (25\%). \TODO{Report leakage-test results; this test would currently fail, since all stored answers are at position A.}
+
+\paragraph{Human sanity.} Where feasible, we report a small human reference under matched information and budget. This check is not the target metric, but it helps establish that the task is understandable from the provided evidence. \TODO{Decide whether to include human sanity in the main paper or appendix.}

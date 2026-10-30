@@ -1,0 +1,51 @@
+\section{Related Work}
+\label{sec:related}
+
+We organize related work by the question each benchmark asks. The closest prior work studies physical reasoning, interactive physics puzzles, scientific law discovery, feedback-driven adaptation, and agent harnesses. Our benchmark borrows pieces from each line, but combines them for a different diagnostic: whether interaction with one latent physical world supports held-out visual prediction in new states governed by the same hidden dynamics.
+
+\subsection{Passive Physical Understanding}
+
+Passive physical-understanding benchmarks test whether models can recognize physical concepts, causal structure, spatial relations, and likely outcomes from fixed visual or textual evidence. Recent VLM-focused suites such as PhysBench ask this question directly. \TODO{Verify PhysBench metadata and add a citation before submission; OpenReview access was blocked in the current environment.} These benchmarks are useful probes of visual physical priors, but the evidence is already present in the input. They do not test whether action feedback changes the agent's belief about a hidden physical world.
+
+\subsection{Interactive Physics Puzzles}
+
+PHYRE~\cite{phyre} introduced a 2D classical-mechanics benchmark built around sample-efficient physical puzzle solving. I-PHYRE~\cite{iphyre} moves further toward interaction by requiring agents to intervene in dynamic events with multi-step timing and planning. These benchmarks answer whether an agent can solve physics tasks under interaction. They leave a different question open: after solving or probing an instance, has the agent learned a reusable account of the dynamics, or only found an action that works there? Our protocol freezes feedback after support and evaluates a new state from the same latent-law realization, so local action search is not enough.
+
+\subsection{Interactive Scientific Law Discovery}
+
+PhysGym~\cite{physgym} and NewtonBench~\cite{newtonbench} evaluate agents that probe simulated systems to recover physical hypotheses or laws. PhysGym controls the agent's prior knowledge and measures hypothesis quality in interactive physics environments; NewtonBench scales law discovery through counterfactual shifts of canonical laws. These benchmarks target scientific discovery as an explicit endpoint. We use a narrower behavioral endpoint. The agent need not state the law in words; it must apply whatever it inferred to choose the rendered future of a held-out scene.
+
+\subsection{Agents Learning from Feedback}
+
+LLF-Bench~\cite{llfbench} studies how language feedback changes agent behavior in sequential decision tasks. Situated induction benchmarks such as Mars study agents that infer counter-commonsense rules from interaction in open-world environments. \TODO{Verify Mars metadata and add a citation before submission; OpenReview access was blocked in the current environment.} These benchmarks treat feedback or rule induction as the central variable. Our benchmark focuses on the physical version of that problem: the induced structure must support counterfactual visual prediction, not only the next task action or a textual rule.
+
+\subsection{Evaluation Unit}
+
+The same base model can behave differently under different prompts, memories, tool policies, and reasoning loops. Harness-Bench~\cite{harnessbench} makes this dependence explicit for realistic agent workflows. We follow that convention and report the evaluated system as a model--harness pair, rather than attributing the outcome to the base model alone.
+
+\subsection{Capability Gap}
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Capability gap.} Prior benchmarks cover parts of our protocol, but not the full combination. \textbf{A}: agent-selected experiments. \textbf{L}: hidden latent-law transformations. \textbf{H}: hierarchy of physical variation. \textbf{T}: support-to-held-out transfer under an unchanged latent law. \textbf{R}: rendered counterfactual MCQ. Rows marked with $^\dagger$ require citation metadata verification before submission. \TODO{Verify each cell against the primary source before finalizing.}}
+  \label{tab:gap}
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lccccc}
+    \toprule
+    Benchmark & A & L & H & T & R \\
+    \midrule
+    PhysBench$^\dagger$ &            &            &           &                   & \checkmark \\
+    PHYRE               & \checkmark &            &           &                   &            \\
+    I-PHYRE             & \checkmark &            &           &                   &            \\
+    PhysGym             & \checkmark & \checkmark &           &                   &            \\
+    NewtonBench         & \checkmark & \checkmark &           &                   &            \\
+    LLF-Bench           & \checkmark &            &           &                   &            \\
+    Mars$^\dagger$      & \checkmark & \checkmark &           &                   &            \\
+    \midrule
+    \textbf{Ours}       & \checkmark & \checkmark & \checkmark & \checkmark        & \checkmark \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The last row is the contribution. We do not claim that agent-selected experiments, latent laws, hierarchical benchmark design, held-out transfer, or rendered multiple-choice prediction is new in isolation. The claim is that their combination isolates a capability that existing benchmarks tend to entangle with instance-level task success or symbolic law recovery.

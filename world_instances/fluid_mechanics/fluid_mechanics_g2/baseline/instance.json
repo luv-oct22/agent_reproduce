@@ -1,0 +1,19 @@
+{
+  "format": "world_family_group",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "family": "fluid_mechanics",
+  "group_id": "fluid_mechanics_g2",
+  "constants": {
+    "fluid_density_kg_m3": 0.8,
+    "gravity_m_s2": 3.1,
+    "fluid_surface_z_m": 0.5,
+    "reference_depth_m": 0.8,
+    "minimum_separation_m": 0.05
+  },
+  "standard_equations": {
+    "buoyancy": "F_b = rho_fluid * V_displaced * g",
+    "net_force": "F_net = F_b - m*g",
+    "acceleration": "a = F_net/m"
+  }
+}

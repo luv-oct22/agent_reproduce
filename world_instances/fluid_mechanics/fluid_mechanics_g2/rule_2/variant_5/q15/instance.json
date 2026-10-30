@@ -1,0 +1,93 @@
+{
+  "format": "question_instance",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "question": {
+    "schema_version": 1,
+    "question_id": "variant_5_q15",
+    "family": "fluid_mechanics",
+    "group_id": "fluid_mechanics_g2",
+    "rule": "rule_2",
+    "variant_id": "variant_5",
+    "scene_state": {
+      "objects": [
+        {
+          "object_id": "object_1",
+          "color": "red",
+          "mass_kg": 1.5,
+          "volume_m3": 0.05,
+          "position_m": [
+            0.5,
+            -0.6,
+            -0.4
+          ],
+          "velocity_m_s": [
+            -0.2,
+            -0.0,
+            0.6
+          ]
+        },
+        {
+          "object_id": "object_2",
+          "color": "blue",
+          "mass_kg": 0.9,
+          "volume_m3": 0.1,
+          "position_m": [
+            -0.1,
+            -0.8,
+            -1.6
+          ],
+          "velocity_m_s": [
+            -0.3,
+            0.2,
+            -0.2
+          ]
+        },
+        {
+          "object_id": "object_3",
+          "color": "green",
+          "mass_kg": 0.8,
+          "volume_m3": 0.06,
+          "position_m": [
+            1.2,
+            -0.4,
+            -0.7
+          ],
+          "velocity_m_s": [
+            0.5,
+            0.4,
+            -0.6
+          ]
+        },
+        {
+          "object_id": "object_4",
+          "color": "yellow",
+          "mass_kg": 1.5,
+          "volume_m3": 0.04,
+          "position_m": [
+            -0.8,
+            0.6,
+            -0.3
+          ],
+          "velocity_m_s": [
+            0.1,
+            -0.5,
+            0.3
+          ]
+        }
+      ],
+      "start_time_s": 3.7,
+      "duration_s": 0.24,
+      "target_object_id": "object_3"
+    },
+    "target_object_id": "object_3",
+    "prompt": "Using the interaction history and rendered context, choose the image showing the target object at the next frame. Answer A, B, C, or D."
+  },
+  "equation_parameters": null,
+  "force_function": {
+    "field_kind": "density_depth",
+    "amplitude": 0.2,
+    "depth_amplitude": 0.15,
+    "reference_depth_m": 1.0
+  }
+}

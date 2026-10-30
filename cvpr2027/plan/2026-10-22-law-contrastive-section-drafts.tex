@@ -1,0 +1,114 @@
+% Drop-in drafts for the law-contrastive exam (see ../EXPERIMENT_REDESIGN.md).
+% Not \input by main.tex. Each block names the section and paragraph it replaces.
+% Numbers marked \TODO come from validate_law_contrastive.py and analyze_law_contrastive.py.
+
+%% ---------------------------------------------------------------------------
+%% sec/3_benchmark.tex  --  replaces the paragraph starting "Foreseeing is posed as a choice"
+%% ---------------------------------------------------------------------------
+Foreseeing is posed as a choice among four rendered candidates $\mathcal{C}=\{I_1,\dots,I_4\}$.
+Each candidate is the outcome of the same experiment under a different law of the same family,
+regime, and condition: the canonical law $\Phi_{f,\rho}$ and three sibling realizations
+$\lambda_1,\lambda_2,\lambda_3$ of condition $c$,
+\begin{equation}
+  \mathcal{C}=\{R(\Phi_{f,\rho}(s,a,\Delta t))\}\cup\{R(\Phi_{(f,\rho,c,\lambda_k)}(s,a,\Delta t))\}_{k=1}^{3}.
+  \label{eq:law-contrastive}
+\end{equation}
+The same four images form one question for each of the three sibling worlds, with a different
+correct candidate in each. A system that does not use evidence about the tested world can therefore
+answer at most one of the three questions correctly, and textbook physics always selects a wrong
+candidate. Candidate positions are permuted independently for every item, so chance is 25\%.
+
+%% ---------------------------------------------------------------------------
+%% sec/4_construction.tex  --  replaces "Simulator and Renders" and "Shortcut Controls"
+%% ---------------------------------------------------------------------------
+\subsection{Simulator, Items, and Renders}
+For each world $\mathcal{W}$, a deterministic RK4 integrator implements $\Phi_{\mathcal{W}}$ under the
+realized law, including any structural change and hidden coefficient field. Items reuse the scenes of
+the world hierarchy: for each condition, we search its scenes in a fixed order and accept a scene,
+with the shortest elapsed time $\Delta t\in\{0.4,\dots,1.5\}$\,s, when the canonical outcome and three
+sibling outcomes are pairwise at least 20 pixels apart at $1920\times1280$ and stay inside the frame.
+New in-plane launches are sampled only to complete coverage. Every image is rendered by the same
+Blender pipeline from the stored state; the renderer never advances physics. The prompt states the
+initial position, velocity, start time, and $\Delta t$ in text.
+
+\paragraph{Identifiability.} The search also tests whether each hidden law is visible at all. Two
+realizations, a mild logarithmic correction to the inverse-square law and a weak quadratic coefficient
+field, never separate from the canonical outcome by more than a few pixels at any admissible horizon.
+We exclude them from the exam and report them as not visually identifiable.
+\TODO{Report the final item and question counts per condition from build\_report.json.}
+
+\subsection{Shortcut Controls}
+\begin{itemize}
+  \item \emph{Law-contrastive candidates.} Every distractor is a physically valid outcome under another
+  law of the same condition or the canonical law, so no distractor can be rejected as implausible.
+  \item \emph{Shared images across worlds.} The same item is asked for three worlds with three different
+  answers, which caps any world-blind policy at $1/3$.
+  \item \emph{Candidate permutation.} Labels are shuffled per item; only the host stores the answer map.
+  \item \emph{Canonical distractor.} The canonical outcome is always present and always wrong.
+\end{itemize}
+
+%% ---------------------------------------------------------------------------
+%% sec/5_protocol.tex  --  replaces "Controls" (keeps the probe subsection as future work)
+%% ---------------------------------------------------------------------------
+\subsection{Evidence Arms}
+\label{sec:protocol:ablations}
+All arms answer identical questions and differ only in the evidence the system receives.
+\emph{No interaction} ($B=0$) gives the rendered context and the experiment description.
+\emph{Own world} adds the complete interaction history recorded in the tested world.
+\emph{Sibling world} adds a history recorded in another realization of the same condition, which is
+equally informative about the family, regime, and kind of change but describes a different hidden law.
+\emph{Law in text} gives the hidden law and regime constants in text and no history.
+We report three paired contrasts on identical questions: own minus no interaction (does interaction
+help, RQ1), own minus sibling (is the gain specific to this world, RQ2), and law in text minus own
+(how much is lost in forming the law, RQ3). We also report how often each arm picks the canonical
+candidate and, in the sibling arm, the sibling world's answer.
+
+%% ---------------------------------------------------------------------------
+%% sec/6_validation.tex  --  new first paragraph + table
+%% ---------------------------------------------------------------------------
+\paragraph{Why law-contrastive candidates.} An earlier version of the exam generated distractors by
+displacing the correct outcome along a line by fixed steps. An audit of its 810 items found that the
+correct candidate always occupied the same position in the same collinear arrangement, and that
+simulating canonical physics alone selected the correct candidate in \TODO{62--83}\% of items per
+condition. Both properties let a system score without learning the world. Table~\ref{tab:validation}
+reports the same checks for the law-contrastive exam.
+
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Exam validity.} Accuracy (\%) of reference policies that do not query a model.
+  \TODO{Fill from results/law\_contrastive/items/validation.json.}}
+  \label{tab:validation}
+  \small
+  \begin{tabular}{lcc}
+    \toprule
+    Policy & Earlier exam & Law-contrastive \\
+    \midrule
+    Simulator oracle (true law)      & 100 & \TODO{100} \\
+    Canonical physics                & \TODO{} & 0 \\
+    Most frequent label              & 100 & \TODO{} \\
+    Best world-blind policy          & 100 & \TODO{33} \\
+    Closest to initial position      & \TODO{} & \TODO{} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+%% ---------------------------------------------------------------------------
+%% sec/7_experiments.tex  --  replaces Table 1 header
+%% ---------------------------------------------------------------------------
+\begin{table}[t]
+  \centering
+  \caption{\textbf{Main results.} Exam accuracy (\%) with 95\% bootstrap intervals over items. Chance is
+  25\%; any world-blind policy is capped at 33\%. \TODO{Populate from python -m src.law\_contrastive analyze.}}
+  \label{tab:main}
+  \small
+  \setlength{\tabcolsep}{3.5pt}
+  \begin{tabular}{lcccc}
+    \toprule
+    System & No interaction & Own world & Sibling world & Law in text \\
+    \midrule
+    \TODO{M1} & -- & -- & -- & -- \\
+    \TODO{M2} & -- & -- & -- & -- \\
+    \TODO{M3} & -- & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}

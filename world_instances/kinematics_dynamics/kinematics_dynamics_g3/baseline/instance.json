@@ -1,0 +1,25 @@
+{
+  "format": "world_family_group",
+  "schema_version": 1,
+  "visibility": "host_only",
+  "family": "kinematics_dynamics",
+  "group_id": "kinematics_dynamics_g3",
+  "constants": {
+    "acceleration_m_s2": [
+      1.5,
+      -0.4,
+      -0.3
+    ],
+    "time_scale_s": 1.0,
+    "clock_range_s": [
+      0.0,
+      30.0
+    ],
+    "minimum_separation_m": 0.05
+  },
+  "standard_equations": {
+    "acceleration": "a = a0",
+    "velocity": "v = v0 + a0*t",
+    "position": "x = x0 + v0*t + 0.5*a0*t^2"
+  }
+}
