@@ -62,6 +62,18 @@
 \newcommand{\GptSolSibFieldCI}{[8.8, 27.3]}
 \newcommand{\GptSolSibFieldCanon}{32.2}
 \newcommand{\GptSolSibFieldPickSib}{53.3}
+\newcommand{\GptSolLawAcc}{91.8}
+\newcommand{\GptSolLawN}{171}
+\newcommand{\GptSolLawCI}{[86.9, 96.2]}
+\newcommand{\GptSolLawCanon}{1.8}
+\newcommand{\GptSolLawStructAcc}{96.4}
+\newcommand{\GptSolLawStructN}{84}
+\newcommand{\GptSolLawStructCI}{[92.5, 100.0]}
+\newcommand{\GptSolLawStructCanon}{1.2}
+\newcommand{\GptSolLawFieldAcc}{87.4}
+\newcommand{\GptSolLawFieldN}{87}
+\newcommand{\GptSolLawFieldCI}{[79.0, 94.5]}
+\newcommand{\GptSolLawFieldCanon}{2.3}
 \newcommand{\GptSolOwnMinusNone}{+29.2}
 \newcommand{\GptSolOwnMinusNoneCI}{[+15.3, +42.9]}
 \newcommand{\GptSolOwnMinusSib}{+37.4}
@@ -72,80 +84,109 @@
 \newcommand{\GptSolOwnRecordMinusObsCI}{[-14.8, +9.9]}
 \newcommand{\GptSolOwnRecordMinusOwn}{+7.6}
 \newcommand{\GptSolOwnRecordMinusOwnCI}{[-5.6, +22.1]}
+\newcommand{\GptSolOwnRecordMinusNone}{+36.8}
+\newcommand{\GptSolOwnRecordMinusNoneCI}{[+25.8, +47.7]}
+\newcommand{\GptSolLawMinusNone}{+64.9}
+\newcommand{\GptSolLawMinusNoneCI}{[+55.6, +73.9]}
+\newcommand{\GptSolLawMinusOwn}{+35.7}
+\newcommand{\GptSolLawMinusOwnCI}{[+24.8, +47.7]}
+\newcommand{\GptSolLawMinusOwnRecord}{+28.1}
+\newcommand{\GptSolLawMinusOwnRecordCI}{[+18.0, +39.2]}
 \newcommand{\GptSolCpA}{21.2}
 \newcommand{\GptSolCpB}{57.6}
 \newcommand{\GptSolCpC}{45.5}
 \newcommand{\GptSolCpD}{78.8}
-\newcommand{\GptSolLawAcc}{91.9}
-\newcommand{\GptSolLawN}{99}
-\newcommand{\GptSolLawCI}{[85.2, 97.7]}
-\newcommand{\GptSolLawStructAcc}{100.0}
-\newcommand{\GptSolLawStructN}{12}
-\newcommand{\GptSolLawStructCI}{[100.0, 100.0]}
-\newcommand{\GptSolLawFieldAcc}{90.8}
-\newcommand{\GptSolLawFieldN}{87}
-\newcommand{\GptSolLawFieldCI}{[83.0, 97.0]}
-\newcommand{\QwenNoneAcc}{24.4}
-\newcommand{\QwenNoneN}{45}
-\newcommand{\QwenNoneCI}{[4.8, 42.6]}
-\newcommand{\QwenNoneCanon}{17.8}
-\newcommand{\QwenNoneStructAcc}{33.3}
-\newcommand{\QwenNoneStructN}{24}
-\newcommand{\QwenNoneStructCI}{[5.0, 57.9]}
-\newcommand{\QwenNoneStructCanon}{12.5}
+\newcommand{\GptSolWorlds}{33}
+\newcommand{\QwenNoneAcc}{23.5}
+\newcommand{\QwenNoneN}{51}
+\newcommand{\QwenNoneCI}{[4.7, 42.6]}
+\newcommand{\QwenNoneCanon}{15.7}
+\newcommand{\QwenNoneStructAcc}{30.0}
+\newcommand{\QwenNoneStructN}{30}
+\newcommand{\QwenNoneStructCI}{[3.4, 56.2]}
+\newcommand{\QwenNoneStructCanon}{10.0}
 \newcommand{\QwenNoneFieldAcc}{14.3}
 \newcommand{\QwenNoneFieldN}{21}
 \newcommand{\QwenNoneFieldCI}{[0.0, 39.1]}
 \newcommand{\QwenNoneFieldCanon}{23.8}
-\newcommand{\QwenOwnAcc}{60.0}
-\newcommand{\QwenOwnN}{40}
-\newcommand{\QwenOwnCI}{[47.2, 73.0]}
-\newcommand{\QwenOwnCanon}{20.0}
-\newcommand{\QwenOwnStructAcc}{66.7}
-\newcommand{\QwenOwnStructN}{24}
-\newcommand{\QwenOwnStructCI}{[47.6, 85.0]}
-\newcommand{\QwenOwnStructCanon}{25.0}
+\newcommand{\QwenOwnAcc}{63.0}
+\newcommand{\QwenOwnN}{46}
+\newcommand{\QwenOwnCI}{[48.8, 75.5]}
+\newcommand{\QwenOwnCanon}{17.4}
+\newcommand{\QwenOwnStructAcc}{70.0}
+\newcommand{\QwenOwnStructN}{30}
+\newcommand{\QwenOwnStructCI}{[51.9, 84.4]}
+\newcommand{\QwenOwnStructCanon}{20.0}
 \newcommand{\QwenOwnFieldAcc}{50.0}
 \newcommand{\QwenOwnFieldN}{16}
 \newcommand{\QwenOwnFieldCI}{[40.0, 66.7]}
 \newcommand{\QwenOwnFieldCanon}{12.5}
-\newcommand{\QwenObsAcc}{68.6}
-\newcommand{\QwenObsN}{35}
-\newcommand{\QwenObsCI}{[48.4, 89.1]}
-\newcommand{\QwenObsCanon}{17.1}
-\newcommand{\QwenObsStructAcc}{76.2}
-\newcommand{\QwenObsStructN}{21}
-\newcommand{\QwenObsStructCI}{[56.5, 96.0]}
-\newcommand{\QwenObsStructCanon}{9.5}
+\newcommand{\QwenOwnRecordAcc}{76.7}
+\newcommand{\QwenOwnRecordN}{30}
+\newcommand{\QwenOwnRecordCI}{[53.8, 96.7]}
+\newcommand{\QwenOwnRecordCanon}{16.7}
+\newcommand{\QwenOwnRecordStructAcc}{76.7}
+\newcommand{\QwenOwnRecordStructN}{30}
+\newcommand{\QwenOwnRecordStructCI}{[53.8, 96.7]}
+\newcommand{\QwenOwnRecordStructCanon}{16.7}
+\newcommand{\QwenObsAcc}{72.7}
+\newcommand{\QwenObsN}{44}
+\newcommand{\QwenObsCI}{[54.5, 88.9]}
+\newcommand{\QwenObsCanon}{15.9}
+\newcommand{\QwenObsStructAcc}{80.0}
+\newcommand{\QwenObsStructN}{30}
+\newcommand{\QwenObsStructCI}{[65.4, 93.8]}
+\newcommand{\QwenObsStructCanon}{10.0}
 \newcommand{\QwenObsFieldAcc}{57.1}
 \newcommand{\QwenObsFieldN}{14}
 \newcommand{\QwenObsFieldCI}{[20.0, 100.0]}
 \newcommand{\QwenObsFieldCanon}{28.6}
-\newcommand{\QwenSibAcc}{13.2}
-\newcommand{\QwenSibN}{38}
-\newcommand{\QwenSibCI}{[4.3, 22.9]}
-\newcommand{\QwenSibCanon}{23.7}
-\newcommand{\QwenSibPickSib}{70.6}
-\newcommand{\QwenSibStructAcc}{4.3}
-\newcommand{\QwenSibStructN}{23}
-\newcommand{\QwenSibStructCI}{[0.0, 10.3]}
-\newcommand{\QwenSibStructCanon}{30.4}
-\newcommand{\QwenSibStructPickSib}{72.7}
+\newcommand{\QwenSibAcc}{11.1}
+\newcommand{\QwenSibN}{45}
+\newcommand{\QwenSibCI}{[2.6, 20.5]}
+\newcommand{\QwenSibCanon}{20.0}
+\newcommand{\QwenSibPickSib}{73.7}
+\newcommand{\QwenSibStructAcc}{3.3}
+\newcommand{\QwenSibStructN}{30}
+\newcommand{\QwenSibStructCI}{[0.0, 8.6]}
+\newcommand{\QwenSibStructCanon}{23.3}
+\newcommand{\QwenSibStructPickSib}{76.9}
 \newcommand{\QwenSibFieldAcc}{26.7}
 \newcommand{\QwenSibFieldN}{15}
 \newcommand{\QwenSibFieldCI}{[20.0, 40.0]}
 \newcommand{\QwenSibFieldCanon}{13.3}
 \newcommand{\QwenSibFieldPickSib}{66.7}
-\newcommand{\QwenOwnMinusNone}{+23.3}
-\newcommand{\QwenOwnMinusNoneCI}{[+0.0, +56.5]}
-\newcommand{\QwenOwnMinusSib}{+42.9}
-\newcommand{\QwenOwnMinusSibCI}{[+25.6, +63.3]}
-\newcommand{\QwenObsMinusOwn}{+9.7}
-\newcommand{\QwenObsMinusOwnCI}{[-16.0, +30.6]}
-\newcommand{\QwenCpA}{10.0}
-\newcommand{\QwenCpB}{60.0}
-\newcommand{\QwenCpC}{50.0}
-\newcommand{\QwenCpD}{60.0}
+\newcommand{\QwenLawAcc}{76.2}
+\newcommand{\QwenLawN}{21}
+\newcommand{\QwenLawCI}{[61.5, 84.6]}
+\newcommand{\QwenLawCanon}{0.0}
+\newcommand{\QwenLawStructAcc}{76.2}
+\newcommand{\QwenLawStructN}{21}
+\newcommand{\QwenLawStructCI}{[61.5, 84.6]}
+\newcommand{\QwenLawStructCanon}{0.0}
+\newcommand{\QwenOwnMinusNone}{+34.1}
+\newcommand{\QwenOwnMinusNoneCI}{[+5.1, +63.8]}
+\newcommand{\QwenOwnMinusSib}{+51.1}
+\newcommand{\QwenOwnMinusSibCI}{[+30.4, +70.9]}
+\newcommand{\QwenObsMinusOwn}{+9.1}
+\newcommand{\QwenObsMinusOwnCI}{[-9.5, +27.8]}
+\newcommand{\QwenOwnRecordMinusObs}{-3.3}
+\newcommand{\QwenOwnRecordMinusObsCI}{[-31.0, +27.3]}
+\newcommand{\QwenOwnRecordMinusOwn}{+6.7}
+\newcommand{\QwenOwnRecordMinusOwnCI}{[-21.9, +25.0]}
+\newcommand{\QwenOwnRecordMinusNone}{+46.7}
+\newcommand{\QwenOwnRecordMinusNoneCI}{[+28.6, +69.2]}
+\newcommand{\QwenLawMinusNone}{+52.4}
+\newcommand{\QwenLawMinusNoneCI}{[+30.0, +72.7]}
+\newcommand{\QwenLawMinusOwn}{+14.3}
+\newcommand{\QwenLawMinusOwnCI}{[-11.1, +40.0]}
+\newcommand{\QwenLawMinusOwnRecord}{+9.5}
+\newcommand{\QwenLawMinusOwnRecordCI}{[-20.0, +27.3]}
+\newcommand{\QwenCpA}{16.7}
+\newcommand{\QwenCpB}{58.3}
+\newcommand{\QwenCpC}{41.7}
+\newcommand{\QwenCpD}{66.7}
+\newcommand{\QwenWorlds}{8}
 \newcommand{\GeminiNoneAcc}{24.0}
 \newcommand{\GeminiNoneN}{171}
 \newcommand{\GeminiNoneCI}{[18.6, 29.9]}
@@ -219,10 +260,13 @@
 \newcommand{\GeminiOwnRecordMinusObsCI}{[-2.7, +13.0]}
 \newcommand{\GeminiOwnRecordMinusOwn}{-1.8}
 \newcommand{\GeminiOwnRecordMinusOwnCI}{[-11.0, +6.6]}
+\newcommand{\GeminiOwnRecordMinusNone}{+1.2}
+\newcommand{\GeminiOwnRecordMinusNoneCI}{[-5.2, +7.1]}
 \newcommand{\GeminiCpA}{15.2}
 \newcommand{\GeminiCpB}{18.2}
 \newcommand{\GeminiCpC}{15.2}
 \newcommand{\GeminiCpD}{33.3}
+\newcommand{\GeminiWorlds}{33}
 \newcommand{\OpusNoneAcc}{20.5}
 \newcommand{\OpusNoneN}{171}
 \newcommand{\OpusNoneCI}{[13.9, 27.4]}
@@ -286,6 +330,18 @@
 \newcommand{\OpusSibFieldCI}{[19.5, 35.1]}
 \newcommand{\OpusSibFieldCanon}{25.3}
 \newcommand{\OpusSibFieldPickSib}{26.7}
+\newcommand{\OpusLawAcc}{81.9}
+\newcommand{\OpusLawN}{171}
+\newcommand{\OpusLawCI}{[75.0, 87.8]}
+\newcommand{\OpusLawCanon}{3.5}
+\newcommand{\OpusLawStructAcc}{83.3}
+\newcommand{\OpusLawStructN}{84}
+\newcommand{\OpusLawStructCI}{[74.7, 89.3]}
+\newcommand{\OpusLawStructCanon}{4.8}
+\newcommand{\OpusLawFieldAcc}{80.5}
+\newcommand{\OpusLawFieldN}{87}
+\newcommand{\OpusLawFieldCI}{[68.3, 90.7]}
+\newcommand{\OpusLawFieldCanon}{2.3}
 \newcommand{\OpusOwnMinusNone}{+11.7}
 \newcommand{\OpusOwnMinusNoneCI}{[+0.0, +23.3]}
 \newcommand{\OpusOwnMinusSib}{+9.4}
@@ -296,10 +352,19 @@
 \newcommand{\OpusOwnRecordMinusObsCI}{[-12.7, +6.8]}
 \newcommand{\OpusOwnRecordMinusOwn}{+2.9}
 \newcommand{\OpusOwnRecordMinusOwnCI}{[-6.2, +12.8]}
+\newcommand{\OpusOwnRecordMinusNone}{+14.6}
+\newcommand{\OpusOwnRecordMinusNoneCI}{[+5.1, +23.3]}
+\newcommand{\OpusLawMinusNone}{+61.4}
+\newcommand{\OpusLawMinusNoneCI}{[+52.1, +70.5]}
+\newcommand{\OpusLawMinusOwn}{+49.7}
+\newcommand{\OpusLawMinusOwnCI}{[+39.8, +59.1]}
+\newcommand{\OpusLawMinusOwnRecord}{+46.8}
+\newcommand{\OpusLawMinusOwnRecordCI}{[+38.1, +55.6]}
 \newcommand{\OpusCpA}{33.3}
 \newcommand{\OpusCpB}{33.3}
 \newcommand{\OpusCpC}{27.3}
 \newcommand{\OpusCpD}{48.5}
+\newcommand{\OpusWorlds}{33}
 \newcommand{\KimiNoneAcc}{0.0}
 \newcommand{\KimiNoneN}{46}
 \newcommand{\KimiNoneCI}{[0.0, 0.0]}
@@ -373,7 +438,10 @@
 \newcommand{\KimiOwnRecordMinusObsCI}{[+0.0, +8.8]}
 \newcommand{\KimiOwnRecordMinusOwn}{-6.2}
 \newcommand{\KimiOwnRecordMinusOwnCI}{[-19.0, +7.4]}
+\newcommand{\KimiOwnRecordMinusNone}{+3.2}
+\newcommand{\KimiOwnRecordMinusNoneCI}{[+0.0, +8.8]}
 \newcommand{\KimiCpA}{25.0}
 \newcommand{\KimiCpB}{37.5}
 \newcommand{\KimiCpC}{50.0}
 \newcommand{\KimiCpD}{25.0}
+\newcommand{\KimiWorlds}{6}

@@ -16,3 +16,12 @@ rlaunch.sh
 rlaunch.sh.backup.*
 .env
 =10.1
+
+# LaTeX build outputs
+*.aux
+*.bbl
+*.blg
+*.brf
+*.out
+cvpr2027/author-kit-CVPR2026-v1-latex-/main.log
+cvpr2027/author-kit-CVPR2026-v1-latex-/main.pdf

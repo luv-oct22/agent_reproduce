@@ -3,13 +3,13 @@
 
 \subsection{Setup}
 
-\paragraph{Systems.} We evaluate five frontier multimodal models: GPT-6.1-Sol, Claude Opus 5.5, Gemini 3.8 Flash, Qwen 3.8 Max, and Kimi K3, each with the harness of Section~\ref{sec:construction:tools}. All models run at temperature 0.7, except Kimi K3, whose endpoint accepts only its default of 1.0. One further model accepted image inputs but discarded them, and is excluded. \TODO{Add exact API versions and access dates.}
+\paragraph{Systems.} We evaluate four frontier multimodal models: GPT-6.1-Sol, Claude Opus 5.5, Gemini 3.8 Flash, and Qwen 3.8 Max, each with the harness of Section~\ref{sec:construction:tools} at temperature 0.7. Two further models are excluded: one accepted image inputs but discarded them, and Kimi K3 returned no parseable answer in most exam calls. \TODO{Add exact API versions and access dates.}
 
-\paragraph{Runs.} Each system runs one episode in each of the 33 worlds with $B=12$, then answers the 171 exam questions under every evidence arm. \TODO{Update if fewer models finish all worlds; report per-model world counts.}
+\paragraph{Runs.} Each system runs one episode in each of the 33 worlds with $B=12$, then answers the 171 exam questions under every evidence arm. Qwen 3.8 Max has completed \V{QwenWorlds} of the 33 worlds so far, and its row is computed on those worlds only. \TODO{Update the Qwen row when its run completes.}
 
 \begin{table*}[t]
   \centering
-  \caption{\textbf{Exam accuracy (\%) by evidence arm.} 171 questions over 33 worlds; brackets give 95\% bootstrap intervals over worlds. Chance is 25\%, canonical physics scores 0\%, and any world-blind policy is capped at 33.3\%. \emph{Sib.\ pick}: fraction of sibling-arm answers that select the sibling world's outcome. \emph{Law in text} is evaluated on the matched subset of questions it has been run on so far. \TODO{Fill remaining rows as runs finish.}}
+  \caption{\textbf{Exam accuracy (\%) by evidence arm.} 171 questions over 33 worlds; brackets give 95\% bootstrap intervals over worlds. Chance is 25\%, canonical physics scores 0\%, and any world-blind policy is capped at 33.3\%. \emph{Sib.\ pick}: fraction of sibling-arm answers that select the sibling world's outcome. $^\dagger$Qwen 3.8 Max on \V{QwenWorlds} of 33 worlds.}
   \label{tab:main}
   \small
   \setlength{\tabcolsep}{4pt}
@@ -20,16 +20,17 @@
     GPT-6.1-Sol      & \V{GptSolNoneAcc} & \V{GptSolOwnAcc} & \V{GptSolSibAcc} & \V{GptSolSibPickSib} & \V{GptSolObsAcc} & \V{GptSolOwnRecordAcc} & \V{GptSolLawAcc} \\
                      & {\scriptsize\V{GptSolNoneCI}} & {\scriptsize\V{GptSolOwnCI}} & {\scriptsize\V{GptSolSibCI}} & & {\scriptsize\V{GptSolObsCI}} & {\scriptsize\V{GptSolOwnRecordCI}} & {\scriptsize\V{GptSolLawCI}} \\
     Claude Opus 5.5  & \V{OpusNoneAcc} & \V{OpusOwnAcc} & \V{OpusSibAcc} & \V{OpusSibPickSib} & \V{OpusObsAcc} & \V{OpusOwnRecordAcc} & \V{OpusLawAcc} \\
+                     & {\scriptsize\V{OpusNoneCI}} & {\scriptsize\V{OpusOwnCI}} & {\scriptsize\V{OpusSibCI}} & & {\scriptsize\V{OpusObsCI}} & {\scriptsize\V{OpusOwnRecordCI}} & {\scriptsize\V{OpusLawCI}} \\
     Gemini 3.8 Flash & \V{GeminiNoneAcc} & \V{GeminiOwnAcc} & \V{GeminiSibAcc} & \V{GeminiSibPickSib} & \V{GeminiObsAcc} & \V{GeminiOwnRecordAcc} & \V{GeminiLawAcc} \\
-    Qwen 3.8 Max     & \V{QwenNoneAcc} & \V{QwenOwnAcc} & \V{QwenSibAcc} & \V{QwenSibPickSib} & \V{QwenObsAcc} & \V{QwenOwnRecordAcc} & \V{QwenLawAcc} \\
-    Kimi K3          & \V{KimiNoneAcc} & \V{KimiOwnAcc} & \V{KimiSibAcc} & \V{KimiSibPickSib} & \V{KimiObsAcc} & \V{KimiOwnRecordAcc} & \V{KimiLawAcc} \\
+                     & {\scriptsize\V{GeminiNoneCI}} & {\scriptsize\V{GeminiOwnCI}} & {\scriptsize\V{GeminiSibCI}} & & {\scriptsize\V{GeminiObsCI}} & {\scriptsize\V{GeminiOwnRecordCI}} & {\scriptsize\V{GeminiLawCI}} \\
+    Qwen 3.8 Max$^\dagger$ & \V{QwenNoneAcc} & \V{QwenOwnAcc} & \V{QwenSibAcc} & \V{QwenSibPickSib} & \V{QwenObsAcc} & \V{QwenOwnRecordAcc} & \V{QwenLawAcc} \\
     \bottomrule
   \end{tabular}
 \end{table*}
 
 \subsection{Does Interaction Help? (RQ1)}
 
-Without interaction, GPT-6.1-Sol answers \V{GptSolNoneAcc}\% of questions correctly, at chance, and picks the canonical outcome in \V{GptSolNoneCanon}\% of them. After twelve experiments in the tested world, accuracy rises to \V{GptSolOwnAcc}\% (paired gain \V{GptSolOwnMinusNone} points, 95\% CI \V{GptSolOwnMinusNoneCI}), well above the one-third cap of any policy that ignores which world is tested, and the canonical-pick rate falls to \V{GptSolOwnCanon}\%. Because canonical physics always selects a wrong candidate, this gain cannot come from textbook knowledge. The checkpoint curve (Figure~\ref{fig:curves}) shows the same learning within the episode: \V{GptSolCpA}\% before any experiment, \V{GptSolCpB}\% after four, \V{GptSolCpC}\% after eight, and \V{GptSolCpD}\% after twelve. \TODO{Cross-model statement once Table~\ref{tab:main} is filled.}
+Without interaction, every system answers at chance (\V{OpusNoneAcc}--\V{GptSolNoneAcc}\%). Twelve experiments in the tested world raise accuracy for three of the four systems: GPT-6.1-Sol reaches \V{GptSolOwnAcc}\% (paired gain \V{GptSolOwnMinusNone} points, 95\% CI \V{GptSolOwnMinusNoneCI}), Claude Opus 5.5 \V{OpusOwnAcc}\% (\V{OpusOwnMinusNone}, CI \V{OpusOwnMinusNoneCI}), and Qwen 3.8 Max \V{QwenOwnAcc}\% on its completed worlds (\V{QwenOwnMinusNone}, CI \V{QwenOwnMinusNoneCI}). The gain comes with a shift away from textbook physics: the canonical-pick rate falls from \V{GptSolNoneCanon}\% to \V{GptSolOwnCanon}\% for GPT-6.1-Sol and from \V{OpusNoneCanon}\% to \V{OpusOwnCanon}\% for Claude Opus 5.5. Because canonical physics always selects a wrong candidate, this gain cannot come from textbook knowledge. Gemini 3.8 Flash stays at chance in every arm that relies on a history (own world \V{GeminiOwnAcc}\%, gain \V{GeminiOwnMinusNone}, CI \V{GeminiOwnMinusNoneCI}), so learning from interaction requires a capability that not every frontier model has. The checkpoint curves (Figure~\ref{fig:curves}) show the same ordering within the episode: GPT-6.1-Sol rises from \V{GptSolCpA}\% before any experiment to \V{GptSolCpD}\% after twelve, Claude Opus 5.5 from \V{OpusCpA}\% to \V{OpusCpD}\%, and Gemini 3.8 Flash from \V{GeminiCpA}\% to \V{GeminiCpD}\%. No curve rises monotonically; every system dips after eight experiments, so more evidence does not steadily improve the agent's belief about the law.
 
 \begin{figure}[t]
   \centering
@@ -44,36 +45,40 @@ Without interaction, GPT-6.1-Sol answers \V{GptSolNoneAcc}\% of questions correc
 
 \subsection{Is the Learning Specific to the World? (RQ2)}
 
-Replacing the agent's own history with one from a sibling world drops accuracy to \V{GptSolSibAcc}\%, below the no-interaction floor (own minus sibling \V{GptSolOwnMinusSib} points, CI \V{GptSolOwnMinusSibCI}). The errors are not random: \V{GptSolSibPickSib}\% of sibling-arm answers select the outcome predicted by the sibling world's law. The system learns a law from its history and applies it; given another world's history, it applies that world's law. The gain is therefore specific to the world explored, not to familiarity with the setting.
+A history from a sibling world never helps. It leaves every system near or below its no-interaction floor (GPT-6.1-Sol \V{GptSolSibAcc}\%, Claude Opus 5.5 \V{OpusSibAcc}\%, Qwen 3.8 Max \V{QwenSibAcc}\%), and its errors are not random: \V{GptSolSibPickSib}\%, \V{OpusSibPickSib}\%, and \V{QwenSibPickSib}\% of sibling-arm answers select the outcome predicted by the sibling world's law. A system that has learned from a history applies the law that history shows; given another world's history, it applies that world's law. The gain from interaction is therefore specific to the world explored, not to familiarity with the setting (own minus sibling: \V{GptSolOwnMinusSib} points for GPT-6.1-Sol, CI \V{GptSolOwnMinusSibCI}; \V{QwenOwnMinusSib} for Qwen 3.8 Max, CI \V{QwenOwnMinusSibCI}). Claude Opus 5.5 shows the same direction with a smaller gain (\V{OpusOwnMinusSib}, CI \V{OpusOwnMinusSibCI}).
 
-Table~\ref{tab:condition} splits accuracy by equation. With its own history, GPT-6.1-Sol reaches \V{GptSolOwnStructAcc}\% on structural changes and \V{GptSolOwnFieldAcc}\% on hidden fields; on these exam questions, the two kinds of departure are learned to a similar degree. \TODO{Revisit once more models finish; an earlier pilot on a different question set suggested fields were harder.}
+Table~\ref{tab:condition} splits accuracy by equation. The two kinds of departure are equally easy to apply once the law is stated: law in text reaches \V{GptSolLawStructAcc}\% and \V{GptSolLawFieldAcc}\% for GPT-6.1-Sol, and \V{OpusLawStructAcc}\% and \V{OpusLawFieldAcc}\% for Claude Opus 5.5. They differ in how well interaction reveals them. Claude Opus 5.5 learns structural changes from its own history (\V{OpusOwnStructAcc}\%, from \V{OpusNoneStructAcc}\%) but not hidden fields (\V{OpusOwnFieldAcc}\%, against \V{OpusNoneFieldAcc}\% without interaction). GPT-6.1-Sol learns both to a similar degree (\V{GptSolOwnStructAcc}\% and \V{GptSolOwnFieldAcc}\%).
 
 \begin{table}[t]
   \centering
-  \caption{\textbf{Accuracy (\%) by equation}, GPT-6.1-Sol. 84 structural and 87 field questions. \TODO{Add columns for the other systems.}}
+  \caption{\textbf{Accuracy (\%) by equation.} 84 structural and 87 field questions per system.}
   \label{tab:condition}
   \small
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{lcc}
+  \begin{tabular}{lcccc}
     \toprule
-    Arm & Structural & Field \\
+    & \multicolumn{2}{c}{GPT-6.1-Sol} & \multicolumn{2}{c}{Claude Opus 5.5} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+    Arm & Struct. & Field & Struct. & Field \\
     \midrule
-    No interaction & \V{GptSolNoneStructAcc} & \V{GptSolNoneFieldAcc} \\
-    Own world      & \V{GptSolOwnStructAcc} & \V{GptSolOwnFieldAcc} \\
-    Sibling world  & \V{GptSolSibStructAcc} & \V{GptSolSibFieldAcc} \\
-    Yoked observer & \V{GptSolObsStructAcc} & \V{GptSolObsFieldAcc} \\
-    Own record     & \V{GptSolOwnRecordStructAcc} & \V{GptSolOwnRecordFieldAcc} \\
-    Law in text    & \V{GptSolLawStructAcc} & \V{GptSolLawFieldAcc} \\
+    No interaction & \V{GptSolNoneStructAcc} & \V{GptSolNoneFieldAcc} & \V{OpusNoneStructAcc} & \V{OpusNoneFieldAcc} \\
+    Own world      & \V{GptSolOwnStructAcc} & \V{GptSolOwnFieldAcc} & \V{OpusOwnStructAcc} & \V{OpusOwnFieldAcc} \\
+    Sibling world  & \V{GptSolSibStructAcc} & \V{GptSolSibFieldAcc} & \V{OpusSibStructAcc} & \V{OpusSibFieldAcc} \\
+    Yoked observer & \V{GptSolObsStructAcc} & \V{GptSolObsFieldAcc} & \V{OpusObsStructAcc} & \V{OpusObsFieldAcc} \\
+    Own record     & \V{GptSolOwnRecordStructAcc} & \V{GptSolOwnRecordFieldAcc} & \V{OpusOwnRecordStructAcc} & \V{OpusOwnRecordFieldAcc} \\
+    Law in text    & \V{GptSolLawStructAcc} & \V{GptSolLawFieldAcc} & \V{OpusLawStructAcc} & \V{OpusLawFieldAcc} \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \subsection{Does Acting Matter?}
 
-A fresh instance shown the agent's episode as a record of someone else's experiments scores \V{GptSolObsAcc}\%, higher than the agent that ran them (\V{GptSolObsMinusOwn} points, CI \V{GptSolObsMinusOwnCI}). Two factors differ between these arms: who chose the experiments, and how the history is presented. The own-record arm separates them. Shown the same record in the same format but told the experiments were its own, the system scores \V{GptSolOwnRecordAcc}\%: \V{GptSolOwnRecordMinusObs} points relative to the observer (CI \V{GptSolOwnRecordMinusObsCI}), and \V{GptSolOwnRecordMinusOwn} points relative to answering inside the live conversation (CI \V{GptSolOwnRecordMinusOwnCI}). \TODO{Interpret once the own-record arm completes (\V{GptSolOwnRecordN} of 171 answered at last update): if own record $\approx$ observer, the observer advantage is a presentation effect and authorship neither helps nor hurts; if own record $>$ observer, authorship helps; if own record $\approx$ own world, the agent's own choices are less informative.}
+A fresh instance shown the agent's episode as a record of another agent's experiments does at least as well as the agent that ran them: GPT-6.1-Sol \V{GptSolObsAcc}\% against \V{GptSolOwnAcc}\% (\V{GptSolObsMinusOwn} points, CI \V{GptSolObsMinusOwnCI}), Claude Opus 5.5 \V{OpusObsAcc}\% against \V{OpusOwnAcc}\% (\V{OpusObsMinusOwn}, CI \V{OpusObsMinusOwnCI}). Two factors differ between these arms: who chose the experiments, and how the history is presented. The own-record arm separates them by showing the same record in the same format, introduced as the agent's own experiments. Authorship has no detectable effect: own record minus observer is \V{GptSolOwnRecordMinusObs} points for GPT-6.1-Sol (CI \V{GptSolOwnRecordMinusObsCI}), \V{OpusOwnRecordMinusObs} for Claude Opus 5.5 (CI \V{OpusOwnRecordMinusObsCI}), and \V{GeminiOwnRecordMinusObs} for Gemini 3.8 Flash (CI \V{GeminiOwnRecordMinusObsCI}). For current systems, the value of interaction lies in the evidence it produces, and that evidence serves a system that did not gather it as well as one that did. Whether choosing experiments matters, as opposed to having made them, is tested by an agent whose experiments are chosen at random, which we leave to future work.
 
 \subsection{Where Does Learning Break? (RQ3)}
 
-Told the law in text, GPT-6.1-Sol scores \V{GptSolLawAcc}\% on the matched questions, against \V{GptSolOwnAcc}\% from its own history. The system can apply the hidden law to rendered scenes once it knows the law; the remaining gap lies in forming the law from evidence. \TODO{Confirm on the full matched set and across models.}
+Told the law in text, without any interaction, every system that learns from interaction reaches high accuracy: GPT-6.1-Sol \V{GptSolLawAcc}\% and Claude Opus 5.5 \V{OpusLawAcc}\%, with the canonical-pick rate near zero (\V{GptSolLawCanon}\% and \V{OpusLawCanon}\%). These systems can therefore read the rendered scenes and apply a known law to them; perception and application are not what limits them. The limit is in forming the law from evidence. Law in text exceeds the own-world arm by \V{GptSolLawMinusOwn} points for GPT-6.1-Sol (CI \V{GptSolLawMinusOwnCI}) and \V{OpusLawMinusOwn} for Claude Opus 5.5 (CI \V{OpusLawMinusOwnCI}). Interaction thus recovers less than half of what knowing the law provides: \V{GptSolOwnMinusNone} of \V{GptSolLawMinusNone} points for GPT-6.1-Sol, and \V{OpusOwnMinusNone} of \V{OpusLawMinusNone} for Claude Opus 5.5.
+
+The gap persists when the history is re-presented in a fresh context: law in text minus own record is \V{GptSolLawMinusOwnRecord} points for GPT-6.1-Sol (CI \V{GptSolLawMinusOwnRecordCI}) and \V{OpusLawMinusOwnRecord} for Claude Opus 5.5 (CI \V{OpusLawMinusOwnRecordCI}). The bottleneck is therefore not only keeping a long interaction in view, but turning observed outcomes into the law that produced them. This gap is largest for hidden fields in Claude Opus 5.5, whose own history leaves field questions at the no-interaction level although it applies the stated field law at \V{OpusLawFieldAcc}\% (Table~\ref{tab:condition}).
 
 \paragraph{Exploration.} Agents do explore the dimensions that reveal a field: GPT-6.1-Sol uses all three start times in 32 of 33 episodes and all three start distances in 31, so failures on hidden fields are not explained by never trying a different time or distance. Its choices are nonetheless concentrated: 66\% of its experiments start at the earliest time. \TODO{Relate coverage to exam accuracy per world, and report for all systems.}

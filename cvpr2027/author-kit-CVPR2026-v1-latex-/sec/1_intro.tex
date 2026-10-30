@@ -15,7 +15,8 @@ Our contributions are:
 \begin{itemize}
   \item A benchmark that frames learning the physical world through interaction as a visual experiment seen from two sides: the agent experiments and observes during interaction, then foresees rendered outcomes of new experiments with interaction frozen.
   \item A law-contrastive evaluation built from sibling worlds that share their scenes but differ in their hidden law, so that a correct prediction requires knowledge of the explored world, together with an identifiability check that removes hidden laws the images cannot reveal.
-  \item An evaluation protocol that measures learning as what interaction changes, through online learning curves and paired evidence arms (no history, own world, sibling world, yoked observer, own record, law in text), applied to five frontier multimodal agents. Interaction raises the strongest system from \V{GptSolNoneAcc}\% to \V{GptSolOwnAcc}\%, and another world's history pulls it to that world's answer. \TODO{Add the authorship and cross-model findings.}
+  \item An evaluation protocol that measures learning as what interaction changes, through online learning curves and paired evidence arms (no history, own world, sibling world, yoked observer, own record, law in text), applied to four frontier multimodal agents.
+  \item Findings on current agents. Interaction teaches the law of the world explored: it raises the strongest system from \V{GptSolNoneAcc}\% to \V{GptSolOwnAcc}\%, and another world's history pulls it to that world's answer. Yet interaction recovers less than half of what the stated law provides (\V{GptSolLawAcc}\% with the law in text), and the gap lies in forming the law from evidence, not in applying it to images. Having run the experiments gives no advantage over observing them.
 \end{itemize}
 
 \begin{figure*}[t]

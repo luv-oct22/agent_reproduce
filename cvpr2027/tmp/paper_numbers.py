@@ -4,14 +4,15 @@ Usage: PYTHONPATH=. python cvpr2027/tmp/paper_numbers.py [model ...]
 Reads ledgers only; writes nothing.
 """
 import json
+import os
 import random
 import sys
 from collections import defaultdict
 from pathlib import Path
 
 RULES = ('rule_1', 'rule_2')
-BASE = Path('results/visual_interaction')
-ARMS = ('none', 'own', 'own_record', 'observations', 'sibling')
+BASE = Path(os.environ.get('VI_RESULTS', 'results/visual_interaction'))
+ARMS = ('none', 'own', 'own_record', 'observations', 'sibling', 'law_text')
 
 
 def boot(rows, stat, n=2000, seed=0):
@@ -36,7 +37,7 @@ def model_numbers(model, mode='frames_predict'):
     rows = [json.loads(l) for l in open(d / 'exam.jsonl') if l.strip()]
     rows = [dict(r, world=(r['group'], r['rule'], r['variant'])) for r in rows
             if r.get('status') == 'complete' and r['rule'] in RULES]
-    out = {'exam': {}, 'paired': {}, 'curve': {}}
+    out = {'exam': {}, 'paired': {}, 'curve': {}, 'worlds': len({r['world'] for r in rows if r['evidence'] == 'own'})}
     idx = {}
     for arm in ARMS:
         for rule in (None,) + RULES:
@@ -51,7 +52,8 @@ def model_numbers(model, mode='frames_predict'):
             out['exam'][f'{arm}|{rule or "all"}'] = e
         idx[arm] = {(*r['world'], r['item']): r for r in rows if r['evidence'] == arm}
     for x, y in (('own', 'none'), ('own', 'sibling'), ('observations', 'own'), ('own_record', 'observations'),
-                 ('own_record', 'own'), ('own_record', 'none')):
+                 ('own_record', 'own'), ('own_record', 'none'), ('law_text', 'none'), ('law_text', 'own'),
+                 ('law_text', 'own_record')):
         keys = sorted(set(idx.get(x, {})) & set(idx.get(y, {})))
         if keys:
             P = [dict(world=k[:3], correct=idx[x][k]['correct'] - idx[y][k]['correct']) for k in keys]
@@ -71,34 +73,15 @@ def model_numbers(model, mode='frames_predict'):
     return out
 
 
-def law_text_numbers(model, exam_keys):
-    """Law-in-text ceiling from the law-contrastive ledger, on the same (world, item) questions as the exam."""
-    path = Path('results/law_contrastive/exam') / model / 'law_text/ledger.jsonl'
-    if not path.exists():
-        return None
-    latest = {}
-    for l in open(path):
-        if l.strip():
-            r = json.loads(l)
-            latest[(r['group'], r['rule'], r['variant'], r['item'])] = r
-    R = [dict(r, world=k[:3]) for k, r in latest.items()
-         if r.get('status') == 'complete' and k in exam_keys]
-    if not R:
-        return None
-    out = {}
-    for rule in (None,) + RULES:
-        S = [r for r in R if rule is None or r['rule'] == rule]
-        if S:
-            out[rule or 'all'] = dict(n=len(S), acc=acc(S), ci=boot(S, acc))
-    return out
-
-
 MACRO = {'gpt-6.1-sol': 'GptSol', 'qwen3.8-max': 'Qwen', 'gemini-3.8-flash': 'Gemini',
          'claude-opus-5-5': 'Opus', 'kimi-k3': 'Kimi'}
-ARM_MACRO = {'none': 'None', 'own': 'Own', 'own_record': 'OwnRecord', 'observations': 'Obs', 'sibling': 'Sib'}
+ARM_MACRO = {'none': 'None', 'own': 'Own', 'own_record': 'OwnRecord', 'observations': 'Obs', 'sibling': 'Sib',
+             'law_text': 'Law'}
 RULE_MACRO = {'all': '', 'rule_1': 'Struct', 'rule_2': 'Field'}
 PAIR_MACRO = {'own-none': 'OwnMinusNone', 'own-sibling': 'OwnMinusSib', 'observations-own': 'ObsMinusOwn',
-              'own_record-observations': 'OwnRecordMinusObs', 'own_record-own': 'OwnRecordMinusOwn'}
+              'own_record-observations': 'OwnRecordMinusObs', 'own_record-own': 'OwnRecordMinusOwn',
+              'own_record-none': 'OwnRecordMinusNone', 'law_text-none': 'LawMinusNone',
+              'law_text-own': 'LawMinusOwn', 'law_text-own_record': 'LawMinusOwnRecord'}
 
 
 def tex(models, path):
@@ -125,20 +108,9 @@ def tex(models, path):
                           f'\\newcommand{{\\{name}CI}}{{[{100 * v["ci"][0]:+.1f}, {100 * v["ci"][1]:+.1f}]}}']
         for k, v in res['curve'].items():
             lines.append(f'\\newcommand{{\\{M}Cp{"ABCD"[int(k)]}}}{{{pct(v["acc"])}}}')
-        keys = {(r['group'], r['rule'], r['variant'], r['item']) for r in _exam_rows(m)}
-        lt = law_text_numbers(m, keys)
-        for rule, v in (lt or {}).items():
-            name = f'{M}Law{RULE_MACRO[rule]}'
-            lines += [f'\\newcommand{{\\{name}Acc}}{{{pct(v["acc"])}}}', f'\\newcommand{{\\{name}N}}{{{v["n"]}}}',
-                      f'\\newcommand{{\\{name}CI}}{{[{pct(v["ci"][0])}, {pct(v["ci"][1])}]}}']
+        lines.append(f'\\newcommand{{\\{M}Worlds}}{{{res["worlds"]}}}')
     Path(path).write_text('\n'.join(lines) + '\n')
     print(f'wrote {path} ({len(lines) - 1} macros)')
-
-
-def _exam_rows(model, mode='frames_predict'):
-    p = BASE / model / mode / 'exam.jsonl'
-    return [r for r in (json.loads(l) for l in open(p) if l.strip())
-            if r.get('status') == 'complete' and r['rule'] in RULES and r['evidence'] == 'none'] if p.exists() else []
 
 
 def main(models):
